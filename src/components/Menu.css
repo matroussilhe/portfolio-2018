@@ -2,6 +2,6 @@
   display: flex;
   position: absolute;
   top: 300px;
-  left: 300px;
+  left: 150px;
   transform: rotate(-90deg);
 }
