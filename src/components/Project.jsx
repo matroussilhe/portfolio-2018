@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Row, Col } from 'react-flexbox-grid';
+import { Row, Col } from './overrides/Grid';
 
-const RowWrapper = styled(Row)`
-  margin-bottom: 80px;
+const ProjectWrapper = styled(Row)`
+  margin-bottom: 200px;
+`;
+
+const DescriptionCol = styled(Col)`
+  padding-right: 40px;
 `;
 
 const Image = styled.img`
@@ -13,47 +17,54 @@ const Image = styled.img`
 `;
 
 const Title = styled.h1`
-  font-size: 18px;
-  font-family: 'Montserrat SemiBold';
-`;
-
-const Subtitle = styled.h2`
-  font-size: 18px;
-  font-family: 'Montserrat SemiBold';
+  font-size: 26px;
+  font-family: 'Open Sans Bold';
+  color: ${props => props.theme.color.primary};
+  opacity: ${props => props.theme.opacity.dark};
+  margin-bottom: 18px;
 `;
 
 const Heading = styled.h3`
-  font-size: 16px;
-  font-family: 'Montserrat Light';
+  font-size: 12px;
+  font-family: 'Montserrat Regular';
+  color: ${props => props.theme.color.primary};
+  opacity: ${props => props.theme.opacity.dark};
+  margin-top: 16px;
+  margin-bottom: 4px;
 `;
 
 const Body = styled.p`
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Open Sans Regular';
+  color: ${props => props.theme.color.primary};
+  opacity: ${props => props.theme.opacity.grey};
 `;
 
 const Link = styled.a`
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Open Sans Regular';
-  text-decoration: none;
-  color: inherit;
+  color: ${props => props.theme.color.primary};
+  opacity: ${props => props.theme.opacity.grey};
 `;
 
 function Project(props) {
   return (
-    <RowWrapper>
+    <ProjectWrapper>
       <Col>
-        <Row>
+        <Row center="xs">
           <Col>
-            <Image src="https://picsum.photos/1600/900" alt="project" />
+            <Title>{props.project.title}</Title>
+            <Image src={props.project.image.src} alt={props.project.image.alt} />
           </Col>
         </Row>
         <Row>
-          <Col>
-            <Title>{props.project.title}</Title>
-            <Subtitle>{props.project.role}</Subtitle>
+          <DescriptionCol xs={12} lg={8}>
             <Heading>Description</Heading>
             <Body>{props.project.description}</Body>
+          </DescriptionCol>
+          <Col xs={12} lg={4}>
+            <Heading>Role</Heading>
+            <Body>{props.project.role}</Body>
             <Heading>Dev stack</Heading>
             <Body>{props.project.stack}</Body>
             {
@@ -65,11 +76,10 @@ function Project(props) {
                 </div>
               : ''
             }
-
           </Col>
         </Row>
       </Col>
-    </RowWrapper>
+    </ProjectWrapper>
   );
 }
 
@@ -80,6 +90,10 @@ Project.propTypes = {
     role: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     stack: PropTypes.string.isRequired,
+    image: PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+    }),
     link: PropTypes.shape({
       label: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,

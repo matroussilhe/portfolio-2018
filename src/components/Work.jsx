@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Row, Col } from 'react-flexbox-grid';
+import { Row, Col } from './overrides/Grid';
 
 import data from '../api/projects.json';
 import Project from '../components/Project';
 
-const RowWrapper = styled(Row)`
-  margin-bottom: 60px;
+const WorkWrapper = styled(Row)`
+  margin-bottom: 20px;
 `;
 
 class Work extends Component {
@@ -24,11 +24,11 @@ class Work extends Component {
 
   render() {
     return (
-      <RowWrapper>
+      <WorkWrapper>
         <Col xs={12}>
           {this.renderProjects()}
         </Col>
-      </RowWrapper>
+      </WorkWrapper>
     );
   }
 }

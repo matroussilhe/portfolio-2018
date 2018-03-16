@@ -5,17 +5,18 @@ const MenuWrapper = styled.div`
   display: flex;
   position: fixed;
   top: 50%;
-  left: 20px;
+  left: 10px;
   transform: rotate(-90deg) translateX(-50%);
   transform-origin: top left;
 }`;
 
 const MenuLink = styled.a`
-  font-size: 18px;
-  font-family: 'Montserrat Bold';
-  text-decoration: none;
-  color: inherit;
   margin-right: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Montserrat Bold';
+  color: ${props => props.theme.color.primary};
+  opacity: ${props => props.theme.opacity.grey};
 }`;
 
 

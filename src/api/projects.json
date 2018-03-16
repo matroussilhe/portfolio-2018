@@ -7,6 +7,10 @@
       "role": "Fullstack developer",
       "description": "I took part in a group of six people of all game development-related fields to create a game within 48 hours. The video game we created is a FPS where the player has to travel through two temples filled with enemy to perform a ritual (this Game Jam theme).",
       "stack": "JS, Node.js, React",
+      "image": {
+        "src": "/assets/images/placeholder.jpg",
+        "alt": "placeholder"
+      },
       "link": {
         "label": "Download",
         "url": "#"
@@ -17,7 +21,11 @@
       "title": "Beep boop",
       "role": "Fullstack developer",
       "description": "I took part in a group of six people of all game development-related fields to create a game within 48 hours. The video game we created is a FPS where the player has to travel through two temples filled with enemy to perform a ritual (this Game Jam theme).",
-      "stack": "JS, Node.js, React"
+      "stack": "JS, Node.js, React",
+      "image": {
+        "src": "/assets/images/placeholder.jpg",
+        "alt": "placeholder"
+      }
     },
     {
       "id": "2",
@@ -25,6 +33,10 @@
       "role": "Fullstack developer",
       "description": "I took part in a group of six people of all game development-related fields to create a game within 48 hours. The video game we created is a FPS where the player has to travel through two temples filled with enemy to perform a ritual (this Game Jam theme).",
       "stack": "JS, Node.js, React",
+      "image": {
+        "src": "/assets/images/placeholder.jpg",
+        "alt": "placeholder"
+      },
       "link": {
         "label": "Download",
         "url": "#"
