@@ -1,19 +1,32 @@
-// TODO: remove eslint disable
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React from 'react';
+import styled from 'styled-components';
 
-import './Menu.css';
+const MenuWrapper = styled.div`
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: rotate(-90deg) translateX(-50%);
+  transform-origin: top left;
+}`;
 
-class Menu extends Component {
-  render() {
-    return (
-      <div className="menu">
-        <p>MAIL</p>
-        <p>LINKEDIN</p>
-        <p>FACEBOOK</p>
-      </div>
-    );
-  }
+const MenuLink = styled.a`
+  font-size: 18px;
+  font-family: 'Montserrat Bold';
+  text-decoration: none;
+  color: inherit;
+  margin-right: 8px;
+}`;
+
+
+function Menu() {
+  return (
+    <MenuWrapper className="menu">
+      <MenuLink href="#">MAIL</MenuLink>
+      <MenuLink href="#">LINKEDIN</MenuLink>
+      <MenuLink href="#">FACEBOOK</MenuLink>
+    </MenuWrapper>
+  );
 }
 
 export default Menu;

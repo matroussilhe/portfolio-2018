@@ -1,0 +1,34 @@
+{
+  "projects":
+  [
+    {
+      "id": "0",
+      "title": "Element Ritual",
+      "role": "Fullstack developer",
+      "description": "I took part in a group of six people of all game development-related fields to create a game within 48 hours. The video game we created is a FPS where the player has to travel through two temples filled with enemy to perform a ritual (this Game Jam theme).",
+      "stack": "JS, Node.js, React",
+      "link": {
+        "label": "Download",
+        "url": "#"
+      }
+    },
+    {
+      "id": "1",
+      "title": "Beep boop",
+      "role": "Fullstack developer",
+      "description": "I took part in a group of six people of all game development-related fields to create a game within 48 hours. The video game we created is a FPS where the player has to travel through two temples filled with enemy to perform a ritual (this Game Jam theme).",
+      "stack": "JS, Node.js, React"
+    },
+    {
+      "id": "2",
+      "title": "Patapook ",
+      "role": "Fullstack developer",
+      "description": "I took part in a group of six people of all game development-related fields to create a game within 48 hours. The video game we created is a FPS where the player has to travel through two temples filled with enemy to perform a ritual (this Game Jam theme).",
+      "stack": "JS, Node.js, React",
+      "link": {
+        "label": "Download",
+        "url": "#"
+      }
+    }
+  ]
+}

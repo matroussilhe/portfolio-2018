@@ -1,16 +1,15 @@
-// TODO: remove eslint disable
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React from 'react';
+import { Row, Col } from 'react-flexbox-grid';
 
-class About extends Component {
-  render() {
-    return (
-      <div>
+function About() {
+  return (
+    <Row>
+      <Col xs={12}>
         <h2>I am nice~</h2>
         <h2>Contact me!</h2>
-      </div>
-    );
-  }
+      </Col>
+    </Row>
+  );
 }
 
 export default About;

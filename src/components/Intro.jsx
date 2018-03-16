@@ -1,6 +1,6 @@
-// TODO: remove eslint disable
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React from 'react';
+
+import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 
 const Title = styled.h1`
@@ -13,15 +13,15 @@ const Subtitle = styled.h2`
   font-family: 'Montserrat Light';
 `;
 
-class Intro extends Component {
-  render() {
-    return (
-      <div>
+function Intro() {
+  return (
+    <Row center="xs">
+      <Col xs={12}>
         <Title>Mathieu Roussilhe</Title>
         <Subtitle>Web developer</Subtitle>
-      </div>
-    );
-  }
+      </Col>
+    </Row>
+  );
 }
 
 export default Intro;
