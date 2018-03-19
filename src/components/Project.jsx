@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Row, Col } from './overrides/Grid';
 
 const ProjectWrapper = styled(Row)`
-  margin-bottom: 200px;
+  margin-top: 400px;
 `;
 
 const DescriptionCol = styled(Col)`
@@ -50,7 +50,7 @@ const Link = styled.a`
 function Project(props) {
   return (
     <ProjectWrapper>
-      <Col>
+      <Col xsOffset={props.offset} xs={6}>
         <Row center="xs">
           <Col>
             <Title>{props.project.title}</Title>
@@ -99,6 +99,7 @@ Project.propTypes = {
       url: PropTypes.string.isRequired,
     }),
   }).isRequired,
+  offset: PropTypes.number.isRequired,
 };
 
 export default Project;

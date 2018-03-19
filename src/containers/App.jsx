@@ -6,6 +6,7 @@ import Intro from '../components/Intro';
 import Work from '../components/Work';
 import About from '../components/About';
 import Menu from '../components/Menu';
+import Background from '../components/Background';
 
 const theme = {
   color: {
@@ -15,6 +16,7 @@ const theme = {
   opacity: {
     dark: 0.8,
     grey: 0.44,
+    light: 0.06,
   },
 };
 
@@ -22,8 +24,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Grid fluid>
+        <Background />
         <Row>
-          <Col smOffset={3} xs={12} lg={6}>
+          <Col xs={12}>
             <Intro />
             <Work />
             <About />

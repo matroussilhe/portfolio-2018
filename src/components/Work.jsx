@@ -17,8 +17,8 @@ class Work extends Component {
   }
 
   renderProjects() {
-    return this.data.projects.map(project => (
-      <Project key={project.id} project={project} />
+    return this.data.projects.map((project, idx) => (
+      <Project key={project.id} project={project} offset={(idx % 2 === 0) ? 2 : 4} />
     ));
   }
 

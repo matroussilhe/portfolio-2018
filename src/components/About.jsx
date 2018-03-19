@@ -22,7 +22,7 @@ const Body = styled.p`
 
 function About() {
   return (
-    <AboutWrapper>
+    <AboutWrapper center="xs">
       <Col xs={12}>
         <Heading>Contact me!</Heading>
         <Body>I am nice~</Body>
