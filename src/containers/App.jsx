@@ -16,7 +16,7 @@ const theme = {
   opacity: {
     dark: 0.8,
     grey: 0.44,
-    light: 0.06,
+    light: 0.05,
   },
 };
 

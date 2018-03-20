@@ -1,31 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import MenuItem from './MenuItem';
+
 const MenuWrapper = styled.div`
   display: flex;
   position: fixed;
   top: 50%;
-  left: 10px;
+  left: 14px;
   transform: rotate(-90deg) translateX(-50%);
   transform-origin: top left;
 }`;
 
-const MenuLink = styled.a`
-  margin-right: 8px;
-  text-decoration: none;
-  font-size: 14px;
-  font-family: 'Montserrat Bold';
-  color: ${props => props.theme.color.primary};
-  opacity: ${props => props.theme.opacity.grey};
-}`;
-
-
 function Menu() {
   return (
-    <MenuWrapper className="menu">
-      <MenuLink href="#">MAIL</MenuLink>
-      <MenuLink href="#">LINKEDIN</MenuLink>
-      <MenuLink href="#">FACEBOOK</MenuLink>
+    <MenuWrapper>
+      <MenuItem label="mail" destination="mailto:mathieu.roussilhe@gmail.com" />
+      <MenuItem label="linkedin" destination="https://www.linkedin.com/in/mathieu-roussilhe-ba2759154/" />
+      <MenuItem label="facebook" destination="https://www.facebook.com/Mathieu.Roussilhe" />
     </MenuWrapper>
   );
 }

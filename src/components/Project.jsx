@@ -59,14 +59,14 @@ function Project(props) {
         </Row>
         <Row>
           <DescriptionCol xs={12} lg={8}>
-            <Heading>Description</Heading>
+            <Heading>{props.project.subtitle}</Heading>
             <Body>{props.project.description}</Body>
           </DescriptionCol>
           <Col xs={12} lg={4}>
             <Heading>Role</Heading>
             <Body>{props.project.role}</Body>
-            <Heading>Dev stack</Heading>
-            <Body>{props.project.stack}</Body>
+            <Heading>Tech</Heading>
+            <Body>{props.project.tech}</Body>
             {
               (props.project.link)
               ?
@@ -87,9 +87,10 @@ Project.propTypes = {
   project: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
     role: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    stack: PropTypes.string.isRequired,
+    tech: PropTypes.string.isRequired,
     image: PropTypes.shape({
       src: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,

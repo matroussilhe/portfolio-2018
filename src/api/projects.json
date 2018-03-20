@@ -4,9 +4,10 @@
     {
       "id": "0",
       "title": "Element Ritual",
-      "role": "Fullstack developer",
+      "subtitle": "Game experiences",
+      "role": "Fulltech developer",
+      "tech": "JS, Node.js, React",
       "description": "I took part in a group of six people of all game development-related fields to create a game within 48 hours. The video game we created is a FPS where the player has to travel through two temples filled with enemy to perform a ritual (this Game Jam theme).",
-      "stack": "JS, Node.js, React",
       "image": {
         "src": "/assets/images/placeholder.jpg",
         "alt": "placeholder"
@@ -19,9 +20,10 @@
     {
       "id": "1",
       "title": "Beep boop",
-      "role": "Fullstack developer",
+      "subtitle": "Game experiences",
+      "role": "Fulltech developer",
+      "tech": "JS, Node.js, React",
       "description": "I took part in a group of six people of all game development-related fields to create a game within 48 hours. The video game we created is a FPS where the player has to travel through two temples filled with enemy to perform a ritual (this Game Jam theme).",
-      "stack": "JS, Node.js, React",
       "image": {
         "src": "/assets/images/placeholder.jpg",
         "alt": "placeholder"
@@ -30,9 +32,10 @@
     {
       "id": "2",
       "title": "Patapook ",
-      "role": "Fullstack developer",
+      "subtitle": "Game experiences",
+      "role": "Fulltech developer",
+      "tech": "JS, Node.js, React",
       "description": "I took part in a group of six people of all game development-related fields to create a game within 48 hours. The video game we created is a FPS where the player has to travel through two temples filled with enemy to perform a ritual (this Game Jam theme).",
-      "stack": "JS, Node.js, React",
       "image": {
         "src": "/assets/images/placeholder.jpg",
         "alt": "placeholder"
