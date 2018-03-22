@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Row, Col } from './overrides/Grid';
+import { Row, Col } from '../../utils/Grid';
 
-import ArrowDown from '../helpers/ArrowDown';
+import ArrowDown from './ArrowDown';
 
-const IntroWrapper = styled(Row)`
+const IntroRow = styled(Row)`
   min-height: 100vh;
   height: 100vh;
 `;
@@ -55,7 +55,7 @@ const WorksSubtitle = styled.h2`
 
 function Intro() {
   return (
-    <IntroWrapper>
+    <IntroRow>
       <IntroCol xs={12}>
         <Title>Mathieu Roussilhe</Title>
         <Subtitle>Web developer</Subtitle>
@@ -65,7 +65,7 @@ function Intro() {
           <ArrowDown />
         </Works>
       </IntroCol>
-    </IntroWrapper>
+    </IntroRow>
   );
 }
 

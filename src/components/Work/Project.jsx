@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Row, Col } from './overrides/Grid';
+import { Row, Col } from '../../utils/Grid';
 
-const ProjectWrapper = styled(Row)`
+const ProjectRow = styled(Row)`
   margin-top: 400px;
 `;
 
@@ -17,15 +17,17 @@ const Image = styled.img`
 `;
 
 const Title = styled.h1`
-  font-size: 26px;
+  position: relative;
+  top: 50%;
+  font-size: 100px;
   font-family: 'Open Sans Bold';
-  color: ${props => props.theme.color.primary};
+  color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.dark};
   margin-bottom: 18px;
 `;
 
 const Heading = styled.h3`
-  font-size: 12px;
+  font-size: 16px;
   font-family: 'Montserrat Regular';
   color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.dark};
@@ -34,14 +36,14 @@ const Heading = styled.h3`
 `;
 
 const Body = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   font-family: 'Open Sans Regular';
   color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.grey};
 `;
 
 const Link = styled.a`
-  font-size: 12px;
+  font-size: 14px;
   font-family: 'Open Sans Regular';
   color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.grey};
@@ -49,7 +51,7 @@ const Link = styled.a`
 
 function Project(props) {
   return (
-    <ProjectWrapper>
+    <ProjectRow>
       <Col xsOffset={props.offset} xs={6}>
         <Row center="xs">
           <Col>
@@ -79,7 +81,7 @@ function Project(props) {
           </Col>
         </Row>
       </Col>
-    </ProjectWrapper>
+    </ProjectRow>
   );
 }
 

@@ -7,9 +7,9 @@ const MenuWrapper = styled.div`
   display: flex;
   position: fixed;
   top: 50%;
-  left: 14px;
-  transform: rotate(-90deg) translateX(-50%);
-  transform-origin: top left;
+  right: 28px;
+  transform: rotate(-90deg) translateX(50%);
+  transform-origin: top right;
 }`;
 
 function Menu() {

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Grid, Row, Col } from '../components/overrides/Grid';
+import { Grid, Row, Col } from '../utils/Grid';
 
-import Intro from '../components/Intro';
-import Work from '../components/Work';
-import About from '../components/About';
+import Intro from '../components/Intro/Intro';
+import Work from '../components/Work/Work';
+import About from '../components/About/About';
+import AboutMenu from '../components/About/AboutMenu';
 import Menu from '../components/Menu';
 import Background from '../components/Background';
 
@@ -12,6 +13,7 @@ const theme = {
   color: {
     primary: '#000000',
     secondary: 'palevioletred',
+    contrast: '#ffffff',
   },
   opacity: {
     dark: 0.8,
@@ -20,22 +22,44 @@ const theme = {
   },
 };
 
-function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <Grid fluid>
-        <Background />
-        <Row>
-          <Col xs={12}>
-            <Intro />
-            <Work />
-            <About />
-          </Col>
-        </Row>
-        <Menu />
-      </Grid>
-    </ThemeProvider>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showAbout: false,
+    };
+
+    this.handleShowAboutChange = this.handleShowAboutChange.bind(this);
+  }
+
+  handleShowAboutChange(showAbout) {
+    this.setState({
+      showAbout,
+    });
+  }
+
+  render() {
+    return (
+      <ThemeProvider theme={theme}>
+        <Grid fluid>
+          <Background contrast={this.state.showAbout} />
+          <Row>
+            <Col xs={12}>
+              <Intro />
+              <Work />
+            </Col>
+          </Row>
+          <About show={this.state.showAbout} />
+          <AboutMenu
+            showAbout={this.state.showAbout}
+            onShowAboutChange={this.handleShowAboutChange}
+          />
+          <Menu />
+        </Grid>
+      </ThemeProvider>
+    );
+  }
 }
 
 export default App;

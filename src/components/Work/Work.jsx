@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Row, Col } from './overrides/Grid';
+import { Row, Col } from '../../utils/Grid';
 
-import data from '../api/projects.json';
-import Project from '../components/Project';
+import data from '../../api/projects.json';
+import Project from './Project';
 
-const WorkWrapper = styled(Row)`
-  margin-bottom: 20px;
+const WorkRow = styled(Row)`
+  margin-bottom: 100px;
 `;
 
 class Work extends Component {
@@ -24,11 +24,11 @@ class Work extends Component {
 
   render() {
     return (
-      <WorkWrapper>
+      <WorkRow>
         <Col xs={12}>
           {this.renderProjects()}
         </Col>
-      </WorkWrapper>
+      </WorkRow>
     );
   }
 }

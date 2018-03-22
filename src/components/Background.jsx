@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Row, Col } from './overrides/Grid';
+import { Row, Col } from '../utils/Grid';
 
-const BackgroundWrapper = styled(Row)`
+const BackgroundRow = styled(Row)`
   position: fixed;
   width: 100%;
   height: 100%;
@@ -10,8 +10,6 @@ const BackgroundWrapper = styled(Row)`
 `;
 
 const BackgroundCol = styled(Col)`
-  min-height: 100vh;
-  height: 100vh;
   border-width: 1px;
   border-left-style: solid;
   border-color: ${props => props.theme.color.primary};
@@ -20,14 +18,14 @@ const BackgroundCol = styled(Col)`
 
 function Background() {
   return (
-    <BackgroundWrapper xs={12}>
+    <BackgroundRow xs={12}>
       <BackgroundCol xs={2} />
       <BackgroundCol xs={2} />
       <BackgroundCol xs={2} />
       <BackgroundCol xs={2} />
       <BackgroundCol xs={2} />
       <BackgroundCol xs={2} />
-    </BackgroundWrapper>
+    </BackgroundRow>
   );
 }
 
