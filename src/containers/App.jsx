@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Grid, Row, Col } from '../utils/Grid';
+import { Flex, Box } from 'grid-styled';
 
 import Intro from '../components/Intro/Intro';
 import Work from '../components/Work/Work';
@@ -42,21 +42,19 @@ class App extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <Grid fluid>
-          <Background contrast={this.state.showAbout} />
-          <Row>
-            <Col xs={12}>
-              <Intro />
-              <Work />
-            </Col>
-          </Row>
+        <Flex>
+          <Box width={1}>
+            <Intro />
+            <Work />
+          </Box>
           <About show={this.state.showAbout} />
           <AboutMenu
             showAbout={this.state.showAbout}
             onShowAboutChange={this.handleShowAboutChange}
           />
           <Menu />
-        </Grid>
+          <Background contrast={this.state.showAbout} />
+        </Flex>
       </ThemeProvider>
     );
   }

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Flex } from 'grid-styled';
 
-import { Row } from '../../utils/Grid';
-import AboutBackgroundCol from './AboutBackgroundCol';
+import AboutBackgroundBox from './AboutBackgroundBox';
 
-const AboutBackgroundRow = styled(Row)`
+const AboutBackgroundFlex = styled(Flex)`
   position: fixed;
   width: 100%;
   height: 100%;
@@ -14,14 +14,16 @@ const AboutBackgroundRow = styled(Row)`
 
 function AboutBackground(props) {
   return (
-    <AboutBackgroundRow xs={12}>
-      <AboutBackgroundCol show={props.show} />
-      <AboutBackgroundCol show={props.show} />
-      <AboutBackgroundCol show={props.show} />
-      <AboutBackgroundCol show={props.show} />
-      <AboutBackgroundCol show={props.show} />
-      <AboutBackgroundCol show={props.show} />
-    </AboutBackgroundRow>
+    <AboutBackgroundFlex>
+      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} />
+    </AboutBackgroundFlex>
   );
 }
 

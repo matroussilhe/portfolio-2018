@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Animate from 'react-move/Animate';
 import { easePolyInOut } from 'd3-ease';
+import { Box } from 'grid-styled';
 
-import { Col } from '../../utils/Grid';
-
-const BackgroundCol = styled(Col)`
+const BackgroundBox = styled(Box)`
   border-width: 1px;
   border-left-style: solid;
   border-color: rgba(255, 255, 255, 0.2);
@@ -14,7 +13,7 @@ const BackgroundCol = styled(Col)`
   transform-origin: left;
 `;
 
-function AboutBackgroundCol(props) {
+function AboutBackgroundBox(props) {
   return (
     <Animate
       // Weither to render or not (trigger enter/leave)
@@ -47,8 +46,8 @@ function AboutBackgroundCol(props) {
     >
       {(state) => {
         return (
-          <BackgroundCol
-            xs={2}
+          <BackgroundBox
+            width={1/8}
             style={{
               transform: `scaleX(${state.scaleX})`,
             }}
@@ -59,8 +58,8 @@ function AboutBackgroundCol(props) {
   );
 }
 
-AboutBackgroundCol.propTypes = {
+AboutBackgroundBox.propTypes = {
   show: PropTypes.bool.isRequired,
 };
 
-export default AboutBackgroundCol;
+export default AboutBackgroundBox;

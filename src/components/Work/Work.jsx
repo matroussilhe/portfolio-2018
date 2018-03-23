@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Row, Col } from '../../utils/Grid';
+import { Flex, Box } from 'grid-styled';
 
 import data from '../../api/projects.json';
 import Project from './Project';
 
-const WorkRow = styled(Row)`
+const WorkFlex = styled(Flex)`
   margin-bottom: 100px;
 `;
 
@@ -18,17 +18,17 @@ class Work extends Component {
 
   renderProjects() {
     return this.data.projects.map((project, idx) => (
-      <Project key={project.id} project={project} offset={(idx % 2 === 0) ? 2 : 4} />
+      <Project key={project.id} project={project} />
     ));
   }
 
   render() {
     return (
-      <WorkRow>
-        <Col xs={12}>
+      <WorkFlex>
+        <Box width={1}>
           {this.renderProjects()}
-        </Col>
-      </WorkRow>
+        </Box>
+      </WorkFlex>
     );
   }
 }

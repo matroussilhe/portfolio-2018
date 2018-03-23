@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Row, Col } from '../utils/Grid';
+import { Flex, Box } from 'grid-styled';
 
-const BackgroundRow = styled(Row)`
+const BackgroundFlex = styled(Flex)`
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: -1;
 `;
 
-const BackgroundCol = styled(Col)`
+const BackgroundBox = styled(Box)`
   border-width: 1px;
   border-left-style: solid;
   border-color: ${props => props.theme.color.primary};
@@ -18,14 +18,16 @@ const BackgroundCol = styled(Col)`
 
 function Background() {
   return (
-    <BackgroundRow xs={12}>
-      <BackgroundCol xs={2} />
-      <BackgroundCol xs={2} />
-      <BackgroundCol xs={2} />
-      <BackgroundCol xs={2} />
-      <BackgroundCol xs={2} />
-      <BackgroundCol xs={2} />
-    </BackgroundRow>
+    <BackgroundFlex>
+      <BackgroundBox width={1/8} />
+      <BackgroundBox width={1/8} />
+      <BackgroundBox width={1/8} />
+      <BackgroundBox width={1/8} />
+      <BackgroundBox width={1/8} />
+      <BackgroundBox width={1/8} />
+      <BackgroundBox width={1/8} />
+      <BackgroundBox width={1/8} />
+    </BackgroundFlex>
   );
 }
 

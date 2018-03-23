@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Row, Col } from '../../utils/Grid';
+import { Flex, Box } from 'grid-styled';
 
 import ArrowDown from './ArrowDown';
 
-const IntroRow = styled(Row)`
+const IntroFlex = styled(Flex)`
   min-height: 100vh;
   height: 100vh;
 `;
 
-const IntroCol = styled(Col)`
+const IntroBox = styled(Box)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,8 +55,8 @@ const WorksSubtitle = styled.h2`
 
 function Intro() {
   return (
-    <IntroRow>
-      <IntroCol xs={12}>
+    <IntroFlex>
+      <IntroBox width={1}>
         <Title>Mathieu Roussilhe</Title>
         <Subtitle>Web developer</Subtitle>
         <Works>
@@ -64,8 +64,8 @@ function Intro() {
           <WorksSubtitle>Portfolio</WorksSubtitle>
           <ArrowDown />
         </Works>
-      </IntroCol>
-    </IntroRow>
+      </IntroBox>
+    </IntroFlex>
   );
 }
 

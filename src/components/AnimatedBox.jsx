@@ -3,20 +3,17 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Animate from 'react-move/Animate';
 import { easePolyInOut } from 'd3-ease';
+import { Box } from 'grid-styled';
 
-import { Col } from '../utils/Grid';
-
-const WrapperCol = styled(Col)`
-  overflow: hidden;
-  padding-right: 50px;
-  flex: 1;
+const WrapperBox = styled(Box)`
+  overflow: hidden
 `;
 
 const SlidingContent = styled.div`
   position: relative;
 `;
 
-function AnimatedCol(props) {
+function AnimatedBox(props) {
   return (
     <Animate
       // Weither to render or not (trigger enter/leave)
@@ -49,9 +46,9 @@ function AnimatedCol(props) {
     >
       {(state) => {
         return (
-          <WrapperCol
-            xs={props.xs}
-            xsOffset={props.xsOffset}
+          <WrapperBox
+            width={props.width}
+            ml={props.offset}
           >
             <SlidingContent
               style={{
@@ -60,23 +57,23 @@ function AnimatedCol(props) {
             >
               {props.children}
             </SlidingContent>
-          </WrapperCol>
+          </WrapperBox>
         );
       }}
     </Animate>
   );
 }
 
-AnimatedCol.defaultProps = {
-  xs: 2,
-  xsOffset: 0,
+AnimatedBox.defaultProps = {
+  width: '1/8',
+  offset: 0,
 };
 
-AnimatedCol.propTypes = {
-  xs: PropTypes.number,
-  xsOffset: PropTypes.number,
+AnimatedBox.propTypes = {
+  width: PropTypes.number,
+  offset: PropTypes.number,
   show: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
 };
 
-export default AnimatedCol;
+export default AnimatedBox;

@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Row, Col } from '../../utils/Grid';
+import { Flex, Box } from 'grid-styled';
 
-const ProjectRow = styled(Row)`
+const ProjectFlex = styled(Flex)`
   margin-top: 400px;
-`;
-
-const DescriptionCol = styled(Col)`
-  padding-right: 40px;
 `;
 
 const Image = styled.img`
@@ -17,11 +13,9 @@ const Image = styled.img`
 `;
 
 const Title = styled.h1`
-  position: relative;
-  top: 50%;
   font-size: 100px;
   font-family: 'Open Sans Bold';
-  color: ${props => props.theme.color.contrast};
+  color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.dark};
   margin-bottom: 18px;
 `;
@@ -51,37 +45,27 @@ const Link = styled.a`
 
 function Project(props) {
   return (
-    <ProjectRow>
-      <Col xsOffset={props.offset} xs={6}>
-        <Row center="xs">
-          <Col>
-            <Title>{props.project.title}</Title>
-            <Image src={props.project.image.src} alt={props.project.image.alt} />
-          </Col>
-        </Row>
-        <Row>
-          <DescriptionCol xs={12} lg={8}>
-            <Heading>{props.project.subtitle}</Heading>
-            <Body>{props.project.description}</Body>
-          </DescriptionCol>
-          <Col xs={12} lg={4}>
-            <Heading>Role</Heading>
-            <Body>{props.project.role}</Body>
-            <Heading>Tech</Heading>
-            <Body>{props.project.tech}</Body>
-            {
-              (props.project.link)
-              ?
-                <div>
-                  <Heading>Link</Heading>
-                  <Link href={props.project.link.url}>{props.project.link.label}</Link>
-                </div>
-              : ''
-            }
-          </Col>
-        </Row>
-      </Col>
-    </ProjectRow>
+    <ProjectFlex>
+      <Box ml="25%" width={1/2}>
+        <Title>{props.project.title}</Title>
+        <Image src={props.project.image.src} alt={props.project.image.alt} />
+        <Heading>{props.project.subtitle}</Heading>
+        <Body>{props.project.description}</Body>
+        <Heading>Role</Heading>
+        <Body>{props.project.role}</Body>
+        <Heading>Tech</Heading>
+        <Body>{props.project.tech}</Body>
+        {
+          (props.project.link)
+          ?
+            <div>
+              <Heading>Link</Heading>
+              <Link href={props.project.link.url}>{props.project.link.label}</Link>
+            </div>
+          : ''
+        }
+      </Box>
+    </ProjectFlex>
   );
 }
 
@@ -102,7 +86,6 @@ Project.propTypes = {
       url: PropTypes.string.isRequired,
     }),
   }).isRequired,
-  offset: PropTypes.number.isRequired,
 };
 
 export default Project;
