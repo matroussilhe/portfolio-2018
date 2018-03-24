@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex, Box } from 'grid-styled';
 
+import MainPanel from './MainPanel';
+
 const ProjectFlex = styled(Flex)`
   margin-top: 400px;
+  padding-left: 1px;
 `;
 
 const Image = styled.img`
@@ -47,7 +50,8 @@ function Project(props) {
   return (
     <ProjectFlex>
       <Box ml="25%" width={1/2}>
-        <Title>{props.project.title}</Title>
+        <MainPanel title={props.project.title} image={props.project.image} />
+        {/* <Title>{props.project.title}</Title>
         <Image src={props.project.image.src} alt={props.project.image.alt} />
         <Heading>{props.project.subtitle}</Heading>
         <Body>{props.project.description}</Body>
@@ -63,7 +67,7 @@ function Project(props) {
               <Link href={props.project.link.url}>{props.project.link.label}</Link>
             </div>
           : ''
-        }
+        } */}
       </Box>
     </ProjectFlex>
   );

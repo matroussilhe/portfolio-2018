@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Flex, Box } from 'grid-styled';
+import { Flex } from 'grid-styled';
 
 import MenuItem from '../MenuItem';
 import AboutBackground from './AboutBackground';
@@ -9,9 +9,6 @@ import AnimatedBox from '../AnimatedBox';
 
 const AboutFlex = styled(Flex)`
   position: fixed;
-`;
-
-const ContentFlex = styled(Flex)`
 `;
 
 const Image = styled.img`

@@ -71,7 +71,7 @@ AnimatedBox.defaultProps = {
 
 AnimatedBox.propTypes = {
   width: PropTypes.number,
-  offset: PropTypes.number,
+  offset: PropTypes.string,
   show: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
 };
