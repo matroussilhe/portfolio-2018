@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import SlideLink from '../SlideLink';
 
 const MenuWrapper = styled.div`
+  z-index: 2;
   display: flex;
   position: fixed;
   top: 50%;

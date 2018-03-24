@@ -42,6 +42,7 @@ function AboutBackgroundBox(props) {
           duration: 800,
           ease: easePolyInOut,
         },
+        events: { end: props.onLeaved }, // Event fired on transition end
       }}
     >
       {(state) => {
@@ -60,6 +61,7 @@ function AboutBackgroundBox(props) {
 
 AboutBackgroundBox.propTypes = {
   show: PropTypes.bool.isRequired,
+  onLeaved: PropTypes.func.isRequired,
 };
 
 export default AboutBackgroundBox;

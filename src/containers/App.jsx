@@ -52,7 +52,7 @@ class App extends Component {
             showAbout={this.state.showAbout}
             onShowAboutChange={this.handleShowAboutChange}
           />
-          <Menu />
+          <Menu contrast={this.state.showAbout} />
           <Background contrast={this.state.showAbout} />
         </Flex>
       </ThemeProvider>

@@ -15,20 +15,21 @@ const AboutBackgroundFlex = styled(Flex)`
 function AboutBackground(props) {
   return (
     <AboutBackgroundFlex>
-      <AboutBackgroundBox show={props.show} />
-      <AboutBackgroundBox show={props.show} />
-      <AboutBackgroundBox show={props.show} />
-      <AboutBackgroundBox show={props.show} />
-      <AboutBackgroundBox show={props.show} />
-      <AboutBackgroundBox show={props.show} />
-      <AboutBackgroundBox show={props.show} />
-      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
+      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
+      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
+      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
+      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
+      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
+      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
+      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
     </AboutBackgroundFlex>
   );
 }
 
 AboutBackground.propTypes = {
   show: PropTypes.bool.isRequired,
+  onLeaved: PropTypes.func.isRequired,
 };
 
 export default AboutBackground;
