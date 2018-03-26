@@ -15,13 +15,12 @@ const MenuWrapper = styled.div`
 }`;
 
 const MenuSlideLink = styled(SlideLink)`
-  position:relative;
-  margin-right: 10px;
-  text-transform: uppercase;
-  font-size: 15px;
-  font-family: 'Montserrat SemiBold';
+  font-family: ${props => props.theme.typography.heading.fontFamily};
   color: ${props => ((props.contrast) ? props.theme.color.contrast : props.theme.color.primary)}
   opacity: ${props => props.theme.opacity.dark};
+  font-size: 16px;
+  position:relative;
+  margin-right: 10px;
 }`;
 
 function Menu(props) {

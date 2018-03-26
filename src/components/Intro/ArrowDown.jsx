@@ -27,7 +27,6 @@ const ArrowCap = styled.div`
   opacity: ${props => props.theme.opacity.grey};
 `;
 
-
 function ArrowDown() {
   return (
     <div>

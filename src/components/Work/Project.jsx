@@ -1,76 +1,67 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex, Box } from 'grid-styled';
 
 import MainPanel from './MainPanel';
+import DescriptionPanel from './DescriptionPanel';
 
 const ProjectFlex = styled(Flex)`
-  margin-top: 400px;
+  margin-bottom: 250px;
   padding-left: 1px;
 `;
 
-const Image = styled.img`
-  width: 100%;
-  height: auto;
+const WrapperBox = styled(Box)`
+  cursor: pointer;
 `;
 
-const Title = styled.h1`
-  font-size: 100px;
-  font-family: 'Open Sans Bold';
-  color: ${props => props.theme.color.primary};
-  opacity: ${props => props.theme.opacity.dark};
-  margin-bottom: 18px;
-`;
+class Project extends Component {
+  constructor(props) {
+    super(props);
 
-const Heading = styled.h3`
-  font-size: 16px;
-  font-family: 'Montserrat Regular';
-  color: ${props => props.theme.color.primary};
-  opacity: ${props => props.theme.opacity.dark};
-  margin-top: 16px;
-  margin-bottom: 4px;
-`;
+    this.state = {
+      // Current pannel, can be main or description
+      pannel: 'main',
+      // Pannel to transition to
+      nextPannel: 'main',
+    };
 
-const Body = styled.p`
-  font-size: 14px;
-  font-family: 'Open Sans Regular';
-  color: ${props => props.theme.color.primary};
-  opacity: ${props => props.theme.opacity.grey};
-`;
+    this.handleClick = this.handleClick.bind(this);
+    this.handleOnLeaved = this.handleOnLeaved.bind(this);
+  }
 
-const Link = styled.a`
-  font-size: 14px;
-  font-family: 'Open Sans Regular';
-  color: ${props => props.theme.color.primary};
-  opacity: ${props => props.theme.opacity.grey};
-`;
+  handleClick() {
+    // Set panel type to transition to
+    this.setState({
+      nextPannel: this.state.pannel === 'main' ? 'description' : 'main',
+    });
+  }
 
-function Project(props) {
-  return (
-    <ProjectFlex>
-      <Box ml="25%" width={1/2}>
-        <MainPanel title={props.project.title} image={props.project.image} />
-        {/* <Title>{props.project.title}</Title>
-        <Image src={props.project.image.src} alt={props.project.image.alt} />
-        <Heading>{props.project.subtitle}</Heading>
-        <Body>{props.project.description}</Body>
-        <Heading>Role</Heading>
-        <Body>{props.project.role}</Body>
-        <Heading>Tech</Heading>
-        <Body>{props.project.tech}</Body>
-        {
-          (props.project.link)
-          ?
-            <div>
-              <Heading>Link</Heading>
-              <Link href={props.project.link.url}>{props.project.link.label}</Link>
-            </div>
-          : ''
-        } */}
-      </Box>
-    </ProjectFlex>
-  );
+  handleOnLeaved() {
+    // Change current panel type on leave animation end
+    this.setState({
+      pannel: this.state.nextPannel,
+    });
+  }
+
+  renderPanel() {
+    if (this.state.pannel === 'main') {
+      return <MainPanel show={this.state.nextPannel === 'main'} onLeaved={this.handleOnLeaved} title={this.props.project.title} image={this.props.project.image} />;
+    } else if (this.state.pannel === 'description') {
+      return <DescriptionPanel show={this.state.nextPannel === 'description'} onLeaved={this.handleOnLeaved} project={this.props.project} />;
+    }
+    return '';
+  }
+
+  render() {
+    return (
+      <ProjectFlex>
+        <WrapperBox ml={[0, 0, 0, '25%']} width={[1, 1, 1, 1/2]} onClick={this.handleClick}>
+          {this.renderPanel()}
+        </WrapperBox>
+      </ProjectFlex>
+    );
+  }
 }
 
 Project.propTypes = {

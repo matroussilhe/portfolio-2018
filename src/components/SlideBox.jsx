@@ -5,67 +5,75 @@ import Animate from 'react-move/Animate';
 import { easePolyInOut } from 'd3-ease';
 import { Box } from 'grid-styled';
 
-const BackgroundBox = styled(Box)`
-  border-width: 1px;
-  border-left-style: solid;
-  border-color: rgba(255, 255, 255, 0.2);
-  background-color: ${props => props.theme.color.primary};
-  transform-origin: left;
+const WrapperBox = styled(Box)`
+  overflow: hidden
 `;
 
-function AboutBackgroundBox(props) {
+const SlidingContent = styled.div`
+  position: relative;
+`;
+
+function SlideBox(props) {
   return (
     <Animate
       // Weither to render or not (trigger enter/leave)
       show={props.show}
       // Starting state
       start={{
-        scaleX: 0,
+        left: -100,
       }}
       // How to transform state on enter
       enter={{
-        scaleX: [1],
+        left: [0],
         timing: {
+          delay: 800,
           duration: 800,
           ease: easePolyInOut,
         },
       }}
       // How to handle interrupted enter and leave transitions.
       update={{
-        scaleX: 0,
+        left: -100,
       }}
       // How to transform node state on leave
       leave={{
-        scaleX: [0],
+        left: [-100],
         timing: {
-          delay: 800,
           duration: 800,
           ease: easePolyInOut,
         },
-        events: props.onLeaved ? { end: props.onLeaved } : {}, // Event fired on transition end
       }}
     >
       {(state) => {
         return (
-          <BackgroundBox
-            width={1/8}
-            style={{
-              transform: `scaleX(${state.scaleX})`,
-            }}
-          />
+          <WrapperBox
+            width={props.width}
+            ml={props.ml}
+          >
+            <SlidingContent
+              style={{
+                left: `${state.left}%`,
+              }}
+            >
+              {props.children}
+            </SlidingContent>
+          </WrapperBox>
         );
       }}
     </Animate>
   );
 }
 
-AboutBackgroundBox.defaultProps = {
-  onLeaved: null,
+SlideBox.defaultProps = {
+  width: '1/8',
+  ml: 0,
 };
 
-AboutBackgroundBox.propTypes = {
+SlideBox.propTypes = {
+  width: PropTypes.number,
+  ml: PropTypes.string,
   show: PropTypes.bool.isRequired,
-  onLeaved: PropTypes.func,
+  children: PropTypes.node.isRequired,
 };
 
-export default AboutBackgroundBox;
+export default SlideBox;

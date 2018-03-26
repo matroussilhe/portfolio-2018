@@ -20,6 +20,20 @@ const theme = {
     grey: 0.44,
     light: 0.05,
   },
+  typography: {
+    title: {
+      fontFamily: 'Neuzeit Bold',
+    },
+    subtitle: {
+      fontFamily: 'Playfair Display Italic',
+    },
+    heading: {
+      fontFamily: 'Neuzeit Bold',
+    },
+    body: {
+      fontFamily: 'Neuzeit Regular',
+    },
+  },
 };
 
 class App extends Component {

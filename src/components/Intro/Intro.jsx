@@ -17,17 +17,17 @@ const IntroBox = styled(Box)`
 `;
 
 const Title = styled.h1`
-  font-size: 42px;
-  font-family: 'Montserrat Bold';
+  font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.dark};
+  font-size: 95px;
 `;
 
 const Subtitle = styled.h2`
-  font-size: 28px;
-  font-family: 'Montserrat SemiBold';
+  font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.grey};
+  font-size: 42px;
 `;
 
 const Works = styled.div`
@@ -39,17 +39,17 @@ const Works = styled.div`
 `;
 
 const WorksTitle = styled.h1`
-  font-size: 16px;
-  font-family: 'Montserrat Bold';
+  font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.dark};
+  font-size: 16px;
 `;
 
 const WorksSubtitle = styled.h2`
-  font-size: 12px;
-  font-family: 'Montserrat SemiBold';
+  font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.grey};
+  font-size: 12px;
   margin-bottom: 6px;
 `;
 

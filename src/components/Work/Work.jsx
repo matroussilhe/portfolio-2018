@@ -6,7 +6,7 @@ import data from '../../api/projects.json';
 import Project from './Project';
 
 const WorkFlex = styled(Flex)`
-  margin-bottom: 100px;
+  margin-top: 250px;
 `;
 
 class Work extends Component {

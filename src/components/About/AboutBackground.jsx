@@ -15,13 +15,14 @@ const AboutBackgroundFlex = styled(Flex)`
 function AboutBackground(props) {
   return (
     <AboutBackgroundFlex>
-      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
-      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
-      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
-      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
-      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
-      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
-      <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
+      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} />
+      <AboutBackgroundBox show={props.show} />
+      {/* AboutBackground's animation considered ended when this box's animation end */}
       <AboutBackgroundBox show={props.show} onLeaved={props.onLeaved} />
     </AboutBackgroundFlex>
   );

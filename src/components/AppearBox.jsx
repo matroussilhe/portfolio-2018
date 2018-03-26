@@ -9,54 +9,63 @@ const WrapperBox = styled(Box)`
   overflow: hidden
 `;
 
-const SlidingContent = styled.div`
+const AppearingContent = styled.div`
   position: relative;
 `;
 
-function AnimatedBox(props) {
+function AppearBox(props) {
   return (
     <Animate
       // Weither to render or not (trigger enter/leave)
       show={props.show}
       // Starting state
       start={{
-        left: -100,
+        top: 50,
+        opacity: 0,
       }}
       // How to transform state on enter
       enter={{
-        left: [0],
+        top: [0],
+        opacity: [1],
         timing: {
-          delay: 800,
-          duration: 800,
+          delay: props.delay,
+          duration: 500,
           ease: easePolyInOut,
         },
       }}
       // How to handle interrupted enter and leave transitions.
       update={{
-        left: -100,
+        top: 0,
+        opacity: 1,
       }}
       // How to transform node state on leave
       leave={{
-        left: [-100],
+        top: [50],
+        opacity: [0],
         timing: {
-          duration: 800,
+          duration: 500,
           ease: easePolyInOut,
         },
+        events: props.onLeaved ? { end: props.onLeaved } : {}, // Event fired on transition end
       }}
     >
       {(state) => {
         return (
           <WrapperBox
             width={props.width}
-            ml={props.offset}
+            pt={props.pt}
+            pb={props.pb}
+            pl={props.pl}
+            pr={props.pr}
           >
-            <SlidingContent
+            <AppearingContent
               style={{
-                left: `${state.left}%`,
+                top: `${state.top}px`,
+                opacity: state.opacity,
               }}
             >
               {props.children}
-            </SlidingContent>
+            </AppearingContent>
           </WrapperBox>
         );
       }}
@@ -64,16 +73,26 @@ function AnimatedBox(props) {
   );
 }
 
-AnimatedBox.defaultProps = {
-  width: '1/8',
-  offset: 0,
+AppearBox.defaultProps = {
+  width: null,
+  pt: '0',
+  pb: '0',
+  pl: '0',
+  pr: '0',
+  delay: 0,
+  onLeaved: null,
 };
 
-AnimatedBox.propTypes = {
+AppearBox.propTypes = {
   width: PropTypes.number,
-  offset: PropTypes.string,
+  pt: PropTypes.string,
+  pb: PropTypes.string,
+  pl: PropTypes.string,
+  pr: PropTypes.string,
+  delay: PropTypes.number,
   show: PropTypes.bool.isRequired,
+  onLeaved: PropTypes.func,
   children: PropTypes.node.isRequired,
 };
 
-export default AnimatedBox;
+export default AppearBox;
