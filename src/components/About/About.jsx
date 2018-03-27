@@ -30,7 +30,7 @@ const Title = styled.h1`
 `;
 
 const Heading = styled.h3`
-  font-family: ${props => props.theme.typography.heading.fontFamily};
+  font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.dark};
   font-size: 27px;
@@ -42,7 +42,7 @@ const Body = styled.p`
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.grey};
   font-size: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 40px;
 `;
 
 class About extends Component {
@@ -78,25 +78,37 @@ class About extends Component {
     return (
       <AboutFlex alignItems="center" width={1} zIndex={this.state.zIndex}>
         <WrapperFlex width={1}>
-          <SlideBox ml="12.5%" width={1/4} show={this.props.show}>
+          <SlideBox ml="12.5%" pr="6.25%" width={2/8} show={this.props.show}>
             <Image src="/assets/images/me.jpg" alt="photo of Mathieu Roussilhe" />
           </SlideBox>
-          <SlideBox ml="12.5%" width={1/4} show={this.props.show}>
-            <Title>Hello</Title>
-            <Body>I am a web developer.<br />I help design and build complete solutions alone or in a team.<br />I just came back from a year in Seoul and now looking for a new destination.<br />I just graduated so if you have any opportunity, get in touch!</Body>
-            <Title>Skills</Title>
-            <Heading>- Front-end</Heading>
-            <Body>React, JS, HTML, CSS</Body>
-            <Heading>- Back-end</Heading>
-            <Body>Meteor, Node.js, Symfony3, REST</Body>
-            <Heading>- Programming</Heading>
-            <Body>C, C++; Android, Java, UML</Body>
-            <Heading>- Database</Heading>
-            <Body>NoSQL, MongoDB, SQL, Doctrine</Body>
-            <Heading>- DevOps</Heading>
-            <Body>Heroku, Amazon S3</Body>
-            <Heading>- Tools</Heading>
-            <Body>Unreal Engine 4, Git, npm</Body>
+          <SlideBox pr="6.25%" width={2/8} show={this.props.show}>
+            <Heading>Hello</Heading>
+            <Body>
+              I am a web developer.<br />
+              I help design and build complete solutions alone or in a team.<br />
+              I just came back from a year in Seoul and now looking for a new destination.<br />
+              I just graduated so if you have any opportunity, get in touch!
+            </Body>
+            <Heading>Skills</Heading>
+            <Body>
+              Front-end: React, JS, HTML, CSS<br />
+              Back-end: Meteor, Node.js, Symfony3, REST<br />
+              Programming: C, C++; Android, Java, UML<br />
+              Database: NoSQL, MongoDB, SQL, Doctrine<br />
+              DevOps: Heroku, Amazon S3<br />
+              Tools: Unreal Engine 4, Git, npm
+            </Body>
+          </SlideBox>
+          <SlideBox width={1/8} show={this.props.show}>
+            <Heading>Follow me </Heading>
+            <Body>
+              Facebook<br />
+              Linkedin
+            </Body>
+            <Heading>Contact me </Heading>
+            <Body>
+              Mail
+            </Body>
           </SlideBox>
         </WrapperFlex>
         <AboutBackground show={this.props.show} onLeaved={this.handleOnLeaved} />

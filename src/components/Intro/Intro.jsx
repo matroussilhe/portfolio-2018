@@ -20,14 +20,15 @@ const Title = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.dark};
-  font-size: 95px;
+  font-size: 82px;
 `;
 
 const Subtitle = styled.h2`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.grey};
-  font-size: 42px;
+  font-size: 32px;
+  margin-top: 4px;
 `;
 
 const Works = styled.div`
@@ -35,14 +36,14 @@ const Works = styled.div`
   flex-direction: column;
   align-items: center;
   position: absolute;
-  bottom: 32px;
+  bottom: 22px;
 `;
 
 const WorksTitle = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.dark};
-  font-size: 16px;
+  font-size: 18px;
 `;
 
 const WorksSubtitle = styled.h2`

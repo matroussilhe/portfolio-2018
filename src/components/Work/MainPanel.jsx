@@ -38,6 +38,11 @@ const Title = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.contrast};
   font-size: 78px;
+  transition: all .3s;
+  ${WrapperBox}:hover & {
+    transition: all .3s;
+    opacity: 0;
+  }
 `;
 
 function MainPanel(props) {

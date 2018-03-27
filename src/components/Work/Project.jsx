@@ -7,7 +7,7 @@ import MainPanel from './MainPanel';
 import DescriptionPanel from './DescriptionPanel';
 
 const ProjectFlex = styled(Flex)`
-  margin-bottom: 250px;
+  margin-bottom: 300px;
   padding-left: 1px;
 `;
 

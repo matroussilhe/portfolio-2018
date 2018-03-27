@@ -49,6 +49,7 @@ const Body = styled.p`
   opacity: ${props => props.theme.opacity.grey};
   font-size: 16px;
   margin-bottom: 16px;
+  white-space: pre-line;
 `;
 
 const Link = styled.a`
@@ -57,6 +58,10 @@ const Link = styled.a`
   opacity: ${props => props.theme.opacity.grey};
   font-size: 16px;
 `;
+
+// function parseMultiline(str) {
+//
+// }
 
 function DescriptionPanel(props) {
   return (
@@ -71,7 +76,7 @@ function DescriptionPanel(props) {
             <Body>{props.project.description}</Body>
           </AppearBox>
           {/* DescriptionPanel's animation considered ended when this box's animation end */}
-          <AppearBox show={props.show} onLeaved={props.onLeaved} width={1/3} delay={400}>
+          <AppearBox show={props.show} onLeaved={props.onLeaved} pr="8%" width={1/3} delay={400}>
             <Heading>Role</Heading>
             <Body>{props.project.role}</Body>
             <Heading>Tech</Heading>
@@ -81,7 +86,7 @@ function DescriptionPanel(props) {
               ?
                 <div>
                   <Heading>Link</Heading>
-                  <Link href={props.project.link.url}>{props.project.link.label}</Link>
+                  <Link href={props.project.link.url} target="_blank">{props.project.link.label}</Link>
                 </div>
               : ''
             }

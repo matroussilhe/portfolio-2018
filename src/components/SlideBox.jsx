@@ -49,6 +49,9 @@ function SlideBox(props) {
           <WrapperBox
             width={props.width}
             ml={props.ml}
+            mr={props.mr}
+            pl={props.pl}
+            pr={props.pr}
           >
             <SlidingContent
               style={{
@@ -67,11 +70,17 @@ function SlideBox(props) {
 SlideBox.defaultProps = {
   width: '1/8',
   ml: 0,
+  mr: 0,
+  pl: 0,
+  pr: 0,
 };
 
 SlideBox.propTypes = {
   width: PropTypes.number,
   ml: PropTypes.string,
+  mr: PropTypes.string,
+  pl: PropTypes.string,
+  pr: PropTypes.string,
   show: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
 };

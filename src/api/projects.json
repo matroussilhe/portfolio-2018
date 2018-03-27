@@ -3,46 +3,62 @@
   [
     {
       "id": "0",
-      "title": "Element Ritual",
-      "subtitle": "Game experiences",
-      "role": "Fulltech developer",
-      "tech": "JS, Node.js, React",
-      "description": "I took part in a group of six people of all game development-related fields to create a game within 48 hours. The video game we created is a FPS where the player has to travel through two temples filled with enemy to perform a ritual (this Game Jam theme).",
+      "title": "Maevents",
+      "subtitle": "Client base",
+      "role": "Full-stack developer",
+      "tech": "React, Meteor, JS, Material Design, MongoDB",
+      "description": "Maevents is a rising tour operator. I worked with them to speed up their operation with a custom software.\n\nI was in charge of the whole development process. I built a website to easily manage your client base and generate various contracts and reports. Data is hierarchically structured and presented in a clear way. A fuzzy-search bar allow you to quickly find what you’re looking for. There is also a data table where you get a big picture of your client base and perform global search.",
       "image": {
-        "src": "/assets/images/placeholder.jpg",
-        "alt": "placeholder"
-      },
-      "link": {
-        "label": "Download",
-        "url": "#"
+        "src": "/assets/images/event.jpg",
+        "alt": "maevent"
       }
     },
     {
       "id": "1",
-      "title": "Beep boop",
-      "subtitle": "Game experiences",
-      "role": "Fulltech developer",
-      "tech": "JS, Node.js, React",
-      "description": "I took part in a group of six people of all game development-related fields to create a game within 48 hours. The video game we created is a FPS where the player has to travel through two temples filled with enemy to perform a ritual (this Game Jam theme).",
+      "title": "Hub-Grade",
+      "subtitle": "REST API",
+      "role": "Back-end developer",
+      "tech": "Symfony3, PHP, Doctrine",
+      "description": "Office rental in France is very constraining. Hub-Grade is a start-up that offers flexible renting solutions.\n\nThey recruited me and two other interns to rework their website using modern technologies. I built a reliable API while my colleagues developed the front-end. Together we had a really fun and engaging teamwork experience.",
       "image": {
-        "src": "/assets/images/placeholder.jpg",
-        "alt": "placeholder"
+        "src": "/assets/images/hubgrade.jpg",
+        "alt": "hubgrade"
+      },
+      "link": {
+        "label": "Visit website",
+        "url": "https://www.hub-grade.com/"
       }
     },
     {
       "id": "2",
-      "title": "Patapook ",
-      "subtitle": "Game experiences",
-      "role": "Fulltech developer",
-      "tech": "JS, Node.js, React",
-      "description": "I took part in a group of six people of all game development-related fields to create a game within 48 hours. The video game we created is a FPS where the player has to travel through two temples filled with enemy to perform a ritual (this Game Jam theme).",
+      "title": "Game Jams",
+      "subtitle": "Game programming",
+      "role": "AI and game programmer",
+      "tech": "UE4, Behavior Tree",
+      "description": "Game jams are a hackathon for video games. It's a very intense and challenging event that takes place over a week-end. I took part in two of them as a programmer working with game designers and artists. In both projects I did AI and game programming.\n\nThe first game \"Lost my Mom\" tells the story of a boy who lost his mom. You see the world through the eyes of a terrified child. You have to wander through a dark city to find her.\n\nThe second game \"Elements Ritual\" is a FPS. There are two enemies AI, one shoot from distance when they see you. The other one is melee fighter than roll up and explode before they die. You basically have to shoot your way through the levels and beat the boss to win the game.",
       "image": {
-        "src": "/assets/images/placeholder.jpg",
+        "src": "/assets/images/gamejam.jpg",
         "alt": "placeholder"
       },
       "link": {
-        "label": "Download",
-        "url": "#"
+        "label": "Visit website",
+        "url": "https://globalgamejam.org/2016/games/elements-ritual"
+      }
+    },
+    {
+      "id": "3",
+      "title": "Naview ",
+      "subtitle": "VR experience",
+      "role": "Fulltech developer",
+      "tech": "JS, Node.js, React",
+      "description": "Naview is an immersive VR experience. It transports you in a 3D environment where you can watch videos with your friends. From within the app anyone can browse YouTube and add videos to a shared playlist. These videos will then synchronously play on the room's screen.\n\nThis project lasted over two years including ideation, documentation, coding and external promotion. We were six developers, spread all over the world during half this duration. I developed the playlist and the web browser both client and server side.",
+      "image": {
+        "src": "/assets/images/naview.jpg",
+        "alt": "placeholder"
+      },
+      "link": {
+        "label": "Visit website",
+        "url": "http://eip.epitech.eu/2018/naview/"
       }
     }
   ]
