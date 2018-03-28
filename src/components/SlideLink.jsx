@@ -29,16 +29,15 @@ const slideOut = keyframes`
 
 // SlideLink base component
 const SlideLink = styled.a`
-  padding-left: 4px;
-  padding-right: 4px;
   text-decoration: none;
+  position:relative;
 
   &:before {
     content:'';
     position: absolute;
     width: 100%;
     height: 3px;
-    top: 42%;
+    top: 48%;
     background-color: ${props => props.theme.color.secondary};
     animation: ${slideOut} 0.25s cubic-bezier(.42, 0, .58, 1) 1 both;
   }

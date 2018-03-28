@@ -5,6 +5,7 @@ import { Flex } from 'grid-styled';
 
 import AboutBackground from './AboutBackground';
 import SlideBox from '../SlideBox';
+import SlideLink from '../SlideLink';
 
 const AboutFlex = styled(Flex)`
   position: fixed;
@@ -14,6 +15,10 @@ const AboutFlex = styled(Flex)`
 `;
 
 const WrapperFlex = styled(Flex)`
+`;
+
+const AboutMeWrapper = styled.div`
+  margin-bottom: 32px;
 `;
 
 const Image = styled.img`
@@ -26,15 +31,15 @@ const Title = styled.h1`
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.dark};
   font-size: 57px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 `;
 
-const Heading = styled.h3`
+const Subtitle = styled.h2`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.dark};
   font-size: 27px;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 `;
 
 const Body = styled.p`
@@ -42,8 +47,16 @@ const Body = styled.p`
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.grey};
   font-size: 16px;
-  margin-bottom: 40px;
+  margin-bottom: 8px;
 `;
+
+const AboutSlideLink = styled(SlideLink)`
+  font-family: ${props => props.theme.typography.heading.fontFamily};
+  color: ${props => props.theme.color.contrast};
+  opacity: ${props => props.theme.opacity.dark};
+  font-size: 16px;
+  margin-right: 16px;
+}`;
 
 class About extends Component {
   constructor(props) {
@@ -78,37 +91,40 @@ class About extends Component {
     return (
       <AboutFlex alignItems="center" width={1} zIndex={this.state.zIndex}>
         <WrapperFlex width={1}>
-          <SlideBox ml="12.5%" pr="6.25%" width={2/8} show={this.props.show}>
+          <SlideBox ml="12.5%" width={2/8} show={this.props.show}>
             <Image src="/assets/images/me.jpg" alt="photo of Mathieu Roussilhe" />
           </SlideBox>
-          <SlideBox pr="6.25%" width={2/8} show={this.props.show}>
-            <Heading>Hello</Heading>
+          <SlideBox ml="12.5%" width={3/8} show={this.props.show}>
+            <AboutMeWrapper>
+              <Title>Hello there</Title>
+              <Subtitle>About me</Subtitle>
+              <Body>
+                I’m a curious French web developer.
+                Always looking for the best and the latest technologies.
+                I enjoy creating efficient and pleasant experiences.
+                <br />
+                I am fond of traveling and have a deep interest in Asia.
+                I lived in Korea for a year and loved it.
+                I believe the best thing about traveling is the food.
+                Street food might be a reason I like Asia that much ¯\_(ツ)_/¯
+                <br />
+                I’m currently looking for a job.
+                Want to work together? Get in touch!
+              </Body>
+              <AboutSlideLink href="https://www.linkedin.com/in/mathieu-roussilhe-ba2759154/" target="_blank">Linkedin</AboutSlideLink>
+              <AboutSlideLink href="mailto:mathieu.roussilhe@gmail.com">Email</AboutSlideLink>
+            </AboutMeWrapper>
+            <Subtitle>Skills</Subtitle>
             <Body>
-              I am a web developer.<br />
-              I help design and build complete solutions alone or in a team.<br />
-              I just came back from a year in Seoul and now looking for a new destination.<br />
-              I just graduated so if you have any opportunity, get in touch!
+              Designing interfaces using the latest front-end technologies<br />
+              Building reliable API and back-end solutions<br />
+              Familiar with both relational and non-relational database<br />
+              Managing hosting and deployment processes<br />
+              Knowledge of algorithm, Unix programming and OOP<br />
+              I can work in complete autonomy as well as part of a multidisciplinary team
             </Body>
-            <Heading>Skills</Heading>
-            <Body>
-              Front-end: React, JS, HTML, CSS<br />
-              Back-end: Meteor, Node.js, Symfony3, REST<br />
-              Programming: C, C++; Android, Java, UML<br />
-              Database: NoSQL, MongoDB, SQL, Doctrine<br />
-              DevOps: Heroku, Amazon S3<br />
-              Tools: Unreal Engine 4, Git, npm
-            </Body>
-          </SlideBox>
-          <SlideBox width={1/8} show={this.props.show}>
-            <Heading>Follow me </Heading>
-            <Body>
-              Facebook<br />
-              Linkedin
-            </Body>
-            <Heading>Contact me </Heading>
-            <Body>
-              Mail
-            </Body>
+            <AboutSlideLink href="/assets/documents/Mathieu Roussilhe.pdf" target="_blank">Resume</AboutSlideLink>
+            <AboutSlideLink href="https://github.com/tokimogo" target="_blank">Github</AboutSlideLink>
           </SlideBox>
         </WrapperFlex>
         <AboutBackground show={this.props.show} onLeaved={this.handleOnLeaved} />

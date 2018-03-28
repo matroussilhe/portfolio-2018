@@ -19,16 +19,15 @@ const MenuSlideLink = styled(SlideLink)`
   color: ${props => ((props.contrast) ? props.theme.color.contrast : props.theme.color.primary)}
   opacity: ${props => props.theme.opacity.dark};
   font-size: 16px;
-  position:relative;
   margin-right: 10px;
+  padding-left: 4px;
+  padding-right: 4px;
 }`;
 
 function Menu(props) {
   return (
     <MenuWrapper>
-      <MenuSlideLink contrast={props.contrast} href="mailto:mathieu.roussilhe@gmail.com">mail</MenuSlideLink>
-      <MenuSlideLink contrast={props.contrast} href="https://www.linkedin.com/in/mathieu-roussilhe-ba2759154/" target="_blank">linkedin</MenuSlideLink>
-      <MenuSlideLink contrast={props.contrast} href="https://www.facebook.com/Mathieu.Roussilhe" target="_blank">facebook</MenuSlideLink>
+      <MenuSlideLink contrast={props.contrast} href="mailto:mathieu.roussilhe@gmail.com">mathieu.roussilhe@gmail.com</MenuSlideLink>
     </MenuWrapper>
   );
 }

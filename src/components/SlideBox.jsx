@@ -49,9 +49,13 @@ function SlideBox(props) {
           <WrapperBox
             width={props.width}
             ml={props.ml}
+            mt={props.mt}
             mr={props.mr}
+            mb={props.mb}
             pl={props.pl}
+            pt={props.pt}
             pr={props.pr}
+            pb={props.pb}
           >
             <SlidingContent
               style={{
@@ -70,17 +74,25 @@ function SlideBox(props) {
 SlideBox.defaultProps = {
   width: '1/8',
   ml: 0,
+  mt: 0,
   mr: 0,
+  mb: 0,
   pl: 0,
+  pt: 0,
   pr: 0,
+  pb: 0,
 };
 
 SlideBox.propTypes = {
-  width: PropTypes.number,
-  ml: PropTypes.string,
-  mr: PropTypes.string,
-  pl: PropTypes.string,
-  pr: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   show: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
 };

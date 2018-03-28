@@ -8,8 +8,8 @@ import { Box } from 'grid-styled';
 const BackgroundBox = styled(Box)`
   border-width: 1px;
   border-left-style: solid;
-  border-color: rgba(255, 255, 255, 0.2);
-  background-color: ${props => props.theme.color.primary};
+  border-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 1);
   transform-origin: left;
 `;
 

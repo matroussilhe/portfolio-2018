@@ -84,11 +84,11 @@ AppearBox.defaultProps = {
 };
 
 AppearBox.propTypes = {
-  width: PropTypes.number,
-  pt: PropTypes.string,
-  pb: PropTypes.string,
-  pl: PropTypes.string,
-  pr: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   delay: PropTypes.number,
   show: PropTypes.bool.isRequired,
   onLeaved: PropTypes.func,

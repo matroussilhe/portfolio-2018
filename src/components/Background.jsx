@@ -13,8 +13,7 @@ const BackgroundFlex = styled(Flex)`
 const BackgroundBox = styled(Box)`
   border-width: 1px;
   border-left-style: solid;
-  border-color: ${props => props.theme.color.primary};
-  opacity: ${props => props.theme.opacity.light};
+  border-color: #dbdbdb;
 `;
 
 function Background() {

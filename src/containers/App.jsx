@@ -12,7 +12,7 @@ import Background from '../components/Background';
 const theme = {
   color: {
     primary: '#000000',
-    secondary: 'palevioletred',
+    secondary: '#f7b731',
     contrast: '#ffffff',
   },
   opacity: {

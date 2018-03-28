@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import { Flex, Box } from 'grid-styled';
 
 import AppearBox from '../AppearBox';
+import SlideLink from '../SlideLink';
 
 const WrapperBox = styled(Box)`
   position: relative;
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  background-color: rgba(0, 0, 0, ${props => props.theme.opacity.dark});
+  background-color: ${props => props.theme.color.primary};
 `;
 
 const ContentFlex = styled(Flex)`
@@ -24,6 +25,7 @@ const BottomFlex = styled(Flex)`
 const Title = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.contrast};
+  opacity: ${props => props.theme.opacity.dark};
   font-size: 57px;
   margin-bottom: 8px;
 `;
@@ -31,6 +33,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.contrast};
+  opacity: ${props => props.theme.opacity.dark};
   font-size: 27px;
   margin-bottom: 16px;
 `;
@@ -52,16 +55,12 @@ const Body = styled.p`
   white-space: pre-line;
 `;
 
-const Link = styled.a`
-  font-family: ${props => props.theme.typography.body.fontFamily};
+const DescriptionSlideLink = styled(SlideLink)`
+  font-family: ${props => props.theme.typography.heading.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.grey};
+  opacity: ${props => props.theme.opacity.dark};
   font-size: 16px;
-`;
-
-// function parseMultiline(str) {
-//
-// }
+}`;
 
 function DescriptionPanel(props) {
   return (
@@ -84,10 +83,7 @@ function DescriptionPanel(props) {
             {
               (props.project.link)
               ?
-                <div>
-                  <Heading>Link</Heading>
-                  <Link href={props.project.link.url} target="_blank">{props.project.link.label}</Link>
-                </div>
+                <DescriptionSlideLink href={props.project.link.url} target="_blank">{props.project.link.label}</DescriptionSlideLink>
               : ''
             }
           </AppearBox>

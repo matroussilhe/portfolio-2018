@@ -19,8 +19,9 @@ const MenuAboutSlideLink = styled(SlideLink)`
   color: ${props => ((props.contrast) ? props.theme.color.contrast : props.theme.color.primary)}
   opacity: ${props => props.theme.opacity.dark};
   font-size: 16px;
-  position:relative;
   margin-right: 10px;
+  padding-left: 4px;
+  padding-right: 4px;
 }`;
 
 class AboutMenu extends Component {
