@@ -111,7 +111,7 @@ class About extends Component {
                 I’m currently looking for a job.
                 Want to work together? Get in touch!
               </Body>
-              <AboutSlideLink href="https://www.linkedin.com/in/mathieu-roussilhe-ba2759154/" target="_blank">Linkedin</AboutSlideLink>
+              <AboutSlideLink href="https://www.linkedin.com/in/matroussilhe/" target="_blank">Linkedin</AboutSlideLink>
               <AboutSlideLink href="mailto:mathieu.roussilhe@gmail.com">Email</AboutSlideLink>
             </AboutMeWrapper>
             <Subtitle>Skills</Subtitle>
