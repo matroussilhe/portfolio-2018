@@ -137,7 +137,7 @@ class About extends Component {
             </Body>
             <AboutSlideLink href="https://www.linkedin.com/in/matroussilhe/" target="_blank">Linkedin</AboutSlideLink>
             <AboutSlideLink href="/assets/documents/Mathieu Roussilhe.pdf" target="_blank">Resume</AboutSlideLink>
-            <AboutSlideLink href="https://github.com/tokimogo" target="_blank">Github</AboutSlideLink>
+            <AboutSlideLink href="https://github.com/matroussilhe" target="_blank">Github</AboutSlideLink>
           </SlideBox>
         </WrapperFlex>
         <AboutBackground show={this.props.show} onLeaved={this.handleOnLeaved} />
