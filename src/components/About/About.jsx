@@ -123,7 +123,7 @@ class About extends Component {
                 I believe the best thing about traveling is the food.
                 Street food might be a reason I like Asia that much ¯\_(ツ)_/¯
               </Body>
-              <AboutSlideLink href="https://www.linkedin.com/in/matroussilhe/" target="_blank">Linkedin</AboutSlideLink>
+              <AboutSlideLink href="https://www.instagram.com/matroussilhe/" target="_blank">Instagram</AboutSlideLink>
               <AboutSlideLink href="mailto:mathieu.roussilhe@gmail.com">Email</AboutSlideLink>
             </AboutMeWrapper>
             <Subtitle>Skills</Subtitle>
@@ -135,6 +135,7 @@ class About extends Component {
               Knowledge of algorithm, Unix programming and OOP<br />
               I can work in complete autonomy as well as part of a multidisciplinary team
             </Body>
+            <AboutSlideLink href="https://www.linkedin.com/in/matroussilhe/" target="_blank">Linkedin</AboutSlideLink>
             <AboutSlideLink href="/assets/documents/Mathieu Roussilhe.pdf" target="_blank">Resume</AboutSlideLink>
             <AboutSlideLink href="https://github.com/tokimogo" target="_blank">Github</AboutSlideLink>
           </SlideBox>
