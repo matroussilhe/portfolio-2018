@@ -34,6 +34,12 @@ const theme = {
       fontFamily: 'Neuzeit Regular',
     },
   },
+  breakpoint: {
+    small: '40em',
+    medium: '52em',
+    large: '64em',
+    xlarge: '85em',
+  },
 };
 
 class App extends Component {

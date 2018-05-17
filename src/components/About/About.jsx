@@ -32,6 +32,10 @@ const Title = styled.h1`
   opacity: ${props => props.theme.opacity.dark};
   font-size: 57px;
   margin-bottom: 16px;
+  @media (max-width: ${props => props.theme.breakpoint.small}) {
+    font-size: 2.4em;
+    margin-bottom: 4px;
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -40,6 +44,10 @@ const Subtitle = styled.h2`
   opacity: ${props => props.theme.opacity.dark};
   font-size: 27px;
   margin-bottom: 8px;
+  @media (max-width: ${props => props.theme.breakpoint.small}) {
+    font-size: 1.3em;
+    margin-bottom: 4px;
+  }
 `;
 
 const Body = styled.p`
@@ -48,6 +56,10 @@ const Body = styled.p`
   opacity: ${props => props.theme.opacity.grey};
   font-size: 16px;
   margin-bottom: 8px;
+  @media (max-width: ${props => props.theme.breakpoint.small}) {
+    font-size: .9em;
+    margin-bottom: 4px;
+  }
 `;
 
 const AboutSlideLink = styled(SlideLink)`
@@ -56,6 +68,9 @@ const AboutSlideLink = styled(SlideLink)`
   opacity: ${props => props.theme.opacity.dark};
   font-size: 16px;
   margin-right: 16px;
+  @media (max-width: ${props => props.theme.breakpoint.small}) {
+    font-size: .9em;
+  }
 }`;
 
 class About extends Component {

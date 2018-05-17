@@ -8,6 +8,9 @@ import AppearBox from '../AppearBox';
 const WrapperBox = styled(Box)`
   position: relative;
   overflow: hidden;
+  @media (max-width: ${props => props.theme.breakpoint.small}) {
+    height: 100vw;
+  }
 `;
 
 const ContentFlex = styled(Flex)`
@@ -32,6 +35,11 @@ const Image = styled.img`
     transition: all .3s;
     transform: scale(1.015, 1.015);
   }
+  @media (max-width: ${props => props.theme.breakpoint.small}) {
+    height: 100%;
+    width: auto;
+    margin-left: -50vw;
+  }
 `;
 
 const Title = styled.h1`
@@ -42,6 +50,12 @@ const Title = styled.h1`
   ${WrapperBox}:hover & {
     transition: all .3s;
     opacity: 0;
+  }
+  @media (max-width: ${props => props.theme.breakpoint.small}) {
+    font-size: 2.8em;
+  }
+  @media (max-width: ${props => props.theme.breakpoint.xlarge}) {
+    font-size: 3.4em;
   }
 `;
 

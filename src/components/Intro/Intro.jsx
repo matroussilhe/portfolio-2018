@@ -21,6 +21,9 @@ const Title = styled.h1`
   color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.dark};
   font-size: 82px;
+  @media (max-width: ${props => props.theme.breakpoint.small}) {
+    font-size: 2.2em;
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -29,6 +32,9 @@ const Subtitle = styled.h2`
   opacity: ${props => props.theme.opacity.grey};
   font-size: 32px;
   margin-top: 4px;
+  @media (max-width: ${props => props.theme.breakpoint.small}) {
+    font-size: 1.2em;
+  }
 `;
 
 const Works = styled.div`

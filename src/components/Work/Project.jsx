@@ -8,7 +8,6 @@ import DescriptionPanel from './DescriptionPanel';
 
 const ProjectFlex = styled(Flex)`
   margin-bottom: 300px;
-  padding-left: 1px;
 `;
 
 const WrapperBox = styled(Box)`
@@ -56,7 +55,7 @@ class Project extends Component {
   render() {
     return (
       <ProjectFlex>
-        <WrapperBox ml={[0, 0, 0, '25%']} width={[1, 1, 1, 1/2]} onClick={this.handleClick}>
+        <WrapperBox ml={[0, 0, 0, '25%']} pl={[0, 0, 0, '1px']} width={[1, 1, 1, 1/2]} onClick={this.handleClick}>
           {this.renderPanel()}
         </WrapperBox>
       </ProjectFlex>
@@ -68,7 +67,6 @@ Project.propTypes = {
   project: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
     role: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     tech: PropTypes.string.isRequired,
