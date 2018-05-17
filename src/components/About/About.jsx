@@ -91,10 +91,10 @@ class About extends Component {
     return (
       <AboutFlex alignItems="center" width={1} zIndex={this.state.zIndex}>
         <WrapperFlex width={1}>
-          <SlideBox ml="12.5%" width={2/8} show={this.props.show}>
+          <SlideBox ml="12.5%" width={[0, 2/8, 2/8, 2/8]} show={this.props.show}>
             <Image src="/assets/images/me.jpg" alt="photo of Mathieu Roussilhe" />
           </SlideBox>
-          <SlideBox ml="12.5%" width={3/8} show={this.props.show}>
+          <SlideBox ml={[0, '12.5%', '12.5%', '12.5%']} width={[6/8, 3/8, 3/8, 3/8]} show={this.props.show}>
             <AboutMeWrapper>
               <Title>Hello there</Title>
               <Subtitle>About me</Subtitle>
@@ -107,9 +107,6 @@ class About extends Component {
                 I lived in Korea for a year and loved it.
                 I believe the best thing about traveling is the food.
                 Street food might be a reason I like Asia that much ¯\_(ツ)_/¯
-                <br />
-                I’m currently looking for a job.
-                Want to work together? Get in touch!
               </Body>
               <AboutSlideLink href="https://www.linkedin.com/in/matroussilhe/" target="_blank">Linkedin</AboutSlideLink>
               <AboutSlideLink href="mailto:mathieu.roussilhe@gmail.com">Email</AboutSlideLink>

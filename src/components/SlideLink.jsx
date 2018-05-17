@@ -31,6 +31,7 @@ const slideOut = keyframes`
 const SlideLink = styled.a`
   text-decoration: none;
   position:relative;
+  cursor: pointer
 
   &:before {
     content:'';

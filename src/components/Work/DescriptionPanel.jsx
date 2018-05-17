@@ -15,7 +15,7 @@ const WrapperBox = styled(Box)`
 const ContentFlex = styled(Flex)`
   position: absolute;
   top: 0;
-  overflow: hidden
+  overflow: hidden;
 `;
 
 const BottomFlex = styled(Flex)`

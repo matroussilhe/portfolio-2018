@@ -6,7 +6,7 @@ import { easePolyInOut } from 'd3-ease';
 import { Box } from 'grid-styled';
 
 const WrapperBox = styled(Box)`
-  overflow: hidden
+  overflow: hidden;
 `;
 
 const AppearingContent = styled.div`

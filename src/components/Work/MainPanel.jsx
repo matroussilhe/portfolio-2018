@@ -17,7 +17,7 @@ const ContentFlex = styled(Flex)`
   width: 100%;
   transition: all .3s;
   background-color: rgba(0, 0, 0, .4);
- ${WrapperBox}:hover & {
+  ${WrapperBox}:hover & {
     transition: all .3s;
     background-color: rgba(0, 0, 0, 0);
   }
