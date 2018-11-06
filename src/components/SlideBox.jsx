@@ -84,15 +84,15 @@ SlideBox.defaultProps = {
 };
 
 SlideBox.propTypes = {
-  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  mt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  pl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  pt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  pr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  pb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  width: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  ml: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  mt: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  mr: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  mb: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  pl: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  pt: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  pr: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  pb: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
   show: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
 };
