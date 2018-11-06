@@ -136,7 +136,7 @@ class About extends Component {
               I can work in complete autonomy as well as part of a multidisciplinary team
             </Body>
             <AboutSlideLink href="https://www.linkedin.com/in/matroussilhe/" target="_blank">Linkedin</AboutSlideLink>
-            <AboutSlideLink href="/assets/documents/Mathieu Roussilhe.pdf" target="_blank">Resume</AboutSlideLink>
+            <AboutSlideLink href="/assets/documents/resume-mathieu-roussilhe.pdf" target="_blank">Resume</AboutSlideLink>
             <AboutSlideLink href="https://github.com/matroussilhe" target="_blank">Github</AboutSlideLink>
           </SlideBox>
         </WrapperFlex>
