@@ -6,6 +6,7 @@ import { Flex } from 'grid-styled';
 import AboutBackground from './AboutBackground';
 import SlideBox from '../SlideBox';
 import SlideLink from '../SlideLink';
+import Resume from '../../assets/documents/resume-mathieu-roussilhe.pdf';
 
 const AboutFlex = styled(Flex)`
   position: fixed;
@@ -136,7 +137,7 @@ class About extends Component {
               I can work in complete autonomy as well as part of a multidisciplinary team
             </Body>
             <AboutSlideLink href="https://www.linkedin.com/in/matroussilhe/" target="_blank">Linkedin</AboutSlideLink>
-            <AboutSlideLink href="/assets/documents/resume-mathieu-roussilhe.pdf" target="_blank">Resume</AboutSlideLink>
+            <AboutSlideLink href={Resume} target="_blank">Resume</AboutSlideLink>
             <AboutSlideLink href="https://github.com/matroussilhe" target="_blank">Github</AboutSlideLink>
           </SlideBox>
         </WrapperFlex>
