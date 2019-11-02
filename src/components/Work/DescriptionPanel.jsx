@@ -10,7 +10,7 @@ const WrapperBox = styled(Box)`
   position: relative;
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
   background-color: ${props => props.theme.color.primary};
-  @media (max-width: ${props => props.theme.breakpoint.small}) {
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
     height: 100vw;
   };
 `;
@@ -31,11 +31,11 @@ const Title = styled.h1`
   opacity: ${props => props.theme.opacity.dark};
   font-size: 57px;
   margin-bottom: 8px;
-  @media (max-width: ${props => props.theme.breakpoint.small}) {
-    font-size: 2.2em;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: 2.2rem;
   }
-  @media (max-width: ${props => props.theme.breakpoint.xlarge}) {
-    font-size: 2.5em;
+  @media (max-width: ${props => props.theme.breakpoint.xl}px) { {
+    font-size: 2.5rem;
   }
 `;
 
@@ -45,11 +45,11 @@ const Heading = styled.h3`
   opacity: ${props => props.theme.opacity.dark};
   font-size: 16px;
   margin-bottom: 4px;
-  @media (max-width: ${props => props.theme.breakpoint.small}) {
-    font-size: .8em;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: .8rem;
   }
-  @media (max-width: ${props => props.theme.breakpoint.xlarge}) {
-    font-size: .9em;
+  @media (max-width: ${props => props.theme.breakpoint.xl}px) { {
+    font-size: .9rem;
   }
 `;
 
@@ -60,12 +60,12 @@ const Body = styled.p`
   font-size: 16px;
   margin-bottom: 16px;
   white-space: pre-line;
-  @media (max-width: ${props => props.theme.breakpoint.small}) {
-    font-size: .8em;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: .8rem;
     margin-bottom: 8px;
   }
-  @media (max-width: ${props => props.theme.breakpoint.xlarge}) {
-    font-size: .9em;
+  @media (max-width: ${props => props.theme.breakpoint.xl}px) { {
+    font-size: .9rem;
   }
 `;
 
@@ -74,11 +74,11 @@ const DescriptionSlideLink = styled(SlideLink)`
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.dark};
   font-size: 16px;
-  @media (max-width: ${props => props.theme.breakpoint.small}) {
-    font-size: .8em;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: .8rem;
   }
-  @media (max-width: ${props => props.theme.breakpoint.xlarge}) {
-    font-size: .9em;
+  @media (max-width: ${props => props.theme.breakpoint.xl}px) { {
+    font-size: .9rem;
   }
 }`;
 

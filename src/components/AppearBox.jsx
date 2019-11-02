@@ -49,26 +49,24 @@ function AppearBox(props) {
         events: props.onLeaved ? { end: props.onLeaved } : {}, // Event fired on transition end
       }}
     >
-      {(state) => {
-        return (
-          <WrapperBox
-            width={props.width}
-            pt={props.pt}
-            pb={props.pb}
-            pl={props.pl}
-            pr={props.pr}
-          >
-            <AppearingContent
-              style={{
+      {state => (
+        <WrapperBox
+          width={props.width}
+          pt={props.pt}
+          pb={props.pb}
+          pl={props.pl}
+          pr={props.pr}
+        >
+          <AppearingContent
+            style={{
                 top: `${state.top}px`,
                 opacity: state.opacity,
               }}
-            >
-              {props.children}
-            </AppearingContent>
-          </WrapperBox>
-        );
-      }}
+          >
+            {props.children}
+          </AppearingContent>
+        </WrapperBox>
+        )}
     </Animate>
   );
 }

@@ -45,16 +45,14 @@ function AboutBackgroundBox(props) {
         events: props.onLeaved ? { end: props.onLeaved } : {}, // Event fired on transition end
       }}
     >
-      {(state) => {
-        return (
-          <BackgroundBox
-            width={1/8}
-            style={{
+      {state => (
+        <BackgroundBox
+          width={props.width}
+          style={{
               transform: `scaleX(${state.scaleX})`,
             }}
-          />
-        );
-      }}
+        />
+        )}
     </Animate>
   );
 }
@@ -65,6 +63,7 @@ AboutBackgroundBox.defaultProps = {
 
 AboutBackgroundBox.propTypes = {
   show: PropTypes.bool.isRequired,
+  width: PropTypes.number.isRequired,
   onLeaved: PropTypes.func,
 };
 

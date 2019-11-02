@@ -1,36 +1,36 @@
 @font-face {
-    font-family: 'Neuzeit Bold';
-    src: url('/assets/fonts/neuzeitgro-bol.eot');
-    src: url('/assets/fonts/neuzeitgro-bol.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/neuzeitgro-bol.woff2') format('woff2'),
-         url('/assets/fonts/neuzeitgro-bol.woff') format('woff'),
-         url('/assets/fonts/neuzeitgro-bol.ttf') format('truetype'),
-         url('/assets/fonts/neuzeitgro-bol.svg#neuzeit_groteskbold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Neuzeit Bold';
+	src: url('/assets/fonts/neuzeitgro-bol.eot');
+	src: url('/assets/fonts/neuzeitgro-bol.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/neuzeitgro-bol.woff2') format('woff2'),
+		url('/assets/fonts/neuzeitgro-bol.woff') format('woff'),
+		url('/assets/fonts/neuzeitgro-bol.ttf') format('truetype'),
+		url('/assets/fonts/neuzeitgro-bol.svg#neuzeit_groteskbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Neuzeit Regular';
-    src: url('/assets/fonts/neuzeitgro-reg.eot');
-    src: url('/assets/fonts/neuzeitgro-reg.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/neuzeitgro-reg.woff2') format('woff2'),
-         url('/assets/fonts/neuzeitgro-reg.woff') format('woff'),
-         url('/assets/fonts/neuzeitgro-reg.ttf') format('truetype'),
-         url('/assets/fonts/neuzeitgro-reg.svg#neuzeit_groteskregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Neuzeit Regular';
+	src: url('/assets/fonts/neuzeitgro-reg.eot');
+	src: url('/assets/fonts/neuzeitgro-reg.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/neuzeitgro-reg.woff2') format('woff2'),
+		url('/assets/fonts/neuzeitgro-reg.woff') format('woff'),
+		url('/assets/fonts/neuzeitgro-reg.ttf') format('truetype'),
+		url('/assets/fonts/neuzeitgro-reg.svg#neuzeit_groteskregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 
 @font-face {
-    font-family: 'Playfair Display Italic';
-    src: url('/assets/fonts/playfairdisplay-italic.eot');
-    src: url('/assets/fonts/playfairdisplay-italic.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/playfairdisplay-italic.woff2') format('woff2'),
-         url('/assets/fonts/playfairdisplay-italic.woff') format('woff'),
-         url('/assets/fonts/playfairdisplay-italic.ttf') format('truetype'),
-         url('/assets/fonts/playfairdisplay-italic.svg#playfair_displayitalic') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Playfair Display Italic';
+	src: url('/assets/fonts/playfairdisplay-italic.eot');
+	src: url('/assets/fonts/playfairdisplay-italic.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/playfairdisplay-italic.woff2') format('woff2'),
+		url('/assets/fonts/playfairdisplay-italic.woff') format('woff'),
+		url('/assets/fonts/playfairdisplay-italic.ttf') format('truetype'),
+		url('/assets/fonts/playfairdisplay-italic.svg#playfair_displayitalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }

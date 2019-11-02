@@ -17,7 +17,7 @@ class Work extends Component {
   }
 
   renderProjects() {
-    return this.data.projects.map((project, idx) => (
+    return this.data.projects.map(project => (
       <Project key={project.id} project={project} />
     ));
   }

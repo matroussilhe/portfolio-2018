@@ -44,29 +44,27 @@ function SlideBox(props) {
         },
       }}
     >
-      {(state) => {
-        return (
-          <WrapperBox
-            width={props.width}
-            ml={props.ml}
-            mt={props.mt}
-            mr={props.mr}
-            mb={props.mb}
-            pl={props.pl}
-            pt={props.pt}
-            pr={props.pr}
-            pb={props.pb}
-          >
-            <SlidingContent
-              style={{
+      {state => (
+        <WrapperBox
+          width={props.width}
+          ml={props.ml}
+          mt={props.mt}
+          mr={props.mr}
+          mb={props.mb}
+          pl={props.pl}
+          pt={props.pt}
+          pr={props.pr}
+          pb={props.pb}
+        >
+          <SlidingContent
+            style={{
                 left: `${state.left}%`,
               }}
-            >
-              {props.children}
-            </SlidingContent>
-          </WrapperBox>
-        );
-      }}
+          >
+            {props.children}
+          </SlidingContent>
+        </WrapperBox>
+        )}
     </Animate>
   );
 }

@@ -33,8 +33,8 @@ const Title = styled.h1`
   opacity: ${props => props.theme.opacity.dark};
   font-size: 57px;
   margin-bottom: 16px;
-  @media (max-width: ${props => props.theme.breakpoint.small}) {
-    font-size: 2.4em;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: 2.4rem;
     margin-bottom: 4px;
   }
 `;
@@ -45,8 +45,8 @@ const Subtitle = styled.h2`
   opacity: ${props => props.theme.opacity.dark};
   font-size: 27px;
   margin-bottom: 8px;
-  @media (max-width: ${props => props.theme.breakpoint.small}) {
-    font-size: 1.3em;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: 1.3rem;
     margin-bottom: 4px;
   }
 `;
@@ -57,8 +57,8 @@ const Body = styled.p`
   opacity: ${props => props.theme.opacity.grey};
   font-size: 16px;
   margin-bottom: 8px;
-  @media (max-width: ${props => props.theme.breakpoint.small}) {
-    font-size: .9em;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: .9rem;
     margin-bottom: 4px;
   }
 `;
@@ -69,8 +69,8 @@ const AboutSlideLink = styled(SlideLink)`
   opacity: ${props => props.theme.opacity.dark};
   font-size: 16px;
   margin-right: 16px;
-  @media (max-width: ${props => props.theme.breakpoint.small}) {
-    font-size: .9em;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: .9rem;
   }
 }`;
 
@@ -141,7 +141,7 @@ class About extends Component {
             <AboutSlideLink href="https://github.com/matroussilhe" target="_blank">Github</AboutSlideLink>
           </SlideBox>
         </WrapperFlex>
-        <AboutBackground show={this.props.show} onLeaved={this.handleOnLeaved} />
+        <AboutBackground show={this.props.show} onLeaved={this.handleOnLeaved} breakpoint={this.props.breakpoint} />
       </AboutFlex>
     );
   }
@@ -149,6 +149,13 @@ class About extends Component {
 
 About.propTypes = {
   show: PropTypes.bool.isRequired,
+  breakpoint: PropTypes.shape({
+    xsAndUp: PropTypes.bool.isRequired,
+    smAndUp: PropTypes.bool.isRequired,
+    mdAndUp: PropTypes.bool.isRequired,
+    lgAndUp: PropTypes.bool.isRequired,
+    xlAndUp: PropTypes.bool.isRequired,
+  }).isRequired,
 };
 
 export default About;

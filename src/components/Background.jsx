@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex, Box } from 'grid-styled';
 
@@ -16,19 +17,39 @@ const BackgroundBox = styled(Box)`
   border-color: #dbdbdb;
 `;
 
-function Background() {
+function Background(props) {
+  if (props.breakpoint.mdAndUp) {
+    return (
+      <BackgroundFlex>
+        <BackgroundBox width={1 / 8} />
+        <BackgroundBox width={1 / 8} />
+        <BackgroundBox width={1 / 8} />
+        <BackgroundBox width={1 / 8} />
+        <BackgroundBox width={1 / 8} />
+        <BackgroundBox width={1 / 8} />
+        <BackgroundBox width={1 / 8} />
+        <BackgroundBox width={1 / 8} />
+      </BackgroundFlex>
+    );
+  }
   return (
     <BackgroundFlex>
-      <BackgroundBox width={1/8} />
-      <BackgroundBox width={1/8} />
-      <BackgroundBox width={1/8} />
-      <BackgroundBox width={1/8} />
-      <BackgroundBox width={1/8} />
-      <BackgroundBox width={1/8} />
-      <BackgroundBox width={1/8} />
-      <BackgroundBox width={1/8} />
+      <BackgroundBox width={1 / 4} />
+      <BackgroundBox width={1 / 4} />
+      <BackgroundBox width={1 / 4} />
+      <BackgroundBox width={1 / 4} />
     </BackgroundFlex>
   );
 }
+
+Background.propTypes = {
+  breakpoint: PropTypes.shape({
+    xsAndUp: PropTypes.bool.isRequired,
+    smAndUp: PropTypes.bool.isRequired,
+    mdAndUp: PropTypes.bool.isRequired,
+    lgAndUp: PropTypes.bool.isRequired,
+    xlAndUp: PropTypes.bool.isRequired,
+  }).isRequired,
+};
 
 export default Background;

@@ -35,10 +35,11 @@ const theme = {
     },
   },
   breakpoint: {
-    small: '40em',
-    medium: '52em',
-    large: '64em',
-    xlarge: '85em',
+    xs: 0,
+    sm: 600,
+    md: 960,
+    lg: 1280,
+    xl: 1920,
   },
 };
 
@@ -47,10 +48,42 @@ class App extends Component {
     super(props);
 
     this.state = {
+      breakpoint: {
+        xsAndUp: false,
+        smAndUp: false,
+        mdAndUp: false,
+        lgAndUp: false,
+        xlAndUp: false,
+      },
       showAbout: false,
     };
 
+    this.handleResize = this.handleResize.bind(this);
     this.handleShowAboutChange = this.handleShowAboutChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  handleResize() {
+    const width = window.innerWidth;
+    const breakpoint = {
+      xsAndUp: width >= theme.breakpoint.xs,
+      smAndUp: width >= theme.breakpoint.md,
+      mdAndUp: width >= theme.breakpoint.md,
+      lgAndUp: width >= theme.breakpoint.lg,
+      xlAndUp: width >= theme.breakpoint.xl,
+    };
+
+    this.setState({
+      breakpoint,
+    });
   }
 
   handleShowAboutChange(showAbout) {
@@ -67,13 +100,10 @@ class App extends Component {
             <Intro />
             <Work />
           </Box>
-          <About show={this.state.showAbout} />
-          <AboutMenu
-            showAbout={this.state.showAbout}
-            onShowAboutChange={this.handleShowAboutChange}
-          />
+          <About show={this.state.showAbout} breakpoint={this.state.breakpoint} />
+          <AboutMenu showAbout={this.state.showAbout} onShowAboutChange={this.handleShowAboutChange} />
           <Menu contrast={this.state.showAbout} />
-          <Background contrast={this.state.showAbout} />
+          <Background breakpoint={this.state.breakpoint} />
         </Flex>
       </ThemeProvider>
     );

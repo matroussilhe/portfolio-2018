@@ -8,7 +8,7 @@ import AppearBox from '../AppearBox';
 const WrapperBox = styled(Box)`
   position: relative;
   overflow: hidden;
-  @media (max-width: ${props => props.theme.breakpoint.small}) {
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
     height: 100vw;
   }
 `;
@@ -35,7 +35,7 @@ const Image = styled.img`
     transition: all .3s;
     transform: scale(1.015, 1.015);
   }
-  @media (max-width: ${props => props.theme.breakpoint.small}) {
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
     height: 100%;
     width: auto;
     margin-left: -50vw;
@@ -51,11 +51,11 @@ const Title = styled.h1`
     transition: all .3s;
     opacity: 0;
   }
-  @media (max-width: ${props => props.theme.breakpoint.small}) {
-    font-size: 2.8em;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: 2.8rem;
   }
-  @media (max-width: ${props => props.theme.breakpoint.xlarge}) {
-    font-size: 3.4em;
+  @media (max-width: ${props => props.theme.breakpoint.xl}px) { {
+    font-size: 3.4rem;
   }
 `;
 
