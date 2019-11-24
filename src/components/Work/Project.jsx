@@ -7,11 +7,14 @@ import MainPanel from './MainPanel';
 import DescriptionPanel from './DescriptionPanel';
 
 const ProjectFlex = styled(Flex)`
-  margin-bottom: 300px;
+  min-height: 100vh;
+  height: 100vh;
 `;
 
 const WrapperBox = styled(Box)`
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 class Project extends Component {

@@ -8,6 +8,7 @@ import About from '../components/About/About';
 import AboutMenu from '../components/About/AboutMenu';
 import Menu from '../components/Menu';
 import Background from '../components/Background';
+import AboutLink from '../components/About/AboutLink';
 
 const theme = {
   color: {
@@ -99,6 +100,7 @@ class App extends Component {
           <Box width={1}>
             <Intro />
             <Work />
+            <AboutLink onShowAboutChange={this.handleShowAboutChange} />
           </Box>
           <About show={this.state.showAbout} breakpoint={this.state.breakpoint} />
           <AboutMenu showAbout={this.state.showAbout} onShowAboutChange={this.handleShowAboutChange} />

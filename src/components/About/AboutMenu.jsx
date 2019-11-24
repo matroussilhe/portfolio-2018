@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import SlideLink from '../SlideLink';
 
-const MenuWrapper = styled.div`
+const AboutMenuWrapper = styled.div`
   z-index: 2;
   display: flex;
   position: fixed;
@@ -14,7 +14,7 @@ const MenuWrapper = styled.div`
   transform-origin: top left;
 }`;
 
-const MenuAboutSlideLink = styled(SlideLink)`
+const AboutMenuSlideLink = styled(SlideLink)`
   font-family: ${props => props.theme.typography.heading.fontFamily};
   color: ${props => ((props.contrast) ? props.theme.color.contrast : props.theme.color.primary)}
   opacity: ${props => props.theme.opacity.dark};
@@ -37,13 +37,13 @@ class AboutMenu extends Component {
 
   render() {
     return (
-      <MenuWrapper>
+      <AboutMenuWrapper>
         {
           (this.props.showAbout)
-            ? <MenuAboutSlideLink contrast onClick={this.handleToggleShowAbout}>close</MenuAboutSlideLink>
-            : <MenuAboutSlideLink onClick={this.handleToggleShowAbout}>about</MenuAboutSlideLink>
+            ? <AboutMenuSlideLink contrast onClick={this.handleToggleShowAbout}>close</AboutMenuSlideLink>
+            : <AboutMenuSlideLink onClick={this.handleToggleShowAbout}>about</AboutMenuSlideLink>
         }
-      </MenuWrapper>
+      </AboutMenuWrapper>
     );
   }
 }
