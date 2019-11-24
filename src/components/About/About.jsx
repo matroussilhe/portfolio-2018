@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Flex } from 'grid-styled';
 
 import AboutBackground from './AboutBackground';
+import AboutClose from './AboutClose';
 import SlideBox from '../SlideBox';
 import SlideLink from '../SlideLink';
 import Resume from '../../assets/documents/resume-mathieu-roussilhe.pdf';
@@ -86,9 +87,9 @@ class About extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // Change z-index to 1 on show
-    if (this.props.show !== nextProps.show) {
-      if (nextProps.show) {
+    // Change z-index to 1 on showAbout
+    if (this.props.showAbout !== nextProps.showAbout) {
+      if (nextProps.showAbout) {
         this.setState({
           zIndex: 1,
         });
@@ -107,10 +108,10 @@ class About extends Component {
     return (
       <AboutFlex alignItems="center" width={1} zIndex={this.state.zIndex}>
         <WrapperFlex width={1}>
-          <SlideBox ml="12.5%" width={[0, 2/8, 2/8, 2/8]} show={this.props.show}>
+          <SlideBox ml="12.5%" width={[0, 2/8, 2/8, 2/8]} show={this.props.showAbout}>
             <Image src="/assets/images/me.jpg" alt="photo of Mathieu Roussilhe" />
           </SlideBox>
-          <SlideBox ml={[0, '12.5%', '12.5%', '12.5%']} width={[6/8, 3/8, 3/8, 3/8]} show={this.props.show}>
+          <SlideBox ml={[0, '12.5%', '12.5%', '12.5%']} width={[6/8, 3/8, 3/8, 3/8]} show={this.props.showAbout}>
             <AboutMeWrapper>
               <Title>Hello there</Title>
               <Subtitle>About me</Subtitle>
@@ -142,14 +143,16 @@ class About extends Component {
             <AboutSlideLink href="https://github.com/matroussilhe" target="_blank">Github</AboutSlideLink>
           </SlideBox>
         </WrapperFlex>
-        <AboutBackground show={this.props.show} onLeaved={this.handleOnLeaved} breakpoint={this.props.breakpoint} />
+        <AboutClose show={this.props.showAbout} onShowAboutChange={this.props.onShowAboutChange} />
+        <AboutBackground show={this.props.showAbout} onLeaved={this.handleOnLeaved} breakpoint={this.props.breakpoint} />
       </AboutFlex>
     );
   }
 }
 
 About.propTypes = {
-  show: PropTypes.bool.isRequired,
+  showAbout: PropTypes.bool.isRequired,
+  onShowAboutChange: PropTypes.func.isRequired,
   breakpoint: PropTypes.shape({
     xsAndUp: PropTypes.bool.isRequired,
     smAndUp: PropTypes.bool.isRequired,

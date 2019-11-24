@@ -102,7 +102,7 @@ class App extends Component {
             <Work />
             <AboutLink onShowAboutChange={this.handleShowAboutChange} />
           </Box>
-          <About show={this.state.showAbout} breakpoint={this.state.breakpoint} />
+          <About showAbout={this.state.showAbout} onShowAboutChange={this.handleShowAboutChange} breakpoint={this.state.breakpoint} />
           <AboutMenu showAbout={this.state.showAbout} onShowAboutChange={this.handleShowAboutChange} />
           <Menu contrast={this.state.showAbout} />
           <Background breakpoint={this.state.breakpoint} />
