@@ -7,7 +7,7 @@ import { easePolyInOut } from 'd3-ease';
 const AboutCloseWrapper = styled.div`
   z-index: 2;
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 14px;
   right: 14px;
   cursor: pointer
@@ -19,7 +19,6 @@ const CloseImage = styled.img`
   height: auto;
   color: ${props => ((props.contrast) ? props.theme.color.contrast : props.theme.color.primary)}
 `;
-
 
 class AboutClose extends Component {
   constructor(props) {
