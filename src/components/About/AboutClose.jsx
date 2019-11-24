@@ -10,14 +10,13 @@ const AboutCloseWrapper = styled.div`
   position: fixed;
   top: 14px;
   right: 14px;
-  cursor: pointer
+  cursor: pointer;
 }`;
 
 const CloseImage = styled.img`
   display: block;
   width: 24px;
   height: auto;
-  color: ${props => ((props.contrast) ? props.theme.color.contrast : props.theme.color.primary)}
 `;
 
 class AboutClose extends Component {
@@ -67,8 +66,9 @@ class AboutClose extends Component {
             style={{
               opacity: state.opacity,
             }}
+            onClick={this.handleToggleShowAbout}
           >
-            <CloseImage onClick={this.handleToggleShowAbout} src="/assets/icons/close.svg" alt="close" />
+            <CloseImage src="/assets/icons/close.svg" alt="close" />
           </AboutCloseWrapper>
         )}
       </Animate>
