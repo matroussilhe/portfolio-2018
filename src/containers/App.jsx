@@ -5,8 +5,8 @@ import { Flex, Box } from 'grid-styled';
 import Intro from '../components/Intro/Intro';
 import Work from '../components/Work/Work';
 import About from '../components/About/About';
-import AboutMenu from '../components/About/AboutMenu';
-import Menu from '../components/Menu';
+import LeftMenu from '../components/LeftMenu';
+import RightMenu from '../components/RightMenu';
 import Background from '../components/Background';
 import AboutLink from '../components/About/AboutLink';
 
@@ -103,8 +103,8 @@ class App extends Component {
             <AboutLink onShowAboutChange={this.handleShowAboutChange} />
           </Box>
           <About showAbout={this.state.showAbout} onShowAboutChange={this.handleShowAboutChange} breakpoint={this.state.breakpoint} />
-          <AboutMenu showAbout={this.state.showAbout} onShowAboutChange={this.handleShowAboutChange} />
-          <Menu contrast={this.state.showAbout} />
+          <LeftMenu showAbout={this.state.showAbout} onShowAboutChange={this.handleShowAboutChange} />
+          <RightMenu contrast={this.state.showAbout} />
           <Background breakpoint={this.state.breakpoint} />
         </Flex>
       </ThemeProvider>

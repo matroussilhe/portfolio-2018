@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import SlideLink from '../SlideLink';
+import SlideLink from './SlideLink';
 
-const AboutMenuWrapper = styled.div`
+const LeftMenuWrapper = styled.div`
   z-index: 2;
   display: flex;
   position: fixed;
@@ -14,7 +14,7 @@ const AboutMenuWrapper = styled.div`
   transform-origin: top left;
 }`;
 
-const AboutMenuSlideLink = styled(SlideLink)`
+const LeftMenuSlideLink = styled(SlideLink)`
   font-family: ${props => props.theme.typography.heading.fontFamily};
   color: ${props => ((props.contrast) ? props.theme.color.contrast : props.theme.color.primary)}
   opacity: ${props => props.theme.opacity.dark};
@@ -24,7 +24,7 @@ const AboutMenuSlideLink = styled(SlideLink)`
   padding-right: 4px;
 }`;
 
-class AboutMenu extends Component {
+class LeftMenu extends Component {
   constructor(props) {
     super(props);
 
@@ -37,20 +37,20 @@ class AboutMenu extends Component {
 
   render() {
     return (
-      <AboutMenuWrapper>
+      <LeftMenuWrapper>
         {
           (this.props.showAbout)
-            ? <AboutMenuSlideLink contrast onClick={this.handleToggleShowAbout}>close</AboutMenuSlideLink>
-            : <AboutMenuSlideLink onClick={this.handleToggleShowAbout}>about</AboutMenuSlideLink>
+            ? <LeftMenuSlideLink contrast onClick={this.handleToggleShowAbout}>close</LeftMenuSlideLink>
+            : <LeftMenuSlideLink onClick={this.handleToggleShowAbout}>about</LeftMenuSlideLink>
         }
-      </AboutMenuWrapper>
+      </LeftMenuWrapper>
     );
   }
 }
 
-AboutMenu.propTypes = {
+LeftMenu.propTypes = {
   showAbout: PropTypes.bool.isRequired,
   onShowAboutChange: PropTypes.func.isRequired,
 };
 
-export default AboutMenu;
+export default LeftMenu;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import SlideLink from './SlideLink';
 
-const MenuWrapper = styled.div`
+const RightMenuWrapper = styled.div`
   z-index: 2;
   display: flex;
   position: fixed;
@@ -14,7 +14,7 @@ const MenuWrapper = styled.div`
   transform-origin: top right;
 }`;
 
-const MenuSlideLink = styled(SlideLink)`
+const RightMenuSlideLink = styled(SlideLink)`
   font-family: ${props => props.theme.typography.heading.fontFamily};
   color: ${props => ((props.contrast) ? props.theme.color.contrast : props.theme.color.primary)}
   opacity: ${props => props.theme.opacity.dark};
@@ -24,16 +24,16 @@ const MenuSlideLink = styled(SlideLink)`
   padding-right: 4px;
 }`;
 
-function Menu(props) {
+function RightMenu(props) {
   return (
-    <MenuWrapper>
-      <MenuSlideLink contrast={props.contrast} href="mailto:mathieu.roussilhe@gmail.com">mathieu.roussilhe@gmail.com</MenuSlideLink>
-    </MenuWrapper>
+    <RightMenuWrapper>
+      <RightMenuSlideLink contrast={props.contrast} href="mailto:mathieu.roussilhe@gmail.com">mathieu.roussilhe@gmail.com</RightMenuSlideLink>
+    </RightMenuWrapper>
   );
 }
 
-Menu.propTypes = {
+RightMenu.propTypes = {
   contrast: PropTypes.bool.isRequired,
 };
 
-export default Menu;
+export default RightMenu;

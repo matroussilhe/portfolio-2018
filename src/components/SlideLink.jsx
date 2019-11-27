@@ -47,5 +47,4 @@ const SlideLink = styled.a`
   }
 }`;
 
-
 export default SlideLink;
