@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Animate from 'react-move/Animate';
-import { easeQuadOut } from 'd3-ease';
+import { easeQuadIn, easeQuadOut } from 'd3-ease';
 
 const ArrowWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 1px;
 `;
 
 const ArrowTrail = styled.div`
   transform: matrix(1, 0, 0, 1, 0, 0);
+  margin-left: 1px;
   height: 34px;
   width: 1px;
   background-color: ${props => props.theme.color.primary};
-  opacity: 0.62;
 `;
 
 const LeftArrowCap = styled.div`
@@ -33,7 +32,6 @@ const ArrowCap = styled.div`
   width: 1px;
   height: 8px;
   background-color: ${props => props.theme.color.primary};
-  opacity: 0.62;
 `;
 
 class DropArrow extends Component {
@@ -69,18 +67,28 @@ class DropArrow extends Component {
         // Starting state
         start={{
           y: 0,
-          opacity: 0.62,
+          opacity: 0,
         }}
         // How to transform state on enter
-        enter={{
-          y: [24],
-          opacity: [0],
-          timing: {
-            delay: 800,
-            duration: 1200,
-            ease: easeQuadOut,
+        enter={() => ([
+          {
+            y: 0,
+            opacity: [0.8],
+            timing: {
+              duration: 400,
+              ease: easeQuadIn,
+            },
           },
-        }}
+          {
+            y: [24],
+            opacity: [0],
+            timing: {
+              delay: 300,
+              duration: 1200,
+              ease: easeQuadOut,
+            },
+          },
+        ])}
       >
         {state => (
           <ArrowWrapper
