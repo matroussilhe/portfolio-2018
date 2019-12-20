@@ -45,11 +45,11 @@ class AboutLink extends Component {
   constructor(props) {
     super(props);
 
-    this.handleToggleShowAbout = this.handleToggleShowAbout.bind(this);
+    this.handleToggleShow = this.handleToggleShow.bind(this);
   }
 
-  handleToggleShowAbout() {
-    this.props.onShowAboutChange(true);
+  handleToggleShow() {
+    this.props.onShowChange(true);
   }
 
   render() {
@@ -57,7 +57,7 @@ class AboutLink extends Component {
       <AboutLinkFlex>
         <AboutLinkBox ml={['12.5%', 0]} width={[3/4, 1]}>
           <AboutLinkTitle>Thank you for your time :)</AboutLinkTitle>
-          <AboutLinkSlideLink onClick={this.handleToggleShowAbout}>Click here to learn more about me</AboutLinkSlideLink>
+          <AboutLinkSlideLink onClick={this.handleToggleShow}>Click here to learn more about me</AboutLinkSlideLink>
         </AboutLinkBox>
       </AboutLinkFlex>
     );
@@ -65,7 +65,7 @@ class AboutLink extends Component {
 }
 
 AboutLink.propTypes = {
-  onShowAboutChange: PropTypes.func.isRequired,
+  onShowChange: PropTypes.func.isRequired,
 };
 
 export default AboutLink;

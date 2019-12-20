@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex, Box } from 'grid-styled';
 
-import MainPanel from './MainPanel';
-import DescriptionPanel from './DescriptionPanel';
+import FrontPanel from './FrontPanel';
+import BackPanel from './BackPanel';
 
 const ProjectFlex = styled(Flex)`
   min-height: 100vh;
@@ -22,10 +22,10 @@ class Project extends Component {
     super(props);
 
     this.state = {
-      // Current pannel, can be main or description
-      pannel: 'main',
+      // Current pannel, can be front or back
+      pannel: 'front',
       // Pannel to transition to
-      nextPannel: 'main',
+      nextPannel: 'front',
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -33,10 +33,15 @@ class Project extends Component {
   }
 
   handleClick() {
-    // Set panel type to transition to
-    this.setState({
-      nextPannel: this.state.pannel === 'main' ? 'description' : 'main',
-    });
+    if (this.props.project.type === 'case-study') {
+      // show case study
+      this.props.onShowChange(true);
+    } else {
+      // Set panel type to transition to
+      this.setState({
+        nextPannel: this.state.pannel === 'front' ? 'back' : 'front',
+      });
+    }
   }
 
   handleOnLeaved() {
@@ -47,10 +52,10 @@ class Project extends Component {
   }
 
   renderPanel() {
-    if (this.state.pannel === 'main') {
-      return <MainPanel show={this.state.nextPannel === 'main'} onLeaved={this.handleOnLeaved} title={this.props.project.title} image={this.props.project.image} />;
-    } else if (this.state.pannel === 'description') {
-      return <DescriptionPanel show={this.state.nextPannel === 'description'} onLeaved={this.handleOnLeaved} project={this.props.project} />;
+    if (this.state.pannel === 'front') {
+      return <FrontPanel show={this.state.nextPannel === 'front'} onLeaved={this.handleOnLeaved} title={this.props.project.title} image={this.props.project.image} />;
+    } else if (this.state.pannel === 'back') {
+      return <BackPanel show={this.state.nextPannel === 'back'} onLeaved={this.handleOnLeaved} project={this.props.project} />;
     }
     return '';
   }
@@ -67,8 +72,10 @@ class Project extends Component {
 }
 
 Project.propTypes = {
+  onShowChange: PropTypes.func.isRequired,
   project: PropTypes.shape({
     id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     role: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,

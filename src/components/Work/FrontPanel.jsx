@@ -8,6 +8,7 @@ import AppearBox from '../AppearBox';
 const WrapperBox = styled(Box)`
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
     height: 100vw;
   }
@@ -59,7 +60,7 @@ const Title = styled.h1`
   }
 `;
 
-function MainPanel(props) {
+function FrontPanel(props) {
   return (
     <WrapperBox>
       <Image src={props.image.src} alt={props.image.alt} />
@@ -72,7 +73,7 @@ function MainPanel(props) {
   );
 }
 
-MainPanel.propTypes = {
+FrontPanel.propTypes = {
   show: PropTypes.bool.isRequired,
   onLeaved: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
@@ -82,4 +83,4 @@ MainPanel.propTypes = {
   }).isRequired,
 };
 
-export default MainPanel;
+export default FrontPanel;

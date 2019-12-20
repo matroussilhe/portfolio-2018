@@ -28,20 +28,20 @@ class LeftMenu extends Component {
   constructor(props) {
     super(props);
 
-    this.handleToggleShowAbout = this.handleToggleShowAbout.bind(this);
+    this.handleToggleShow = this.handleToggleShow.bind(this);
   }
 
-  handleToggleShowAbout() {
-    this.props.onShowAboutChange(!this.props.showAbout);
+  handleToggleShow() {
+    this.props.onShowChange(!this.props.show);
   }
 
   render() {
     return (
       <LeftMenuWrapper>
         {
-          (this.props.showAbout)
-            ? <LeftMenuSlideLink contrast onClick={this.handleToggleShowAbout}>close</LeftMenuSlideLink>
-            : <LeftMenuSlideLink onClick={this.handleToggleShowAbout}>about</LeftMenuSlideLink>
+          (this.props.show)
+            ? <LeftMenuSlideLink contrast onClick={this.handleToggleShow}>close</LeftMenuSlideLink>
+            : <LeftMenuSlideLink onClick={this.handleToggleShow}>about</LeftMenuSlideLink>
         }
       </LeftMenuWrapper>
     );
@@ -49,8 +49,8 @@ class LeftMenu extends Component {
 }
 
 LeftMenu.propTypes = {
-  showAbout: PropTypes.bool.isRequired,
-  onShowAboutChange: PropTypes.func.isRequired,
+  show: PropTypes.bool.isRequired,
+  onShowChange: PropTypes.func.isRequired,
 };
 
 export default LeftMenu;

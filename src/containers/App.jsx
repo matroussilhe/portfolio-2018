@@ -5,6 +5,7 @@ import { Flex, Box } from 'grid-styled';
 import Intro from '../components/Intro/Intro';
 import Work from '../components/Work/Work';
 import About from '../components/About/About';
+import CaseStudy from '../components/Work/CaseStudy';
 import LeftMenu from '../components/LeftMenu';
 import RightMenu from '../components/RightMenu';
 import Background from '../components/Background';
@@ -57,10 +58,13 @@ class App extends Component {
         xlAndUp: false,
       },
       showAbout: false,
+      showCaseStudy: false,
     };
 
     this.handleResize = this.handleResize.bind(this);
     this.handleShowAboutChange = this.handleShowAboutChange.bind(this);
+    this.handleShowCaseStudyChange = this.handleShowCaseStudyChange.bind(this);
+    this.handleShowAboutAndCaseStudyChange = this.handleShowAboutAndCaseStudyChange.bind(this);
   }
 
   componentDidMount() {
@@ -87,10 +91,28 @@ class App extends Component {
     });
   }
 
-  handleShowAboutChange(showAbout) {
+  handleShowAboutChange(value) {
     this.setState({
-      showAbout,
+      showAbout: value,
     });
+  }
+
+  handleShowCaseStudyChange(value) {
+    this.setState({
+      showCaseStudy: value,
+    });
+  }
+
+  handleShowAboutAndCaseStudyChange(value) {
+    if (this.state.showCaseStudy === true) {
+      this.setState({
+        showCaseStudy: value,
+      });
+    } else {
+      this.setState({
+        showAbout: value,
+      });
+    }
   }
 
   render() {
@@ -99,12 +121,13 @@ class App extends Component {
         <Flex>
           <Box width={1}>
             <Intro />
-            <Work />
-            <AboutLink onShowAboutChange={this.handleShowAboutChange} />
+            <Work onShowChange={this.handleShowCaseStudyChange} />
+            <AboutLink onShowChange={this.handleShowAboutChange} />
           </Box>
-          <About showAbout={this.state.showAbout} onShowAboutChange={this.handleShowAboutChange} breakpoint={this.state.breakpoint} />
-          <LeftMenu showAbout={this.state.showAbout} onShowAboutChange={this.handleShowAboutChange} />
-          <RightMenu contrast={this.state.showAbout} />
+          <About show={this.state.showAbout} onShowChange={this.handleShowAboutChange} breakpoint={this.state.breakpoint} />
+          <CaseStudy show={this.state.showCaseStudy} onShowChange={this.handleShowCaseStudyChange} breakpoint={this.state.breakpoint} />
+          <LeftMenu show={this.state.showAbout || this.state.showCaseStudy} onShowChange={this.handleShowAboutAndCaseStudyChange} />
+          <RightMenu contrast={this.state.showAbout || this.state.showCaseStudy} />
           <Background breakpoint={this.state.breakpoint} />
         </Flex>
       </ThemeProvider>

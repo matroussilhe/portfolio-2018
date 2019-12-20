@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Animate from 'react-move/Animate';
 import { easePolyInOut } from 'd3-ease';
 
-const AboutCloseWrapper = styled.div`
+const AppearCloseWrapper = styled.div`
   z-index: 2;
   display: flex;
   position: fixed;
@@ -19,15 +19,15 @@ const CloseImage = styled.img`
   height: auto;
 `;
 
-class AboutClose extends Component {
+class AppearClose extends Component {
   constructor(props) {
     super(props);
 
-    this.handleToggleShowAbout = this.handleToggleShowAbout.bind(this);
+    this.handleToggleShow = this.handleToggleShow.bind(this);
   }
 
-  handleToggleShowAbout() {
-    this.props.onShowAboutChange(false);
+  handleToggleShow() {
+    this.props.onShowChange(false);
   }
 
   render() {
@@ -62,23 +62,23 @@ class AboutClose extends Component {
         }}
       >
         {state => (
-          <AboutCloseWrapper
+          <AppearCloseWrapper
             style={{
               opacity: state.opacity,
             }}
-            onClick={this.handleToggleShowAbout}
+            onClick={this.handleToggleShow}
           >
             <CloseImage src="/assets/icons/close.svg" alt="close" />
-          </AboutCloseWrapper>
+          </AppearCloseWrapper>
         )}
       </Animate>
     );
   }
 }
 
-AboutClose.propTypes = {
+AppearClose.propTypes = {
   show: PropTypes.bool.isRequired,
-  onShowAboutChange: PropTypes.func.isRequired,
+  onShowChange: PropTypes.func.isRequired,
 };
 
-export default AboutClose;
+export default AppearClose;

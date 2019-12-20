@@ -13,7 +13,7 @@ const BackgroundBox = styled(Box)`
   transform-origin: left;
 `;
 
-function AboutBackgroundBox(props) {
+function SlideBackgroundBox(props) {
   return (
     <Animate
       // Weither to render or not (trigger enter/leave)
@@ -57,14 +57,14 @@ function AboutBackgroundBox(props) {
   );
 }
 
-AboutBackgroundBox.defaultProps = {
+SlideBackgroundBox.defaultProps = {
   onLeaved: null,
 };
 
-AboutBackgroundBox.propTypes = {
+SlideBackgroundBox.propTypes = {
   show: PropTypes.bool.isRequired,
   width: PropTypes.number.isRequired,
   onLeaved: PropTypes.func,
 };
 
-export default AboutBackgroundBox;
+export default SlideBackgroundBox;

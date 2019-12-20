@@ -10,6 +10,7 @@ const WrapperBox = styled(Box)`
   position: relative;
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
   background-color: ${props => props.theme.color.primary};
+  cursor: pointer;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
     height: 100vw;
   };
@@ -82,7 +83,7 @@ const DescriptionSlideLink = styled(SlideLink)`
   }
 }`;
 
-function DescriptionPanel(props) {
+function BackPanel(props) {
   return (
     <WrapperBox width={1}>
       <ContentFlex flexDirection="column">
@@ -93,7 +94,7 @@ function DescriptionPanel(props) {
           <AppearBox show={props.show} pr="6%" width={3/4} delay={200}>
             <Body>{props.project.description}</Body>
           </AppearBox>
-          {/* DescriptionPanel's animation considered ended when this box's animation end */}
+          {/* BackPanel's animation considered ended when this box's animation end */}
           <AppearBox show={props.show} onLeaved={props.onLeaved} pr="4%" width={1/4} delay={400}>
             <Heading>Role</Heading>
             <Body>{props.project.role}</Body>
@@ -112,7 +113,7 @@ function DescriptionPanel(props) {
   );
 }
 
-DescriptionPanel.propTypes = {
+BackPanel.propTypes = {
   show: PropTypes.bool.isRequired,
   onLeaved: PropTypes.func.isRequired,
   project: PropTypes.shape({
@@ -132,4 +133,4 @@ DescriptionPanel.propTypes = {
   }).isRequired,
 };
 
-export default DescriptionPanel;
+export default BackPanel;

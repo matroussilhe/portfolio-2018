@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Flex, Box } from 'grid-styled';
 
 import data from '../../api/projects.json';
@@ -13,7 +14,7 @@ class Work extends Component {
 
   renderProjects() {
     return this.data.projects.map(project => (
-      <Project key={project.id} project={project} />
+      <Project key={project.id} project={project} onShowChange={this.props.onShowChange} />
     ));
   }
 
@@ -27,5 +28,9 @@ class Work extends Component {
     );
   }
 }
+
+Work.propTypes = {
+  onShowChange: PropTypes.func.isRequired,
+};
 
 export default Work;

@@ -3,6 +3,16 @@
   [
     {
       "id": "0",
+      "type": "case-study",
+      "title": "Withgoods",
+      "image": {
+        "src": "/assets/images/sleek.jpg",
+        "alt": "picture of sleek website"
+      }
+    },
+    {
+      "id": "1",
+      "type": "card",
       "title": "Sleek",
       "role": "Full-stack developer",
       "tech": "JavaScript (ES6), Node.js, React, Vue, TDD, Mongoose",
@@ -17,7 +27,8 @@
       }
     },
     {
-      "id": "1",
+      "id": "2",
+      "type": "card",
       "title": "Maevents",
       "role": "Full-stack developer",
       "tech": "JavaScript (ES6), React, Meteor, MongoDB",
@@ -28,7 +39,8 @@
       }
     },
     {
-      "id": "2",
+      "id": "3",
+      "type": "card",
       "title": "Hub-Grade",
       "role": "Back-end developer",
       "tech": "PHP, Symfony3, REST, Doctrine",
@@ -43,7 +55,8 @@
       }
     },
     {
-      "id": "3",
+      "id": "4",
+      "type": "card",
       "title": "Game Jams",
       "role": "AI and game programmer",
       "tech": "UE4, Behavior Tree",
@@ -58,7 +71,8 @@
       }
     },
     {
-      "id": "4",
+      "id": "5",
+      "type": "card",
       "title": "Naview ",
       "role": "Software developer",
       "tech": "UE4, Node.js, Socket.io",
