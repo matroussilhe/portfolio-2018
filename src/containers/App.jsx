@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Flex, Box } from 'grid-styled';
 
+import data from '../api/projects.json';
+
 import Intro from '../components/Intro/Intro';
 import Work from '../components/Work/Work';
 import About from '../components/About/About';
@@ -45,6 +47,10 @@ const theme = {
   },
 };
 
+function getProjectById(id) {
+  return data.projects.find(project => project.id === id);
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -59,12 +65,14 @@ class App extends Component {
       },
       showAbout: false,
       showCaseStudy: false,
+      projectId: null,
     };
 
     this.handleResize = this.handleResize.bind(this);
     this.handleShowAboutChange = this.handleShowAboutChange.bind(this);
     this.handleShowCaseStudyChange = this.handleShowCaseStudyChange.bind(this);
     this.handleShowAboutAndCaseStudyChange = this.handleShowAboutAndCaseStudyChange.bind(this);
+    this.handleProjectIdChange = this.handleProjectIdChange.bind(this);
   }
 
   componentDidMount() {
@@ -98,12 +106,14 @@ class App extends Component {
   }
 
   handleShowCaseStudyChange(value) {
+    console.log('handleShowCaseStudyChange: ', value);
     this.setState({
       showCaseStudy: value,
     });
   }
 
   handleShowAboutAndCaseStudyChange(value) {
+    console.log('handleShowAboutAndCaseStudyChange: ', value);
     if (this.state.showCaseStudy === true) {
       this.setState({
         showCaseStudy: value,
@@ -115,17 +125,24 @@ class App extends Component {
     }
   }
 
+  handleProjectIdChange(value) {
+    console.log('handleProjectIdChange: ', value);
+    this.setState({
+      projectId: value,
+    });
+  }
+
   render() {
     return (
       <ThemeProvider theme={theme}>
         <Flex>
           <Box width={1}>
             <Intro />
-            <Work onShowChange={this.handleShowCaseStudyChange} />
+            <Work onShowChange={this.handleShowCaseStudyChange} onProjectIdChange={this.handleProjectIdChange} />
             <AboutLink onShowChange={this.handleShowAboutChange} />
           </Box>
           <About show={this.state.showAbout} onShowChange={this.handleShowAboutChange} breakpoint={this.state.breakpoint} />
-          <CaseStudy show={this.state.showCaseStudy} onShowChange={this.handleShowCaseStudyChange} breakpoint={this.state.breakpoint} />
+          <CaseStudy show={this.state.showCaseStudy} onShowChange={this.handleShowCaseStudyChange} breakpoint={this.state.breakpoint} project={getProjectById(this.state.projectId)} />
           <LeftMenu show={this.state.showAbout || this.state.showCaseStudy} onShowChange={this.handleShowAboutAndCaseStudyChange} />
           <RightMenu contrast={this.state.showAbout || this.state.showCaseStudy} />
           <Background breakpoint={this.state.breakpoint} />

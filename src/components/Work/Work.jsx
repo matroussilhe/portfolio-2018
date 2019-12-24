@@ -14,7 +14,7 @@ class Work extends Component {
 
   renderProjects() {
     return this.data.projects.map(project => (
-      <Project key={project.id} project={project} onShowChange={this.props.onShowChange} />
+      <Project key={project.id} project={project} onShowChange={this.props.onShowChange} onProjectIdChange={this.props.onProjectIdChange} />
     ));
   }
 
@@ -31,6 +31,7 @@ class Work extends Component {
 
 Work.propTypes = {
   onShowChange: PropTypes.func.isRequired,
+  onProjectIdChange: PropTypes.func.isRequired,
 };
 
 export default Work;

@@ -92,29 +92,25 @@ class CaseStudy extends Component {
     });
   }
 
+  renderSections() {
+    return (this.props.project ? this.props.project.sections : []).map((section, index) => (
+      <SlideBox key={section.id} ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
+        <Subtitle>{section.title}</Subtitle>
+        <Body>{section.description}</Body>
+        <Image src="/assets/images/event.jpg" alt="section photo" />
+      </SlideBox>
+    ));
+  }
+
   render() {
     return (
       <CaseStudyFlex width={1} zIndex={this.state.zIndex}>
         <WrapperFlex width={1} flexDirection="column">
           <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-            <Title>Title</Title>
-            <Subtitle>Subtitle</Subtitle>
-            <Body>
-              MY BODY IS READY
-            </Body>
+            <Title>{this.props.project ? this.props.project.title : ''}</Title>
+            <Body>{this.props.project ? this.props.project.description : ''}</Body>
           </SlideBox>
-          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-            <Image src="/assets/images/event.jpg" alt="photo of Mathieu Roussilhe" />
-          </SlideBox>
-          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-            <Image src="/assets/images/event.jpg" alt="photo of Mathieu Roussilhe" />
-          </SlideBox>
-          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-            <Image src="/assets/images/event.jpg" alt="photo of Mathieu Roussilhe" />
-          </SlideBox>
-          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-            <Image src="/assets/images/event.jpg" alt="photo of Mathieu Roussilhe" />
-          </SlideBox>
+          {this.renderSections()}
         </WrapperFlex>
         <AppearClose show={this.props.show} onShowChange={this.props.onShowChange} />
         <SlideBackground show={this.props.show} onLeaved={this.handleOnLeaved} breakpoint={this.props.breakpoint} />
@@ -132,6 +128,30 @@ CaseStudy.propTypes = {
     mdAndUp: PropTypes.bool.isRequired,
     lgAndUp: PropTypes.bool.isRequired,
     xlAndUp: PropTypes.bool.isRequired,
+  }).isRequired,
+  project: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    tech: PropTypes.string.isRequired,
+    image: PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+    }),
+    link: PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    }),
+    sections: PropTypes.arrayOf(PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      image: PropTypes.shape({
+        src: PropTypes.string.isRequired,
+        alt: PropTypes.string.isRequired,
+      }),
+    })),
   }).isRequired,
 };
 

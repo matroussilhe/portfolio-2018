@@ -36,6 +36,7 @@ class Project extends Component {
     if (this.props.project.type === 'case-study') {
       // show case study
       this.props.onShowChange(true);
+      this.props.onProjectIdChange(this.props.project.id);
     } else {
       // Set panel type to transition to
       this.setState({
@@ -73,8 +74,9 @@ class Project extends Component {
 
 Project.propTypes = {
   onShowChange: PropTypes.func.isRequired,
+  onProjectIdChange: PropTypes.func.isRequired,
   project: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     type: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     role: PropTypes.string.isRequired,
