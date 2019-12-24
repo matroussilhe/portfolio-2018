@@ -55,6 +55,7 @@ function SlideBox(props) {
           pt={props.pt}
           pr={props.pr}
           pb={props.pb}
+          flex={props.flex}
         >
           <SlidingContent
             style={{
@@ -79,6 +80,7 @@ SlideBox.defaultProps = {
   pt: 0,
   pr: 0,
   pb: 0,
+  flex: '',
 };
 
 SlideBox.propTypes = {
@@ -91,6 +93,7 @@ SlideBox.propTypes = {
   pt: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
   pr: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
   pb: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  flex: PropTypes.string,
   show: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
 };

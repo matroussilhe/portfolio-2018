@@ -5,12 +5,26 @@ import { Flex } from 'grid-styled';
 
 import SlideBackground from '../SlideBackground';
 import AppearClose from '../AppearClose';
+import SlideBox from '../SlideBox';
 
 const CaseStudyFlex = styled(Flex)`
   position: fixed;
   min-height: 100vh;
   height: 100vh;
   z-index: ${props => props.zIndex}
+`;
+
+const WrapperFlex = styled(Flex)`
+  overflow: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: auto;
 `;
 
 const Title = styled.h1`
@@ -80,12 +94,28 @@ class CaseStudy extends Component {
 
   render() {
     return (
-      <CaseStudyFlex alignItems="center" width={1} zIndex={this.state.zIndex}>
-        <Title>Title</Title>
-        <Subtitle>Subtitle</Subtitle>
-        <Body>
+      <CaseStudyFlex width={1} zIndex={this.state.zIndex}>
+        <WrapperFlex width={1} flexDirection="column">
+          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
+            <Title>Title</Title>
+            <Subtitle>Subtitle</Subtitle>
+            <Body>
               MY BODY IS READY
-        </Body>
+            </Body>
+          </SlideBox>
+          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
+            <Image src="/assets/images/event.jpg" alt="photo of Mathieu Roussilhe" />
+          </SlideBox>
+          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
+            <Image src="/assets/images/event.jpg" alt="photo of Mathieu Roussilhe" />
+          </SlideBox>
+          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
+            <Image src="/assets/images/event.jpg" alt="photo of Mathieu Roussilhe" />
+          </SlideBox>
+          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
+            <Image src="/assets/images/event.jpg" alt="photo of Mathieu Roussilhe" />
+          </SlideBox>
+        </WrapperFlex>
         <AppearClose show={this.props.show} onShowChange={this.props.onShowChange} />
         <SlideBackground show={this.props.show} onLeaved={this.handleOnLeaved} breakpoint={this.props.breakpoint} />
       </CaseStudyFlex>

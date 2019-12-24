@@ -52,10 +52,15 @@ function AppearBox(props) {
       {state => (
         <WrapperBox
           width={props.width}
-          pt={props.pt}
-          pb={props.pb}
+          ml={props.ml}
+          mt={props.mt}
+          mr={props.mr}
+          mb={props.mb}
           pl={props.pl}
+          pt={props.pt}
           pr={props.pr}
+          pb={props.pb}
+          flex={props.flex}
         >
           <AppearingContent
             style={{
@@ -72,21 +77,31 @@ function AppearBox(props) {
 }
 
 AppearBox.defaultProps = {
-  width: null,
-  pt: '0',
-  pb: '0',
-  pl: '0',
-  pr: '0',
+  width: '1/8',
+  ml: 0,
+  mt: 0,
+  mr: 0,
+  mb: 0,
+  pl: 0,
+  pt: 0,
+  pr: 0,
+  pb: 0,
+  flex: '',
   delay: 0,
   onLeaved: null,
 };
 
 AppearBox.propTypes = {
-  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  pt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  pb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  pl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  pr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  width: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  ml: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  mt: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  mr: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  mb: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  pl: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  pt: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  pr: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  pb: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  flex: PropTypes.string,
   delay: PropTypes.number,
   show: PropTypes.bool.isRequired,
   onLeaved: PropTypes.func,
