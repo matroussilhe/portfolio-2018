@@ -62,7 +62,7 @@ class App extends Component {
       },
       showAbout: false,
       showCaseStudy: false,
-      caseStudy: null,
+      caseStudy: undefined,
     };
 
     this.handleResize = this.handleResize.bind(this);

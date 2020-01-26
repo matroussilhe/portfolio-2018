@@ -22,15 +22,23 @@ const WrapperFlex = styled(Flex)`
   -ms-overflow-style: none;
 `;
 
-const TextFlex = styled(Flex)`
+const HeaderFlex = styled(Flex)`
+  position: relative;
 `;
 
-const Image = styled.img`
+const HeaderImage = styled.img`
   width: 100%;
   height: auto;
 `;
 
-const Title = styled.h1`
+const HeaderTextFlex = styled(Flex)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-shadow: 2px 2px #ff0000;
+`;
+
+const HeaderTitle = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.dark};
@@ -41,30 +49,28 @@ const Title = styled.h1`
   }
 `;
 
-const Subtitle = styled.h2`
+const HeaderSubtitle = styled.h2`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.dark};
   font-size: 32px;
-  margin-top: 4px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
     font-size: 1.2rem;
   }
 `;
 
-const Body = styled.p`
+const SubHeaderBody = styled.p`
   font-family: ${props => props.theme.typography.body.fontFamily};
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.grey};
-  font-size: 16px;
-  margin-bottom: 8px;
+  font-size: 20px;
+  white-space: pre-wrap;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
-    font-size: .9rem;
-    margin-bottom: 4px;
+    font-size: 1.2rem;
   }
 `;
 
-const SectionTitle = styled.h1`
+const FeatureTitle = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.dark};
@@ -72,6 +78,37 @@ const SectionTitle = styled.h1`
   font-size: 60px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
     font-size: 1.8rem;
+  }
+`;
+
+const SectionTitle = styled.h2`
+  font-family: ${props => props.theme.typography.title.fontFamily};
+  color: ${props => props.theme.color.contrast};
+  opacity: ${props => props.theme.opacity.dark};
+  font-size: 32px;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: 1.2rem;
+  }
+`;
+
+const ParagraphTitle = styled.h3`
+  font-family: ${props => props.theme.typography.subtitle.fontFamily};
+  color: ${props => props.theme.color.contrast};
+  opacity: ${props => props.theme.opacity.dark};
+  font-size: 22px;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: 1.2rem;
+  }
+`;
+
+const ParagraphBody = styled.p`
+  font-family: ${props => props.theme.typography.body.fontFamily};
+  color: ${props => props.theme.color.contrast};
+  opacity: ${props => props.theme.opacity.grey};
+  font-size: 20px;
+  white-space: pre-wrap;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: 1.2rem;
   }
 `;
 
@@ -104,15 +141,43 @@ class CaseStudy extends Component {
     });
   }
 
-  renderSections() {
-    return (this.props.caseStudy ? this.props.caseStudy.sections : []).map(section => (
-      <SlideBox key={section.id} ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-        <TextFlex ml="16.7%" width={4 / 6} flexDirection="column">
-          <SectionTitle>{section.title}</SectionTitle>
-          <Body>{section.description}</Body>
-        </TextFlex>
-        <Image src="/assets/images/event.jpg" alt="section photo" />
-      </SlideBox>
+  renderFeatures() {
+    return (this.props.caseStudy ? this.props.caseStudy.features : []).map(feature => (
+      <Flex flexDirection="column">
+        <HeaderFlex>
+          <HeaderImage src={feature.image.src} alt={this.props.caseStudy.image.alt} />
+          <HeaderTextFlex alignItems="center" justifyContent="center" flexDirection="column">
+            <FeatureTitle>{feature.title}</FeatureTitle>
+          </HeaderTextFlex>
+        </HeaderFlex>
+        <Flex ml="16.7%" mt="150px" width={4 / 6} flexDirection="column">
+          <SectionTitle>Challenges</SectionTitle>
+          {feature.challenge.paragraphs.map(paragraph => (
+            <Flex mb="25px" flexDirection="column">
+              <ParagraphTitle>{paragraph.title}</ParagraphTitle>
+              <ParagraphBody>{paragraph.body}</ParagraphBody>
+            </Flex>
+          ))}:
+        </Flex>
+        <Flex ml="16.7%" width={4 / 6} flexDirection="column">
+          <SectionTitle>Solution</SectionTitle>
+          {feature.solution.paragraphs.map(paragraph => (
+            <Flex mb="25px" flexDirection="column">
+              <ParagraphTitle>{paragraph.title}</ParagraphTitle>
+              <ParagraphBody>{paragraph.body}</ParagraphBody>
+            </Flex>
+          ))}:
+        </Flex>
+        <Flex ml="16.7%" mb="100px" width={4 / 6} flexDirection="column">
+          <SectionTitle>Results</SectionTitle>
+          {feature.result.paragraphs.map(paragraph => (
+            <Flex mb="25px" flexDirection="column">
+              <ParagraphTitle>{paragraph.title}</ParagraphTitle>
+              <ParagraphBody>{paragraph.body}</ParagraphBody>
+            </Flex>
+          ))}:
+        </Flex>
+      </Flex>
     ));
   }
 
@@ -121,13 +186,18 @@ class CaseStudy extends Component {
       <CaseStudyFlex width={1} zIndex={this.state.zIndex}>
         <WrapperFlex width={1} flexDirection="column">
           <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-            <TextFlex ml="16.7%" width={4 / 6} flexDirection="column">
-              <Title>{this.props.caseStudy ? this.props.caseStudy.title : ''}</Title>
-              <Subtitle>{this.props.caseStudy ? this.props.caseStudy.title : ''}</Subtitle>
-              <Body>{this.props.caseStudy ? this.props.caseStudy.description : ''}</Body>
-            </TextFlex>
+            <HeaderFlex>
+              <HeaderImage src={this.props.caseStudy.image.src} alt={this.props.caseStudy.image.alt} />
+              <HeaderTextFlex alignItems="center" justifyContent="center" flexDirection="column">
+                <HeaderTitle>{this.props.caseStudy.title}</HeaderTitle>
+                <HeaderSubtitle>{this.props.caseStudy.subtitle}</HeaderSubtitle>
+              </HeaderTextFlex>
+            </HeaderFlex>
+            <Flex ml="16.7%" my="150px" width={4 / 6} flexDirection="column">
+              <SubHeaderBody>{this.props.caseStudy.description}</SubHeaderBody>
+            </Flex>
+            {this.renderFeatures()}
           </SlideBox>
-          {this.renderSections()}
         </WrapperFlex>
         <AppearClose show={this.props.show} onShowChange={this.props.onShowChange} />
         <SlideBackground show={this.props.show} onLeaved={this.handleOnLeaved} breakpoint={this.props.breakpoint} />
@@ -137,7 +207,16 @@ class CaseStudy extends Component {
 }
 
 CaseStudy.defaultProps = {
-  caseStudy: {},
+  caseStudy: {
+    id: null,
+    title: '',
+    description: '',
+    image: {
+      src: '',
+      alt: '',
+    },
+    features: [],
+  },
 };
 
 CaseStudy.propTypes = {
@@ -153,13 +232,23 @@ CaseStudy.propTypes = {
   caseStudy: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    sections: PropTypes.arrayOf(PropTypes.shape({
+    image: PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+    }),
+    features: PropTypes.arrayOf(PropTypes.shape({
       title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
       image: PropTypes.shape({
         src: PropTypes.string.isRequired,
         alt: PropTypes.string.isRequired,
+      }),
+      challenge: PropTypes.shape({
+        features: PropTypes.arrayOf(PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          body: PropTypes.string.isRequired,
+        })),
       }),
     })),
   }),

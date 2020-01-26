@@ -2,33 +2,136 @@
   {
     "id": 1,
     "title": "Withgoods",
-    "description": "Whenever I add or build a feature to Withgoods I always prioritised scalability and maintainability.",
-    "sections": [
+    "subtitle": "A good with us!",
+    "description": "[write a small intro about withgoods project and my role][Define my role: the following has all been done entirely by me][1 sentence per case study with challenge + result][Withgoods service description in intro]",
+    "image": {
+      "src": "/assets/images/placeholder.jpg",
+      "alt": "TODO:"
+    },
+    "features": [
       {
-        "id": 1,
         "title": "Image generator",
-        "description": "Give a “classic” introduction to Withgoods and my mission there. Lambda and parallel running (infinite scale, no overcharge). Explain that first it ran in node and was slow and killed the server. Cylinder items felt flat so I added curve and light. Use a bezier curve to generate the exact curve wanted by the admins. Add the light effect for 3D and realism",
         "image": {
-          "src": "/assets/images/sleek.jpg",
-          "alt": "picture of sleek website"
+          "src": "/assets/images/placeholder.jpg",
+          "alt": "TODO:"
+        },
+        "challenge": {
+          "paragraphs": [
+            {
+              "title": "",
+              "body": "Our goal is to allow artists to turn their art into real life items. Generating life-like product images is our core feature both for the artists and the customers. If something feels wrong (ex: too pixelated, too flat, bad lightning) the illusion is broken. To advocate high quality, induce sales and promote our brand it is critical that we generate the best images we can."
+            }
+          ]
+        },
+        "solution": {
+          "paragraphs": [
+            {
+              "title": "Requirements",
+              "body": "To create a product image we need 4 different things. The artwork (ex: a cat illustration), the product image (ex: a mug cup), a clipping mask (ex: mug rectangular shape) and an overlay (ex: mug light reflection)."
+            },
+            {
+              "title": "Image Generation",
+              "body": "Image Generation can be resumed in 6 steps:\n1) Editing. Using our editor the artist scale and position his artwork against the product template. When done we upload it and the generation starts.\n2) Cropping. Here we crop the part of the artwork we need and place it according to the product image. For example the left part of the artwork will be the front of the mug, the right part being the back.\n3) Mask Clipping. By applying a clipping mask we obtain an exact shape with all its irregularities. For a clock the mask will be a circle.\n4) Curving. Here we displace the pixels according to a predefined curve (Bezier curve). This will create the illusion of a round object and give a 3D effect.\n5) Merging. We merge the transformed artwork image on top of the product item image to create our custom product image.\n6) Overlay application. Finally we merge the overlay image on top. Overlay includes reflection and light rays to create the illusion of a reflective texture thus reinforcing the 3D and realistic effect."
+            },
+            {
+              "title": "Lambda process",
+              "body": "Considering the artist pick 20 items and each item needs 3 images (ex: left, front and right view), we need to generate 60 images at once. Image generation is a heavy process, running it all at once would overload and slow down our main server. Here the image generation process has been moved from our main server to a serverless function (AWS Lambda). When an image generation is requested, a new function is launched, create the image, save it and is terminated. When 60 are requested, 60 functions will run in parallel. This feature is totally independent from our main server and is infinitely scalable."
+            }
+          ]
+        },
+        "result": {
+          "paragraphs": [
+            {
+              "title": "",
+              "body": "The end result is a high quality image with the artwork matching the object shape and orientation. The reflection overlay giving it a neat finish reinforcing the realistic and 3D effect. The generation process can easily be configured from the admin page. Changing the mask, increasing the curvature or updating the overlay can be done in a few clicks. Changes can be applied to new items as well as old items. Images can be regenerated at any time."
+            }
+          ]
         }
       },
       {
-        "id": 2,
+        "title": "On the fly image optimizer",
+        "image": {
+          "src": "/assets/images/placeholder.jpg",
+          "alt": "TODO:"
+        },
+        "challenge": {
+          "paragraphs": [
+            {
+              "title": "",
+              "body": "In the earliest versions of Withgoods, users could upload images up to 5mb. These images were served in their original format. Pages containing a lot of these became really heavy and slow. The same image is needed alternatively as a small thumbnail, a medium sized product image or a high quality gallery image. We also needed a way to protect our artist by not providing the original image and applying watermarks."
+            }
+          ]
+        },
+        "solution": {
+          "paragraphs": [
+            {
+              "title": "CDN",
+              "body": "Our original images are stored in AWS S3 (file storage). The first step was to setup AWS CloudFront (CDN) to deliver images faster through AWS globally-distributed network. CloudFront comes with a functionality allowing us to run serveless code (AWS Lambda@Edge)  at certains steps of the content distribution. The idea here is to request the image with the needed optimizations, apply these changes, then save and cache the result for future use."
+            },
+            {
+              "title": "Incoming request",
+              "body": "During the first step and before hitting the cache, we validate and parse the request looking for 3 possible parameters. The first one is the desired dimensions and is the only mandatory one. Its format is WIDTHxHEIGHT (ex: 500x500). The second one is quality. Here we accept the values “full” (original quality), “fine” (lowest quality settings before artifacts start to appear), and “low”. The third and last one is the watermark. Here we can pick from a set of watermarks to apply (ex: logo or grid). From the combination of these we generate a unique URI to store and retrieve the generated image."
+            },
+            {
+              "title": "Caching",
+              "body": "After the first step, we ask CloudFront if the URI exists. If it does, the optimized image is immediately returned. If it doesn’t we ask for the original image directly from S3."
+            },
+            {
+              "title": "Image Optimization",
+              "body": "This step happens after the file is returned from S3 but before it is returned to the client. This is where we will apply all the requested optimizations. Using an image processing library we resize to the desired dimensions, format to the new quality settings and if needed apply a watermark. We both save the optimized image in S3 and send it back. CloudFront will cache it and return it to the client. The next time this URI is requested it will be instantly returned from CloudFront cache."
+            }
+          ]
+        },
+        "result": {
+          "paragraphs": [
+            {
+              "title": "",
+              "body": "We can now optimize and watermark our images on the fly. Implementing this solution drastically improved page loading speed and reduced data usage. We could increase the upload limit from 5 to 12mb for a better image quality. Reducing the image size, also mean reducing the transfer costs thus reducing the bill. Now when a UI change ask for new display settings, it only takes one run to generate the new optimized images and will be done in an automatic and effortless way."
+            }
+          ]
+        }
+      },
+      {
         "title": "AI powered search engine",
-        "description": "We needed a scalable and reliable solution to index and search our good items. Using Google Vision API we can analyse the artwork our users upload and assign them tags and colors. For tags, we get only the ones with a high (>60% of certainty) score. Because our users are Korean speaking, the tags are then translated into Korean using Google Traduction API. Each tags are then inserted into our DB and the most common appear first in the autocomplete when searching. For color we use parse from Google Vision API the most common color in terms of presence (number of pixels), and of focus (center of image, higher focus etc). These colors are then matched with a custom palette of ours. This palette is then used for filtering. So now in addition to filtering per category of item, we can also filter per color. We can then search for these tags in the search bar in addition to strings such as artist or artwork name. We can search either for items or artwork.",
         "image": {
-          "src": "/assets/images/sleek.jpg",
-          "alt": "picture of sleek website"
-        }
-      },
-      {
-        "id": 3,
-        "title": "Automatic thumbnail generator",
-        "description": "Because it’s an e-commerce website with user generated images, the load of images to load was huge. We needed a scalable, flexible solution to reduce load time and charge. Using AWS Lambda edge capacity I made a on-demand thumbnail generator taking full advantage of edge cache to serve fast and light images.",
-        "image": {
-          "src": "/assets/images/sleek.jpg",
-          "alt": "picture of sleek website"
+          "src": "/assets/images/placeholder.jpg",
+          "alt": "TODO:"
+        },
+        "challenge": {
+          "paragraphs": [
+            {
+              "title": "",
+              "body": "On Withgoods, the products are created by the users. For each artwork uploaded, dozens of new products are created. As the number of items quickly increased it became necessary to provide an effective way to search. Since we are dealing with images, a simple text search wouldn't be enough, we needed a better way to classify and sort artworks. We wanted to keep the upload process as quick and seamless as possible for both users and admins. No additional actions such as labelling or reviewing should be required."
+            }
+          ]
+        },
+        "solution": {
+          "paragraphs": [
+            {
+              "title": "Idea",
+              "body": "The idea is to take advantage of AI with Google Vision API. The Vision API takes an image as input and produce metadata such as labels, dominants colors, text and more."
+            },
+            {
+              "title": "Labels",
+              "body": "From the generated metadata we extract the labels, each label comes with a confidence score. We only get the labels with a high score, which usually gives us between 3 to 5 labels. The resulting labels being in english only, we then use Google Cloud Translation API to translate them to korean."
+            },
+            {
+              "title": "Colors",
+              "body": "For colors, we get a set of dominant colors which comes with a score (importance of this color in the image) and a percentage (how much of this image is taken by this color). We use these two metrics to extract only the most relevant colors, usually 1 to 3. These colors will then be matched against a custom palette, the same palette that will be used as filter when searching."
+            },
+            {
+              "title": "Architecture",
+              "body": "This process is run in the background so the user experience is not affected in any way. When an artwork is uploaded a serverless function (AWS Lambda) will trigger the necessary calls to the Google Cloud services. The function will then parse and persist its metadata in our database. It’s a completely automatic, silent and scalable solution."
+            }
+          ]
+        },
+        "result": {
+          "paragraphs": [
+            {
+              "title": "",
+              "body": "The search page is the most visited page (after our landing page). It holds the longest session times and allow our users to effectively find what they are looking for. If you're looking for an illustration of a red cat you are able to find only that."
+            }
+          ]
         }
       }
     ]
