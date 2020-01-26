@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Flex, Box } from 'grid-styled';
 
-import data from '../api/projects.json';
+import projects from '../api/project.json';
+import caseStudies from '../api/case-study.json';
 
 import Intro from '../components/Intro/Intro';
 import Work from '../components/Work/Work';
@@ -47,10 +48,6 @@ const theme = {
   },
 };
 
-function getProjectById(id) {
-  return data.projects.find(project => project.id === id);
-}
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -65,14 +62,14 @@ class App extends Component {
       },
       showAbout: false,
       showCaseStudy: false,
-      projectId: null,
+      caseStudy: null,
     };
 
     this.handleResize = this.handleResize.bind(this);
     this.handleShowAboutChange = this.handleShowAboutChange.bind(this);
     this.handleShowCaseStudyChange = this.handleShowCaseStudyChange.bind(this);
     this.handleShowAboutAndCaseStudyChange = this.handleShowAboutAndCaseStudyChange.bind(this);
-    this.handleProjectIdChange = this.handleProjectIdChange.bind(this);
+    this.handleProjectChange = this.handleProjectChange.bind(this);
   }
 
   componentDidMount() {
@@ -106,14 +103,12 @@ class App extends Component {
   }
 
   handleShowCaseStudyChange(value) {
-    console.log('handleShowCaseStudyChange: ', value);
     this.setState({
       showCaseStudy: value,
     });
   }
 
   handleShowAboutAndCaseStudyChange(value) {
-    console.log('handleShowAboutAndCaseStudyChange: ', value);
     if (this.state.showCaseStudy === true) {
       this.setState({
         showCaseStudy: value,
@@ -125,11 +120,17 @@ class App extends Component {
     }
   }
 
-  handleProjectIdChange(value) {
-    console.log('handleProjectIdChange: ', value);
-    this.setState({
-      projectId: value,
-    });
+  handleProjectChange(projectId) {
+    const foundProject = projects.find(project => project.id === projectId);
+
+    const { caseStudyId } = foundProject || {};
+    if (caseStudyId) {
+      const foundCaseStudy = caseStudies.find(caseStudy => caseStudy.id === caseStudyId);
+
+      this.setState({
+        caseStudy: foundCaseStudy,
+      });
+    }
   }
 
   render() {
@@ -138,11 +139,11 @@ class App extends Component {
         <Flex>
           <Box width={1}>
             <Intro />
-            <Work onShowChange={this.handleShowCaseStudyChange} onProjectIdChange={this.handleProjectIdChange} />
+            <Work onShowChange={this.handleShowCaseStudyChange} onProjectChange={this.handleProjectChange} />
             <AboutLink onShowChange={this.handleShowAboutChange} />
           </Box>
           <About show={this.state.showAbout} onShowChange={this.handleShowAboutChange} breakpoint={this.state.breakpoint} />
-          <CaseStudy show={this.state.showCaseStudy} onShowChange={this.handleShowCaseStudyChange} breakpoint={this.state.breakpoint} project={getProjectById(this.state.projectId)} />
+          <CaseStudy show={this.state.showCaseStudy} onShowChange={this.handleShowCaseStudyChange} breakpoint={this.state.breakpoint} caseStudy={this.state.caseStudy} />
           <LeftMenu show={this.state.showAbout || this.state.showCaseStudy} onShowChange={this.handleShowAboutAndCaseStudyChange} />
           <RightMenu contrast={this.state.showAbout || this.state.showCaseStudy} />
           <Background breakpoint={this.state.breakpoint} />

@@ -117,7 +117,8 @@ BackPanel.propTypes = {
   show: PropTypes.bool.isRequired,
   onLeaved: PropTypes.func.isRequired,
   project: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    caseStudyId: PropTypes.number,
     title: PropTypes.string.isRequired,
     role: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,

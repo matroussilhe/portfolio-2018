@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "title": "Withgoods",
+    "description": "Whenever I add or build a feature to Withgoods I always prioritised scalability and maintainability.",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Image generator",
+        "description": "Give a “classic” introduction to Withgoods and my mission there. Lambda and parallel running (infinite scale, no overcharge). Explain that first it ran in node and was slow and killed the server. Cylinder items felt flat so I added curve and light. Use a bezier curve to generate the exact curve wanted by the admins. Add the light effect for 3D and realism",
+        "image": {
+          "src": "/assets/images/sleek.jpg",
+          "alt": "picture of sleek website"
+        }
+      },
+      {
+        "id": 2,
+        "title": "AI powered search engine",
+        "description": "We needed a scalable and reliable solution to index and search our good items. Using Google Vision API we can analyse the artwork our users upload and assign them tags and colors. For tags, we get only the ones with a high (>60% of certainty) score. Because our users are Korean speaking, the tags are then translated into Korean using Google Traduction API. Each tags are then inserted into our DB and the most common appear first in the autocomplete when searching. For color we use parse from Google Vision API the most common color in terms of presence (number of pixels), and of focus (center of image, higher focus etc). These colors are then matched with a custom palette of ours. This palette is then used for filtering. So now in addition to filtering per category of item, we can also filter per color. We can then search for these tags in the search bar in addition to strings such as artist or artwork name. We can search either for items or artwork.",
+        "image": {
+          "src": "/assets/images/sleek.jpg",
+          "alt": "picture of sleek website"
+        }
+      },
+      {
+        "id": 3,
+        "title": "Automatic thumbnail generator",
+        "description": "Because it’s an e-commerce website with user generated images, the load of images to load was huge. We needed a scalable, flexible solution to reduce load time and charge. Using AWS Lambda edge capacity I made a on-demand thumbnail generator taking full advantage of edge cache to serve fast and light images.",
+        "image": {
+          "src": "/assets/images/sleek.jpg",
+          "alt": "picture of sleek website"
+        }
+      }
+    ]
+  }
+]

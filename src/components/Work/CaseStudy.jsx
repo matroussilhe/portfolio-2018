@@ -22,6 +22,9 @@ const WrapperFlex = styled(Flex)`
   -ms-overflow-style: none;
 `;
 
+const TextFlex = styled(Flex)`
+`;
+
 const Image = styled.img`
   width: 100%;
   height: auto;
@@ -31,11 +34,10 @@ const Title = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.dark};
-  font-size: 57px;
-  margin-bottom: 16px;
+  text-align: center;
+  font-size: 82px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
-    font-size: 2.4rem;
-    margin-bottom: 4px;
+    font-size: 2.2rem;
   }
 `;
 
@@ -43,11 +45,10 @@ const Subtitle = styled.h2`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.dark};
-  font-size: 27px;
-  margin-bottom: 8px;
+  font-size: 32px;
+  margin-top: 4px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
-    font-size: 1.3rem;
-    margin-bottom: 4px;
+    font-size: 1.2rem;
   }
 `;
 
@@ -60,6 +61,17 @@ const Body = styled.p`
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
     font-size: .9rem;
     margin-bottom: 4px;
+  }
+`;
+
+const SectionTitle = styled.h1`
+  font-family: ${props => props.theme.typography.title.fontFamily};
+  color: ${props => props.theme.color.contrast};
+  opacity: ${props => props.theme.opacity.dark};
+  text-align: center;
+  font-size: 60px;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: 1.8rem;
   }
 `;
 
@@ -93,10 +105,12 @@ class CaseStudy extends Component {
   }
 
   renderSections() {
-    return (this.props.project ? this.props.project.sections : []).map((section, index) => (
+    return (this.props.caseStudy ? this.props.caseStudy.sections : []).map(section => (
       <SlideBox key={section.id} ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-        <Subtitle>{section.title}</Subtitle>
-        <Body>{section.description}</Body>
+        <TextFlex ml="16.7%" width={4 / 6} flexDirection="column">
+          <SectionTitle>{section.title}</SectionTitle>
+          <Body>{section.description}</Body>
+        </TextFlex>
         <Image src="/assets/images/event.jpg" alt="section photo" />
       </SlideBox>
     ));
@@ -107,8 +121,11 @@ class CaseStudy extends Component {
       <CaseStudyFlex width={1} zIndex={this.state.zIndex}>
         <WrapperFlex width={1} flexDirection="column">
           <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-            <Title>{this.props.project ? this.props.project.title : ''}</Title>
-            <Body>{this.props.project ? this.props.project.description : ''}</Body>
+            <TextFlex ml="16.7%" width={4 / 6} flexDirection="column">
+              <Title>{this.props.caseStudy ? this.props.caseStudy.title : ''}</Title>
+              <Subtitle>{this.props.caseStudy ? this.props.caseStudy.title : ''}</Subtitle>
+              <Body>{this.props.caseStudy ? this.props.caseStudy.description : ''}</Body>
+            </TextFlex>
           </SlideBox>
           {this.renderSections()}
         </WrapperFlex>
@@ -118,6 +135,10 @@ class CaseStudy extends Component {
     );
   }
 }
+
+CaseStudy.defaultProps = {
+  caseStudy: {},
+};
 
 CaseStudy.propTypes = {
   show: PropTypes.bool.isRequired,
@@ -129,21 +150,10 @@ CaseStudy.propTypes = {
     lgAndUp: PropTypes.bool.isRequired,
     xlAndUp: PropTypes.bool.isRequired,
   }).isRequired,
-  project: PropTypes.shape({
+  caseStudy: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    type: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    role: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    tech: PropTypes.string.isRequired,
-    image: PropTypes.shape({
-      src: PropTypes.string.isRequired,
-      alt: PropTypes.string.isRequired,
-    }),
-    link: PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-    }),
     sections: PropTypes.arrayOf(PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
@@ -152,7 +162,7 @@ CaseStudy.propTypes = {
         alt: PropTypes.string.isRequired,
       }),
     })),
-  }).isRequired,
+  }),
 };
 
 export default CaseStudy;

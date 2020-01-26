@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "caseStudyId": 1,
+    "title": "Withgoods",
+    "role": "",
+    "tech": "",
+    "description": "",
+    "image": {
+      "src": "/assets/images/sleek.jpg",
+      "alt": "picture of sleek website"
+    }
+  },
+  {
+    "id": 2,
+    "caseStudyId": null,
+    "title": "Sleek",
+    "role": "Full-stack developer",
+    "tech": "JavaScript (ES6), Node.js, React, Vue, TDD, Mongoose",
+    "description": "Sleek is a startup which offers online company secretary services. They provide a two-sided web platform. One side for the clients, one side for the corporate secretary admins.\n\nMy main contribution to the platform was maintaining and improving the API, refactoring the access control system, and building an automated reminding and renewing (billing) system. As the deadline for Sleek new service (e-signature) was approaching I switched to this project to speed up the development. My final task was the complete rework of the UI. We switched to a whole new stack (React to Vue). We built a lighter, faster and more maintainable UI.",
+    "image": {
+      "src": "/assets/images/sleek.jpg",
+      "alt": "picture of sleek website"
+    },
+    "link": {
+      "label": "Visit website",
+      "url": "https://sleek.sg/"
+    }
+  },
+  {
+    "id": 3,
+    "caseStudyId": null,
+    "title": "Maevents",
+    "role": "Full-stack developer",
+    "tech": "JavaScript (ES6), React, Meteor, MongoDB",
+    "description": "Maevents is a rising tour operator. I worked with them to speed up their operation with a custom software.\n\nI was in charge of the whole development process. I built a website to easily manage your client base and generate various contracts and reports. Data is hierarchically structured and presented in a clear way. A fuzzy-search bar allow you to quickly find what you’re looking for. There is also a data table where you get a big picture of your client base and perform global search.",
+    "image": {
+      "src": "/assets/images/event.jpg",
+      "alt": "picture of maevent website"
+    }
+  },
+  {
+    "id": 4,
+    "caseStudyId": null,
+    "title": "Hub-Grade",
+    "role": "Back-end developer",
+    "tech": "PHP, Symfony3, REST, Doctrine",
+    "description": "Office rental in France is very constraining. Hub-Grade is a start-up that offers flexible renting solutions.\n\nThey recruited me and two other interns to rework their website using modern technologies. I built a reliable API while my colleagues developed the front-end. Together we had a really fun and engaging teamwork experience.",
+    "image": {
+      "src": "/assets/images/hubgrade.jpg",
+      "alt": "picture of hubgrade website"
+    },
+    "link": {
+      "label": "Visit website",
+      "url": "https://www.hub-grade.com/"
+    }
+  },
+  {
+    "id": 5,
+    "caseStudyId": null,
+    "title": "Game Jams",
+    "role": "AI and game programmer",
+    "tech": "UE4, Behavior Tree",
+    "description": "I took part in two Game Jam as a programmer working with game designers and artists. In both projects I did AI and game programming.\n\nThe first game \"Lost my Mom\" tells the story of a boy who lost his mom. You see the world through the eyes of a terrified child. You have to wander through a dark city to find her.\n\nThe second game \"Elements Ritual\" is a FPS. There are two enemies AI, one shoot from distance when they see you. The other one is melee fighter than roll up and explode before they die. You basically have to shoot your way through the levels and beat the boss to win the game.",
+    "image": {
+      "src": "/assets/images/gamejam.jpg",
+      "alt": "picture of gamejam projects"
+    },
+    "link": {
+      "label": "Visit website",
+      "url": "https://globalgamejam.org/2016/games/elements-ritual"
+    }
+  },
+  {
+    "id": 6,
+    "caseStudyId": null,
+    "title": "Naview ",
+    "role": "Software developer",
+    "tech": "UE4, Node.js, Socket.io",
+    "description": "Naview is an immersive VR experience. It transports you in a 3D environment where you can watch videos with your friends. From within the app anyone can browse YouTube and add videos to a shared playlist. These videos will then synchronously play on the room's screen.\n\nThis project lasted over two years including ideation, documentation, coding and external promotion. We were six developers, spread all over the world during half this duration. I developed the playlist and the web browser both client and server side.",
+    "image": {
+      "src": "/assets/images/naview.jpg",
+      "alt": "picture of naview app"
+    },
+    "link": {
+      "label": "Visit website",
+      "url": "http://eip.epitech.eu/2018/naview/"
+    }
+  }
+]
