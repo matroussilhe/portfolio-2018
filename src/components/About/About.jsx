@@ -31,7 +31,7 @@ const Image = styled.img`
 const Title = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.dark};
+  opacity: ${props => props.theme.opacity.high};
   font-size: 57px;
   margin-bottom: 16px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
@@ -43,7 +43,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.dark};
+  opacity: ${props => props.theme.opacity.high};
   font-size: 27px;
   margin-bottom: 8px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
@@ -55,7 +55,7 @@ const Subtitle = styled.h2`
 const Body = styled.p`
   font-family: ${props => props.theme.typography.body.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.grey};
+  opacity: ${props => props.theme.opacity.medium};
   font-size: 16px;
   margin-bottom: 8px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
@@ -67,7 +67,7 @@ const Body = styled.p`
 const AboutSlideLink = styled(SlideLink)`
   font-family: ${props => props.theme.typography.heading.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.dark};
+  opacity: ${props => props.theme.opacity.high};
   font-size: 16px;
   margin-right: 16px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {

@@ -21,9 +21,10 @@ const theme = {
     contrast: '#ffffff',
   },
   opacity: {
-    dark: 0.8,
-    grey: 0.62,
-    light: 0.05,
+    solid: 1,
+    high: 0.87,
+    medium: 0.60,
+    low: 0.38,
   },
   typography: {
     title: {

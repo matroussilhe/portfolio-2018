@@ -20,7 +20,7 @@ const AboutLinkBox = styled(Box)`
 const AboutLinkTitle = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.primary};
-  opacity: ${props => props.theme.opacity.dark};
+  opacity: ${props => props.theme.opacity.high};
   font-size: 60px;
   text-align: center;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
@@ -31,7 +31,7 @@ const AboutLinkTitle = styled.h1`
 const AboutLinkSlideLink = styled(SlideLink)`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.primary};
-  opacity: ${props => props.theme.opacity.grey};
+  opacity: ${props => props.theme.opacity.medium};
   font-size: 24px;
   text-align: center;
   margin-top: 4px;

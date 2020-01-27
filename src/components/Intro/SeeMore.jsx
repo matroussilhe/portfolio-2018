@@ -13,14 +13,14 @@ const SeeMoreWrapper = styled.div`
 const SeeMoreTitle = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.primary};
-  opacity: ${props => props.theme.opacity.dark};
+  opacity: ${props => props.theme.opacity.high};
   font-size: 18px;
 `;
 
 const SeeMoreSubtitle = styled.h2`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.primary};
-  opacity: ${props => props.theme.opacity.grey};
+  opacity: ${props => props.theme.opacity.medium};
   font-size: 12px;
   margin-bottom: 8px;
 `;

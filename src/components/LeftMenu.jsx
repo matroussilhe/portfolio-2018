@@ -17,7 +17,7 @@ const LeftMenuWrapper = styled.div`
 const LeftMenuSlideLink = styled(SlideLink)`
   font-family: ${props => props.theme.typography.heading.fontFamily};
   color: ${props => ((props.contrast) ? props.theme.color.contrast : props.theme.color.primary)}
-  opacity: ${props => props.theme.opacity.dark};
+  opacity: ${props => props.theme.opacity.high};
   font-size: 16px;
   margin-right: 10px;
   padding-left: 4px;

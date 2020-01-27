@@ -41,7 +41,7 @@ const HeaderTextFlex = styled(Flex)`
 const CaseStudyTitle = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.dark};
+  opacity: ${props => props.theme.opacity.solid};
   text-align: center;
   font-size: 82px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
@@ -52,7 +52,7 @@ const CaseStudyTitle = styled.h1`
 const CaseStudySubtitle = styled.h2`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.dark};
+  opacity: ${props => props.theme.opacity.solid};
   font-size: 32px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
     font-size: 1.2rem;
@@ -62,7 +62,7 @@ const CaseStudySubtitle = styled.h2`
 const CaseStudyBody = styled.p`
   font-family: ${props => props.theme.typography.body.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.grey};
+  opacity: ${props => props.theme.opacity.medium};
   font-size: 22px;
   line-height: 28px;
   white-space: pre-wrap;
@@ -75,7 +75,7 @@ const CaseStudyBody = styled.p`
 const FeatureTitle = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.dark};
+  opacity: ${props => props.theme.opacity.high};
   text-align: center;
   font-size: 60px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
@@ -86,7 +86,7 @@ const FeatureTitle = styled.h1`
 const SectionTitle = styled.h2`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.dark};
+  opacity: ${props => props.theme.opacity.high};
   font-size: 32px;
   margin-bottom: 8px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
@@ -98,7 +98,7 @@ const SectionTitle = styled.h2`
 const SectionBody = styled.p`
   font-family: ${props => props.theme.typography.body.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.grey};
+  opacity: ${props => props.theme.opacity.medium};
   font-size: 18px;
   line-height: 24px;
   white-space: pre-wrap;
