@@ -22,7 +22,7 @@ const theme = {
   },
   opacity: {
     dark: 0.8,
-    grey: 0.44,
+    grey: 0.62,
     light: 0.05,
   },
   typography: {

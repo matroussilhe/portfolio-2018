@@ -82,7 +82,6 @@ const DescriptionSlideLink = styled(SlideLink)`
     font-size: .9rem;
   }
 }`;
-
 function BackPanel(props) {
   return (
     <WrapperBox width={1}>
