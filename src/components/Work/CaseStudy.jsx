@@ -151,35 +151,53 @@ class CaseStudy extends Component {
             <FeatureTitle>{feature.title}</FeatureTitle>
           </HeaderTextFlex>
         </HeaderFlex>
-        <Flex ml="25%" my="100px" width={4 / 8} flexDirection="column">
-          <SectionTitle>Challenges</SectionTitle>
-          {feature.challenge.paragraphs.map((paragraph, index) => (
-            <Flex mb={index === feature.challenge.paragraphs.length - 1 ? '0px' : '32px'}>
-              <SectionBody>{paragraph}</SectionBody>
-            </Flex>
-          ))}:
+        <Flex ml="12.5%" mt="150px" width={1} flexDirection="column">
+          <Flex ml="12.5%" width={4 / 8}>
+            <SectionTitle>Challenge</SectionTitle>
+          </Flex>
+          {feature.challenge.map((item, index) => (
+            item.type === 'paragraph'
+              ?
+                <Flex ml="12.5%" width={4 / 8} mb={index === feature.challenge.length - 1 ? '0px' : '25px'}>
+                  <SectionBody>{item.value}</SectionBody>
+                </Flex>
+              :
+                <Flex width={6 / 8} mt="75px" mb={index === feature.challenge.length - 1 ? '0px' : '100px'}>
+                  <SectionImage src={item.value.src} alt={item.value.alt} />
+                </Flex>
+          ))}
         </Flex>
-        <Flex ml="12.5%" width={6 / 8}>
-          <SectionImage src={feature.challenge.image.src} alt={feature.challenge.image.alt} />
+        <Flex ml="12.5%" mt="150px" width={1} flexDirection="column">
+          <Flex ml="12.5%" width={4 / 8}>
+            <SectionTitle>Solution</SectionTitle>
+          </Flex>
+          {feature.solution.map((item, index) => (
+            item.type === 'paragraph'
+              ?
+                <Flex ml="12.5%" width={4 / 8} mb={index === feature.solution.length - 1 ? '0px' : '25px'}>
+                  <SectionBody>{item.value}</SectionBody>
+                </Flex>
+              :
+                <Flex width={6 / 8} mt="75px" mb={index === feature.solution.length - 1 ? '0px' : '100px'}>
+                  <SectionImage src={item.value.src} alt={item.value.alt} />
+                </Flex>
+          ))}
         </Flex>
-        <Flex ml="25%" my="100px" width={4 / 8} flexDirection="column">
-          <SectionTitle>Solution</SectionTitle>
-          {feature.solution.paragraphs.map((paragraph, index) => (
-            <Flex mb={index === feature.solution.paragraphs.length - 1 ? '0px' : '32px'}>
-              <SectionBody>{paragraph}</SectionBody>
-            </Flex>
-          ))}:
-        </Flex>
-        <Flex ml="12.5%" width={6 / 8}>
-          <SectionImage src={feature.solution.image.src} alt={feature.solution.image.alt} />
-        </Flex>
-        <Flex ml="25%" my="100px" width={4 / 8} flexDirection="column">
-          <SectionTitle>Results</SectionTitle>
-          {feature.result.paragraphs.map((paragraph, index) => (
-            <Flex mb={index === feature.result.paragraphs.length - 1 ? '0px' : '32px'}>
-              <SectionBody>{paragraph}</SectionBody>
-            </Flex>
-          ))}:
+        <Flex ml="12.5%" my="150px" width={1} flexDirection="column">
+          <Flex ml="12.5%" width={4 / 8}>
+            <SectionTitle>Result</SectionTitle>
+          </Flex>
+          {feature.result.map((item, index) => (
+            item.type === 'paragraph'
+              ?
+                <Flex ml="12.5%" width={4 / 8} mb={index === feature.result.length - 1 ? '0px' : '25px'}>
+                  <SectionBody>{item.value}</SectionBody>
+                </Flex>
+              :
+                <Flex width={6 / 8} mt="75px" mb={index === feature.result.length - 1 ? '0px' : '100px'}>
+                  <SectionImage src={item.value.src} alt={item.value.alt} />
+                </Flex>
+          ))}
         </Flex>
       </Flex>
     ));
