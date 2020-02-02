@@ -3,10 +3,10 @@
     "id": 1,
     "title": "Withgoods",
     "subtitle": "A good with us!",
-    "description": "Withgoods is a place where independent artists can upload and sell their original works as high quality goods. They create, we produce locally and every purchase pays an artist. Simple but beautiful.",
+    "description": "Withgoods is a place where independent artists can upload and sell their original works as high quality goods. They create, we produce locally and every purchase pays an artist. Simple but beautiful.\n\nI joined Withgoods at the very beginning of the project as a fullstack developer. I designed and implemented the API with consistency and flexibility in mind. I took advantage of the JavaScript and Vue ecosystem to produce reusable and maintainable components to allow fast iterations. Finally I took care of the devops tasks: deployment, testing and all the cloud services integration.\n\nBellow are the 3 case study of the 3 features that were the most fun to code and which I believe  brings the more value. The first feature is the image generator that creates realistic looking product images from the artist’s artwork and our items. The second one is a on-the-fly image optimizer which drastically increase our page loading speed. The last case study is the integration of Google Vision AI into our search system to allow efficient image sorting.",
     "image": {
       "src": "/assets/images/withgoods.jpeg",
-      "alt": "TODO:"
+      "alt": "photo of withgoods items"
     },
     "features": [
       {

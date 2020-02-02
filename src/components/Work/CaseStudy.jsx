@@ -31,11 +31,20 @@ const HeaderImage = styled.img`
   height: auto;
 `;
 
+const HeaderOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.17);
+`;
+
 const HeaderTextFlex = styled(Flex)`
   position: absolute;
   width: 100%;
   height: 100%;
-  text-shadow: 2px 2px #ff0000;
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.25);
 `;
 
 const CaseStudyTitle = styled.h1`
@@ -75,7 +84,7 @@ const CaseStudyBody = styled.p`
 const FeatureTitle = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.high};
+  opacity: ${props => props.theme.opacity.solid};
   text-align: center;
   font-size: 60px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
@@ -146,7 +155,8 @@ class CaseStudy extends Component {
     return (this.props.caseStudy ? this.props.caseStudy.features : []).map(feature => (
       <Flex flexDirection="column">
         <HeaderFlex>
-          <HeaderImage src={feature.image.src} alt={this.props.caseStudy.image.alt} />
+          <HeaderImage src={feature.image.src} alt={this.props.caseStudy.image.alt} height="300px" />
+          <HeaderOverlay />
           <HeaderTextFlex alignItems="center" justifyContent="center" flexDirection="column">
             <FeatureTitle>{feature.title}</FeatureTitle>
           </HeaderTextFlex>
@@ -210,12 +220,13 @@ class CaseStudy extends Component {
           <SlideBox width={1} flex="1 0 auto" show={this.props.show}>
             <HeaderFlex>
               <HeaderImage src={this.props.caseStudy.image.src} alt={this.props.caseStudy.image.alt} />
+              <HeaderOverlay />
               <HeaderTextFlex alignItems="center" justifyContent="center" flexDirection="column">
                 <CaseStudyTitle>{this.props.caseStudy.title}</CaseStudyTitle>
                 <CaseStudySubtitle>{this.props.caseStudy.subtitle}</CaseStudySubtitle>
               </HeaderTextFlex>
             </HeaderFlex>
-            <Flex ml="25%" my="100px" width={4 / 8}>
+            <Flex ml="25%" my="150px" width={4 / 8}>
               <CaseStudyBody>{this.props.caseStudy.description}</CaseStudyBody>
             </Flex>
             {this.renderFeatures()}
