@@ -37,7 +37,7 @@ const HeaderOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.17);
+  background-color: rgba(0, 0, 0, 0.37);
 `;
 
 const HeaderTextFlex = styled(Flex)`

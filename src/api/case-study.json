@@ -59,8 +59,8 @@
       {
         "title": "On the fly image optimizer",
         "image": {
-          "src": "/assets/images/placeholder-long.jpg",
-          "alt": "TODO:"
+          "src": "/assets/images/thumbnail-header.png",
+          "alt": "genrerated item images"
         },
         "challenge": [
           {
@@ -71,11 +71,18 @@
         "solution": [
           {
             "type": "paragraph",
-            "value": "Our original images are stored in AWS S3 (file storage). The first step was to setup AWS CloudFront (CDN) to deliver images faster through AWS globally-distributed network. CloudFront comes with a functionality allowing us to run serveless code (AWS Lambda@Edge)  at certains steps of the content distribution. The idea here is to request the image with the needed optimizations, apply these changes, then save and cache the result for future use."
+            "value": "Our original images are stored in AWS S3 (file storage). The first step was to setup AWS CloudFront (CDN) to deliver images faster through AWS globally-distributed network. CloudFront comes with a functionality allowing us to run serveless code (AWS Lambda@Edge) at certains steps of the content distribution. The idea here is to request the image with the needed optimizations, apply these changes, then save and cache the result for future use."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/thumbnail-schema.png",
+              "alt": "schema of thumbnail architecture"
+            }
           },
           {
             "type": "paragraph",
-            "value": "During the first step and before hitting the cache, we validate and parse the request looking for 3 possible parameters. The first one is the desired dimensions and is the only mandatory one. Its format is WIDTHxHEIGHT (ex: 500x500). The second one is quality. Here we accept the values “full” (original quality), “fine” (lowest quality settings before artifacts start to appear), and “low”. The third and last one is the watermark. Here we can pick from a set of watermarks to apply (ex: logo or grid). From the combination of these we generate a unique URI to store and retrieve the generated image."
+            "value": "During the first step and before hitting the cache (function 1 in schema), we validate and parse the request looking for 3 possible parameters. The first one is the desired dimensions and is the only mandatory one. Its format is WIDTHxHEIGHT (ex: 500x500). The second one is quality. Here we accept the values “full” (original quality), “fine” (lowest quality settings before artifacts start to appear), and “low”. The third and last one is the watermark. Here we can pick from a set of watermarks to apply (ex: logo or grid). From the combination of these we generate a unique URI to store and retrieve the generated image."
           },
           {
             "type": "paragraph",
@@ -83,7 +90,14 @@
           },
           {
             "type": "paragraph",
-            "value": "This step happens after the file is returned from S3 but before it is returned to the client. This is where we will apply all the requested optimizations. Using an image processing library we resize to the desired dimensions, format to the new quality settings and if needed apply a watermark. We both save the optimized image in S3 and send it back. CloudFront will cache it and return it to the client. The next time this URI is requested it will be instantly returned from CloudFront cache."
+            "value": "When the file is returned from S3 but before it is returned to the client (function 2 in schema) we intercept it and will apply all the requested optimizations. Using an image processing library we resize to the desired dimensions, format to the new quality settings and if needed apply a watermark. We both save the optimized image in S3 and send it back. CloudFront will cache it and return it to the client. The next time this URI is requested it will be instantly returned from CloudFront cache."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/thumbnail-examples.png",
+              "alt": "examples of thumbnail generation"
+            }
           }
         ],
         "result": [
@@ -96,8 +110,8 @@
       {
         "title": "AI powered search engine",
         "image": {
-          "src": "/assets/images/placeholder-long.jpg",
-          "alt": "TODO:"
+          "src": "/assets/images/ai-search-header.png",
+          "alt": "image of the search page"
         },
         "challenge": [
           {
@@ -111,12 +125,26 @@
             "value": "The idea is to take advantage of AI with Google Vision API. The Vision API takes an image as input and produce metadata such as labels, dominants colors, text and more."
           },
           {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/ai-search-vision-api.png",
+              "alt": "schema of vision API integration"
+            }
+          },
+          {
             "type": "paragraph",
             "value": "From the generated metadata we extract the labels, each label comes with a confidence score. We only get the labels with a high score, which usually gives us between 3 to 5 labels. The resulting labels being in english only, we then use Google Cloud Translation API to translate them to korean."
           },
           {
             "type": "paragraph",
             "value": "For colors, we get a set of dominant colors which comes with a score (importance of this color in the image) and a percentage (how much of this image is taken by this color). We use these two metrics to extract only the most relevant colors, usually 1 to 3. These colors will then be matched against a custom palette, the same palette that will be used as filter when searching."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/ai-search-mobile.png",
+              "alt": "image of search results"
+            }
           },
           {
             "type": "paragraph",
@@ -126,7 +154,7 @@
         "result": [
           {
             "type": "paragraph",
-            "value": "The search page is the most visited page (after our landing page). It holds the longest session times and allow our users to effectively find what they are looking for. If you're looking for an illustration of a red cat you are able to find only that."
+            "value": "The search page is the most visited page (after our landing page). It holds the longest session times and allows our users to effectively find what they are looking for. If you're looking for an illustration of a black cat you are able to find only that."
           }
         ]
       }
