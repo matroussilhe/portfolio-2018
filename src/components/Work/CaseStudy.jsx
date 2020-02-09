@@ -6,6 +6,7 @@ import { Flex } from 'grid-styled';
 import SlideBackground from '../SlideBackground';
 import AppearClose from '../AppearClose';
 import SlideBox from '../SlideBox';
+import SlideLink from '../SlideLink';
 
 const CaseStudyFlex = styled(Flex)`
   position: fixed;
@@ -37,7 +38,7 @@ const HeaderOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.37);
+  background-color: rgba(0, 0, 0, 0.33);
 `;
 
 const HeaderTextFlex = styled(Flex)`
@@ -53,6 +54,7 @@ const CaseStudyTitle = styled.h1`
   opacity: ${props => props.theme.opacity.solid};
   text-align: center;
   font-size: 82px;
+  margin-bottom: 8px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
     font-size: 2.2rem;
   }
@@ -80,6 +82,16 @@ const CaseStudyBody = styled.p`
     line-height: 1.2;
   }
 `;
+
+const CaseStudySlideLink = styled(SlideLink)`
+  font-family: ${props => props.theme.typography.title.fontFamily};
+  color: ${props => props.theme.color.contrast};
+  opacity: ${props => props.theme.opacity.solid};
+  font-size: 32px;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: 1.2rem;
+  }
+}`;
 
 const FeatureTitle = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
@@ -230,6 +242,9 @@ class CaseStudy extends Component {
               <CaseStudyBody>{this.props.caseStudy.description}</CaseStudyBody>
             </Flex>
             {this.renderFeatures()}
+            <Flex ml="25%" mb="150px" width={4 / 8} justifyContent="center">
+              <CaseStudySlideLink href={this.props.caseStudy.link.url} target="_blank">{this.props.caseStudy.link.label}</CaseStudySlideLink>
+            </Flex>
           </SlideBox>
         </WrapperFlex>
         <AppearClose show={this.props.show} onShowChange={this.props.onShowChange} />
@@ -244,10 +259,8 @@ CaseStudy.defaultProps = {
     id: null,
     title: '',
     description: '',
-    image: {
-      src: '',
-      alt: '',
-    },
+    image: {},
+    link: {},
     features: [],
   },
 };
@@ -270,6 +283,10 @@ CaseStudy.propTypes = {
     image: PropTypes.shape({
       src: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,
+    }),
+    link: PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
     }),
     features: PropTypes.arrayOf(PropTypes.shape({
       title: PropTypes.string.isRequired,

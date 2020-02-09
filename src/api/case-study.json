@@ -2,11 +2,15 @@
   {
     "id": 1,
     "title": "Withgoods",
-    "subtitle": "A good with us!",
+    "subtitle": "Building an art-centered platform",
     "description": "Withgoods is a place where independent artists can upload and sell their original works as high quality goods. They create, we produce locally and every purchase pays an artist. Simple but beautiful.\n\nI joined Withgoods at the very beginning of the project as a fullstack developer. I designed and implemented the API with consistency and flexibility in mind. I took advantage of the JavaScript and Vue ecosystem to produce reusable and maintainable components to allow fast iterations. Finally I took care of the devops tasks: deployment, testing and all the cloud services integration.\n\nBellow are the 3 case study of the 3 features that were the most fun to code and which I believe  brings the more value. The first feature is the image generator that creates realistic looking product images from the artist’s artwork and our items. The second one is a on-the-fly image optimizer which drastically increase our page loading speed. The last case study is the integration of Google Vision AI into our search system to allow efficient image sorting.",
     "image": {
-      "src": "/assets/images/withgoods.jpeg",
+      "src": "/assets/images/withgoods-header.png",
       "alt": "photo of withgoods items"
+    },
+    "link": {
+      "label": "Visit Website",
+      "url": "https://withgoods.net"
     },
     "features": [
       {
@@ -53,6 +57,57 @@
           {
             "type": "paragraph",
             "value": "The end result is a high quality image with the artwork matching the object shape and orientation. The reflection overlay giving it a neat finish reinforcing the realistic and 3D effect. The generation process can easily be configured from the admin page. Changing the mask, increasing the curvature or updating the overlay can be done in a few clicks. Changes can be applied to new items as well as old items. Images can be regenerated at any time."
+          }
+        ]
+      },
+      {
+        "title": "AI-powered search engine",
+        "image": {
+          "src": "/assets/images/ai-search-header.png",
+          "alt": "image of the search page"
+        },
+        "challenge": [
+          {
+            "type": "paragraph",
+            "value": "On Withgoods, the products are created by the users. For each artwork uploaded, dozens of new products are created. As the number of items quickly increased it became necessary to provide an effective way to search. Since we are dealing with images, a simple text search wouldn't be enough, we needed a better way to classify and sort artworks. We wanted to keep the upload process as quick and seamless as possible for both users and admins. No additional actions such as labelling or reviewing should be required."
+          }
+        ],
+        "solution": [
+          {
+            "type": "paragraph",
+            "value": "The idea is to take advantage of AI with Google Vision API. The Vision API takes an image as input and produce metadata such as labels, dominants colors, text and more."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/ai-search-vision-api.png",
+              "alt": "schema of vision API integration"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "From the generated metadata we extract the labels, each label comes with a confidence score. We only get the labels with a high score, which usually gives us between 3 to 5 labels. The resulting labels being in english only, we then use Google Cloud Translation API to translate them to korean."
+          },
+          {
+            "type": "paragraph",
+            "value": "For colors, we get a set of dominant colors which comes with a score (importance of this color in the image) and a percentage (how much of this image is taken by this color). We use these two metrics to extract only the most relevant colors, usually 1 to 3. These colors will then be matched against a custom palette, the same palette that will be used as filter when searching."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/ai-search-mobile.png",
+              "alt": "image of search results"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "This process is run in the background so the user experience is not affected in any way. When an artwork is uploaded a serverless function (AWS Lambda) will trigger the necessary calls to the Google Cloud services. The function will then parse and persist its metadata in our database. It’s a completely automatic, silent and scalable solution."
+          }
+        ],
+        "result": [
+          {
+            "type": "paragraph",
+            "value": "The search page is the most visited page (after our landing page). It holds the longest session times and allows our users to effectively find what they are looking for. If you're looking for an illustration of a black cat you are able to find only that."
           }
         ]
       },
@@ -104,57 +159,6 @@
           {
             "type": "paragraph",
             "value": "We can now optimize and watermark our images on the fly. Implementing this solution drastically improved page loading speed and reduced data usage. We could increase the upload limit from 5 to 12mb for a better image quality. Reducing the image size, also mean reducing the transfer costs thus reducing the bill. Now when a UI change ask for new display settings, it only takes one run to generate the new optimized images and will be done in an automatic and effortless way."
-          }
-        ]
-      },
-      {
-        "title": "AI powered search engine",
-        "image": {
-          "src": "/assets/images/ai-search-header.png",
-          "alt": "image of the search page"
-        },
-        "challenge": [
-          {
-            "type": "paragraph",
-            "value": "On Withgoods, the products are created by the users. For each artwork uploaded, dozens of new products are created. As the number of items quickly increased it became necessary to provide an effective way to search. Since we are dealing with images, a simple text search wouldn't be enough, we needed a better way to classify and sort artworks. We wanted to keep the upload process as quick and seamless as possible for both users and admins. No additional actions such as labelling or reviewing should be required."
-          }
-        ],
-        "solution": [
-          {
-            "type": "paragraph",
-            "value": "The idea is to take advantage of AI with Google Vision API. The Vision API takes an image as input and produce metadata such as labels, dominants colors, text and more."
-          },
-          {
-            "type": "image",
-            "value": {
-              "src": "/assets/images/ai-search-vision-api.png",
-              "alt": "schema of vision API integration"
-            }
-          },
-          {
-            "type": "paragraph",
-            "value": "From the generated metadata we extract the labels, each label comes with a confidence score. We only get the labels with a high score, which usually gives us between 3 to 5 labels. The resulting labels being in english only, we then use Google Cloud Translation API to translate them to korean."
-          },
-          {
-            "type": "paragraph",
-            "value": "For colors, we get a set of dominant colors which comes with a score (importance of this color in the image) and a percentage (how much of this image is taken by this color). We use these two metrics to extract only the most relevant colors, usually 1 to 3. These colors will then be matched against a custom palette, the same palette that will be used as filter when searching."
-          },
-          {
-            "type": "image",
-            "value": {
-              "src": "/assets/images/ai-search-mobile.png",
-              "alt": "image of search results"
-            }
-          },
-          {
-            "type": "paragraph",
-            "value": "This process is run in the background so the user experience is not affected in any way. When an artwork is uploaded a serverless function (AWS Lambda) will trigger the necessary calls to the Google Cloud services. The function will then parse and persist its metadata in our database. It’s a completely automatic, silent and scalable solution."
-          }
-        ],
-        "result": [
-          {
-            "type": "paragraph",
-            "value": "The search page is the most visited page (after our landing page). It holds the longest session times and allows our users to effectively find what they are looking for. If you're looking for an illustration of a black cat you are able to find only that."
           }
         ]
       }

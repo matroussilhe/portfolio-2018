@@ -40,7 +40,6 @@ const AboutLinkSlideLink = styled(SlideLink)`
   }
 }`;
 
-
 class AboutLink extends Component {
   constructor(props) {
     super(props);
