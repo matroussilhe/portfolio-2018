@@ -6,6 +6,7 @@ import { Flex } from 'grid-styled';
 import SlideBackground from '../SlideBackground';
 import AppearClose from '../AppearClose';
 import SlideBox from '../SlideBox';
+import SlideLink from '../SlideLink';
 
 const CaseStudyFlex = styled(Flex)`
   position: fixed;
@@ -22,45 +23,115 @@ const WrapperFlex = styled(Flex)`
   -ms-overflow-style: none;
 `;
 
-const Image = styled.img`
+const HeaderFlex = styled(Flex)`
+  position: relative;
+`;
+
+const HeaderImage = styled.img`
   width: 100%;
   height: auto;
 `;
 
-const Title = styled.h1`
+const HeaderOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.33);
+`;
+
+const HeaderTextFlex = styled(Flex)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.25);
+`;
+
+const CaseStudyTitle = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.dark};
-  font-size: 57px;
-  margin-bottom: 16px;
+  opacity: ${props => props.theme.opacity.solid};
+  text-align: center;
+  font-size: 82px;
+  margin-bottom: 8px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
-    font-size: 2.4rem;
-    margin-bottom: 4px;
+    font-size: 2.2rem;
   }
 `;
 
-const Subtitle = styled.h2`
+const CaseStudySubtitle = styled.h2`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.dark};
-  font-size: 27px;
-  margin-bottom: 8px;
+  opacity: ${props => props.theme.opacity.solid};
+  font-size: 32px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
-    font-size: 1.3rem;
-    margin-bottom: 4px;
+    font-size: 1.2rem;
   }
 `;
 
-const Body = styled.p`
+const CaseStudyBody = styled.p`
   font-family: ${props => props.theme.typography.body.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.grey};
-  font-size: 16px;
+  opacity: ${props => props.theme.opacity.medium};
+  font-size: 22px;
+  line-height: 28px;
+  white-space: pre-wrap;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+`;
+
+const CaseStudySlideLink = styled(SlideLink)`
+  font-family: ${props => props.theme.typography.title.fontFamily};
+  color: ${props => props.theme.color.contrast};
+  opacity: ${props => props.theme.opacity.solid};
+  font-size: 32px;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: 1.2rem;
+  }
+}`;
+
+const FeatureTitle = styled.h1`
+  font-family: ${props => props.theme.typography.title.fontFamily};
+  color: ${props => props.theme.color.contrast};
+  opacity: ${props => props.theme.opacity.solid};
+  text-align: center;
+  font-size: 60px;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: 1.8rem;
+  }
+`;
+
+const SectionTitle = styled.h2`
+  font-family: ${props => props.theme.typography.subtitle.fontFamily};
+  color: ${props => props.theme.color.contrast};
+  opacity: ${props => props.theme.opacity.high};
+  font-size: 32px;
   margin-bottom: 8px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
-    font-size: .9rem;
-    margin-bottom: 4px;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
   }
+`;
+
+const SectionBody = styled.p`
+  font-family: ${props => props.theme.typography.body.fontFamily};
+  color: ${props => props.theme.color.contrast};
+  opacity: ${props => props.theme.opacity.medium};
+  font-size: 18px;
+  line-height: 24px;
+  white-space: pre-wrap;
+  @media (max-width: ${props => props.theme.breakpoint.md}px) { {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+`;
+
+const SectionImage = styled.img`
+  width: 100%;
+  height: auto;
 `;
 
 class CaseStudy extends Component {
@@ -92,28 +163,88 @@ class CaseStudy extends Component {
     });
   }
 
+  renderFeatures() {
+    return (this.props.caseStudy ? this.props.caseStudy.features : []).map(feature => (
+      <Flex flexDirection="column">
+        <HeaderFlex>
+          <HeaderImage src={feature.image.src} alt={this.props.caseStudy.image.alt} height="300px" />
+          <HeaderOverlay />
+          <HeaderTextFlex alignItems="center" justifyContent="center" flexDirection="column">
+            <FeatureTitle>{feature.title}</FeatureTitle>
+          </HeaderTextFlex>
+        </HeaderFlex>
+        <Flex ml="12.5%" mt="150px" width={1} flexDirection="column">
+          <Flex ml="12.5%" width={4 / 8}>
+            <SectionTitle>Challenge</SectionTitle>
+          </Flex>
+          {feature.challenge.map((item, index) => (
+            item.type === 'paragraph'
+              ?
+                <Flex ml="12.5%" width={4 / 8} mb={index === feature.challenge.length - 1 ? '0px' : '25px'}>
+                  <SectionBody>{item.value}</SectionBody>
+                </Flex>
+              :
+                <Flex width={6 / 8} mt="75px" mb={index === feature.challenge.length - 1 ? '0px' : '100px'}>
+                  <SectionImage src={item.value.src} alt={item.value.alt} />
+                </Flex>
+          ))}
+        </Flex>
+        <Flex ml="12.5%" mt="150px" width={1} flexDirection="column">
+          <Flex ml="12.5%" width={4 / 8}>
+            <SectionTitle>Solution</SectionTitle>
+          </Flex>
+          {feature.solution.map((item, index) => (
+            item.type === 'paragraph'
+              ?
+                <Flex ml="12.5%" width={4 / 8} mb={index === feature.solution.length - 1 ? '0px' : '25px'}>
+                  <SectionBody>{item.value}</SectionBody>
+                </Flex>
+              :
+                <Flex width={6 / 8} mt="75px" mb={index === feature.solution.length - 1 ? '0px' : '100px'}>
+                  <SectionImage src={item.value.src} alt={item.value.alt} />
+                </Flex>
+          ))}
+        </Flex>
+        <Flex ml="12.5%" my="150px" width={1} flexDirection="column">
+          <Flex ml="12.5%" width={4 / 8}>
+            <SectionTitle>Result</SectionTitle>
+          </Flex>
+          {feature.result.map((item, index) => (
+            item.type === 'paragraph'
+              ?
+                <Flex ml="12.5%" width={4 / 8} mb={index === feature.result.length - 1 ? '0px' : '25px'}>
+                  <SectionBody>{item.value}</SectionBody>
+                </Flex>
+              :
+                <Flex width={6 / 8} mt="75px" mb={index === feature.result.length - 1 ? '0px' : '100px'}>
+                  <SectionImage src={item.value.src} alt={item.value.alt} />
+                </Flex>
+          ))}
+        </Flex>
+      </Flex>
+    ));
+  }
+
   render() {
     return (
       <CaseStudyFlex width={1} zIndex={this.state.zIndex}>
         <WrapperFlex width={1} flexDirection="column">
-          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-            <Title>Title</Title>
-            <Subtitle>Subtitle</Subtitle>
-            <Body>
-              MY BODY IS READY
-            </Body>
-          </SlideBox>
-          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-            <Image src="/assets/images/event.jpg" alt="photo of Mathieu Roussilhe" />
-          </SlideBox>
-          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-            <Image src="/assets/images/event.jpg" alt="photo of Mathieu Roussilhe" />
-          </SlideBox>
-          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-            <Image src="/assets/images/event.jpg" alt="photo of Mathieu Roussilhe" />
-          </SlideBox>
-          <SlideBox ml="12.5%" width={6 / 8} flex="1 0 auto" show={this.props.show}>
-            <Image src="/assets/images/event.jpg" alt="photo of Mathieu Roussilhe" />
+          <SlideBox width={1} flex="1 0 auto" show={this.props.show}>
+            <HeaderFlex>
+              <HeaderImage src={this.props.caseStudy.image.src} alt={this.props.caseStudy.image.alt} />
+              <HeaderOverlay />
+              <HeaderTextFlex alignItems="center" justifyContent="center" flexDirection="column">
+                <CaseStudyTitle>{this.props.caseStudy.title}</CaseStudyTitle>
+                <CaseStudySubtitle>{this.props.caseStudy.subtitle}</CaseStudySubtitle>
+              </HeaderTextFlex>
+            </HeaderFlex>
+            <Flex ml="25%" my="150px" width={4 / 8}>
+              <CaseStudyBody>{this.props.caseStudy.description}</CaseStudyBody>
+            </Flex>
+            {this.renderFeatures()}
+            <Flex ml="25%" mb="150px" width={4 / 8} justifyContent="center">
+              <CaseStudySlideLink href={this.props.caseStudy.link.url} target="_blank">{this.props.caseStudy.link.label}</CaseStudySlideLink>
+            </Flex>
           </SlideBox>
         </WrapperFlex>
         <AppearClose show={this.props.show} onShowChange={this.props.onShowChange} />
@@ -122,6 +253,17 @@ class CaseStudy extends Component {
     );
   }
 }
+
+CaseStudy.defaultProps = {
+  caseStudy: {
+    id: null,
+    title: '',
+    description: '',
+    image: {},
+    link: {},
+    features: [],
+  },
+};
 
 CaseStudy.propTypes = {
   show: PropTypes.bool.isRequired,
@@ -133,6 +275,33 @@ CaseStudy.propTypes = {
     lgAndUp: PropTypes.bool.isRequired,
     xlAndUp: PropTypes.bool.isRequired,
   }).isRequired,
+  caseStudy: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+    }),
+    link: PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    }),
+    features: PropTypes.arrayOf(PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      image: PropTypes.shape({
+        src: PropTypes.string.isRequired,
+        alt: PropTypes.string.isRequired,
+      }),
+      challenge: PropTypes.shape({
+        features: PropTypes.arrayOf(PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          body: PropTypes.string.isRequired,
+        })),
+      }),
+    })),
+  }),
 };
 
 export default CaseStudy;

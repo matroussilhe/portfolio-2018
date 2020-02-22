@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Flex, Box } from 'grid-styled';
 
+import projects from '../api/project.json';
+import caseStudies from '../api/case-study.json';
+
 import Intro from '../components/Intro/Intro';
 import Work from '../components/Work/Work';
 import About from '../components/About/About';
@@ -18,9 +21,10 @@ const theme = {
     contrast: '#ffffff',
   },
   opacity: {
-    dark: 0.8,
-    grey: 0.44,
-    light: 0.05,
+    solid: 1,
+    high: 0.87,
+    medium: 0.60,
+    low: 0.38,
   },
   typography: {
     title: {
@@ -59,12 +63,14 @@ class App extends Component {
       },
       showAbout: false,
       showCaseStudy: false,
+      caseStudy: undefined,
     };
 
     this.handleResize = this.handleResize.bind(this);
     this.handleShowAboutChange = this.handleShowAboutChange.bind(this);
     this.handleShowCaseStudyChange = this.handleShowCaseStudyChange.bind(this);
     this.handleShowAboutAndCaseStudyChange = this.handleShowAboutAndCaseStudyChange.bind(this);
+    this.handleProjectChange = this.handleProjectChange.bind(this);
   }
 
   componentDidMount() {
@@ -115,17 +121,30 @@ class App extends Component {
     }
   }
 
+  handleProjectChange(projectId) {
+    const foundProject = projects.find(project => project.id === projectId);
+
+    const { caseStudyId } = foundProject || {};
+    if (caseStudyId) {
+      const foundCaseStudy = caseStudies.find(caseStudy => caseStudy.id === caseStudyId);
+
+      this.setState({
+        caseStudy: foundCaseStudy,
+      });
+    }
+  }
+
   render() {
     return (
       <ThemeProvider theme={theme}>
         <Flex>
           <Box width={1}>
             <Intro />
-            <Work onShowChange={this.handleShowCaseStudyChange} />
+            <Work onShowChange={this.handleShowCaseStudyChange} onProjectChange={this.handleProjectChange} />
             <AboutLink onShowChange={this.handleShowAboutChange} />
           </Box>
           <About show={this.state.showAbout} onShowChange={this.handleShowAboutChange} breakpoint={this.state.breakpoint} />
-          <CaseStudy show={this.state.showCaseStudy} onShowChange={this.handleShowCaseStudyChange} breakpoint={this.state.breakpoint} />
+          <CaseStudy show={this.state.showCaseStudy} onShowChange={this.handleShowCaseStudyChange} breakpoint={this.state.breakpoint} caseStudy={this.state.caseStudy} />
           <LeftMenu show={this.state.showAbout || this.state.showCaseStudy} onShowChange={this.handleShowAboutAndCaseStudyChange} />
           <RightMenu contrast={this.state.showAbout || this.state.showCaseStudy} />
           <Background breakpoint={this.state.breakpoint} />

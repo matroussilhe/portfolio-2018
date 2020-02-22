@@ -31,7 +31,7 @@ const Image = styled.img`
 const Title = styled.h1`
   font-family: ${props => props.theme.typography.title.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.dark};
+  opacity: ${props => props.theme.opacity.high};
   font-size: 57px;
   margin-bottom: 16px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
@@ -43,7 +43,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.dark};
+  opacity: ${props => props.theme.opacity.high};
   font-size: 27px;
   margin-bottom: 8px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
@@ -55,7 +55,7 @@ const Subtitle = styled.h2`
 const Body = styled.p`
   font-family: ${props => props.theme.typography.body.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.grey};
+  opacity: ${props => props.theme.opacity.medium};
   font-size: 16px;
   margin-bottom: 8px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
@@ -67,7 +67,7 @@ const Body = styled.p`
 const AboutSlideLink = styled(SlideLink)`
   font-family: ${props => props.theme.typography.heading.fontFamily};
   color: ${props => props.theme.color.contrast};
-  opacity: ${props => props.theme.opacity.dark};
+  opacity: ${props => props.theme.opacity.high};
   font-size: 16px;
   margin-right: 16px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
@@ -116,31 +116,28 @@ class About extends Component {
               <Title>Hello there</Title>
               <Subtitle>About me</Subtitle>
               <Body>
-                I’m a curious French web developer.
-                Always looking for the best and the latest technologies.
+                I am a French developer based in Seoul, Korea.<br />
+                Always looking for the best and the latest technologies.<br />
                 I enjoy creating efficient and pleasant experiences.
-                <br />
-                I am fond of traveling and have a deep interest in Asia.
-                I lived in Korea for a year and loved it.
-                I believe the best thing about traveling is the food.
-                Street food might be a reason I like Asia that much ¯\_(ツ)_/¯
               </Body>
               <AboutSlideLink href="https://www.instagram.com/matroussilhe" target="_blank">Instagram</AboutSlideLink>
               <AboutSlideLink href="mailto:mathieu.roussilhe@gmail.com">Email</AboutSlideLink>
             </AboutMeWrapper>
-            <Subtitle>Skills</Subtitle>
-            <Body>
-              Designing interfaces using the latest front-end technologies<br />
-              Building reliable API and back-end solutions<br />
-              Familiar with both relational and non-relational database<br />
-              Managing hosting and deployment processes<br />
-              Knowledge of algorithm, Unix programming and OOP<br />
-              I can work in complete autonomy as well as part of a multidisciplinary team
-            </Body>
-            <AboutSlideLink href="https://www.linkedin.com/in/matroussilhe" target="_blank">Linkedin</AboutSlideLink>
-            <AboutSlideLink href="https://www.rocketpunch.com/@matroussilhe" target="_blank">RocketPunch</AboutSlideLink>
-            <AboutSlideLink href={Resume} target="_blank">Resume</AboutSlideLink>
-            <AboutSlideLink href="https://github.com/matroussilhe" target="_blank">Github</AboutSlideLink>
+            <AboutMeWrapper>
+              <Subtitle>Skills</Subtitle>
+              <Body>
+                Designing interfaces using the latest front-end technologies<br />
+                Building reliable API and back-end solutions<br />
+                Familiar with both relational and non-relational database<br />
+                Managing hosting and deployment processes<br />
+                Knowledge of algorithm, Unix programming and OOP<br />
+                I can work in complete autonomy as well as part of a multidisciplinary team
+              </Body>
+              <AboutSlideLink href="https://www.linkedin.com/in/matroussilhe" target="_blank">Linkedin</AboutSlideLink>
+              <AboutSlideLink href="https://www.rocketpunch.com/@matroussilhe" target="_blank">RocketPunch</AboutSlideLink>
+              <AboutSlideLink href={Resume} target="_blank">Resume</AboutSlideLink>
+              <AboutSlideLink href="https://github.com/matroussilhe" target="_blank">Github</AboutSlideLink>
+            </AboutMeWrapper>
           </SlideBox>
         </WrapperFlex>
         <AppearClose show={this.props.show} onShowChange={this.props.onShowChange} />
