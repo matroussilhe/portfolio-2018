@@ -116,31 +116,28 @@ class About extends Component {
               <Title>Hello there</Title>
               <Subtitle>About me</Subtitle>
               <Body>
-                I’m a curious French web developer.
-                Always looking for the best and the latest technologies.
+                I am a French developer based in Seoul, Korea.<br />
+                Always looking for the best and the latest technologies.<br />
                 I enjoy creating efficient and pleasant experiences.
-                <br />
-                I am fond of traveling and have a deep interest in Asia.
-                I lived in Korea for a year and loved it.
-                I believe the best thing about traveling is the food.
-                Street food might be a reason I like Asia that much ¯\_(ツ)_/¯
               </Body>
               <AboutSlideLink href="https://www.instagram.com/matroussilhe" target="_blank">Instagram</AboutSlideLink>
               <AboutSlideLink href="mailto:mathieu.roussilhe@gmail.com">Email</AboutSlideLink>
             </AboutMeWrapper>
-            <Subtitle>Skills</Subtitle>
-            <Body>
-              Designing interfaces using the latest front-end technologies<br />
-              Building reliable API and back-end solutions<br />
-              Familiar with both relational and non-relational database<br />
-              Managing hosting and deployment processes<br />
-              Knowledge of algorithm, Unix programming and OOP<br />
-              I can work in complete autonomy as well as part of a multidisciplinary team
-            </Body>
-            <AboutSlideLink href="https://www.linkedin.com/in/matroussilhe" target="_blank">Linkedin</AboutSlideLink>
-            <AboutSlideLink href="https://www.rocketpunch.com/@matroussilhe" target="_blank">RocketPunch</AboutSlideLink>
-            <AboutSlideLink href={Resume} target="_blank">Resume</AboutSlideLink>
-            <AboutSlideLink href="https://github.com/matroussilhe" target="_blank">Github</AboutSlideLink>
+            <AboutMeWrapper>
+              <Subtitle>Skills</Subtitle>
+              <Body>
+                Designing interfaces using the latest front-end technologies<br />
+                Building reliable API and back-end solutions<br />
+                Familiar with both relational and non-relational database<br />
+                Managing hosting and deployment processes<br />
+                Knowledge of algorithm, Unix programming and OOP<br />
+                I can work in complete autonomy as well as part of a multidisciplinary team
+              </Body>
+              <AboutSlideLink href="https://www.linkedin.com/in/matroussilhe" target="_blank">Linkedin</AboutSlideLink>
+              <AboutSlideLink href="https://www.rocketpunch.com/@matroussilhe" target="_blank">RocketPunch</AboutSlideLink>
+              <AboutSlideLink href={Resume} target="_blank">Resume</AboutSlideLink>
+              <AboutSlideLink href="https://github.com/matroussilhe" target="_blank">Github</AboutSlideLink>
+            </AboutMeWrapper>
           </SlideBox>
         </WrapperFlex>
         <AppearClose show={this.props.show} onShowChange={this.props.onShowChange} />
