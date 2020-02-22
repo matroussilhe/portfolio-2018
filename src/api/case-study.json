@@ -5,7 +5,7 @@
     "subtitle": "Building an art-centered platform",
     "description": "Withgoods is a place where anyone can upload and sell their original works as high quality goods. They create, we produce locally and every purchase pays an artist. Simple but beautiful.\n\nI joined Withgoods at the very beginning of the project as a fullstack developer. Here I designed and implemented the API. I built a responsive and modern interface. I handled the devops tasks (hosting, deploying, testing, monitoring). Finally, I organised the agile development flow in collaboration with the other project members.\n\nBelow are 3 case studies for the features that were the most fun to make and which I believe brings the most value. The first one is the image generator that creates realistic looking product images from the artist’s artwork and our items. The second one is the integration of Google Vision AI into our search system to allow efficient image filtering. The last case study is an on-the-fly image optimizer which drastically improves our page loading speed and user’s data usage.",
     "image": {
-      "src": "/assets/images/withgoods-header.png",
+      "src": "/assets/images/withgoods-header.jpg",
       "alt": "photo of withgoods items"
     },
     "link": {
@@ -16,7 +16,7 @@
       {
         "title": "Image generator",
         "image": {
-          "src": "/assets/images/image-generation-header.png",
+          "src": "/assets/images/image-generation-header.jpg",
           "alt": "photo of image editor"
         },
         "challenge": [
@@ -33,7 +33,7 @@
           {
             "type": "image",
             "value": {
-              "src": "/assets/images/image-generation-mix.png",
+              "src": "/assets/images/image-generation-mix.jpg",
               "alt": "photo of image generation result"
             }
           },
@@ -44,7 +44,7 @@
           {
             "type": "image",
             "value": {
-              "src": "/assets/images/image-generation-mobile.png",
+              "src": "/assets/images/image-generation-mobile.jpg",
               "alt": "photo of image generation on mobile device"
             }
           },
@@ -63,7 +63,7 @@
       {
         "title": "AI-powered search engine",
         "image": {
-          "src": "/assets/images/ai-search-header.png",
+          "src": "/assets/images/ai-search-header.jpg",
           "alt": "image of the search page"
         },
         "challenge": [
@@ -80,7 +80,7 @@
           {
             "type": "image",
             "value": {
-              "src": "/assets/images/ai-search-vision-api.png",
+              "src": "/assets/images/ai-search-vision-api.jpg",
               "alt": "schema of vision API integration"
             }
           },
@@ -95,7 +95,7 @@
           {
             "type": "image",
             "value": {
-              "src": "/assets/images/ai-search-mobile.png",
+              "src": "/assets/images/ai-search-mobile.jpg",
               "alt": "image of search results"
             }
           },
@@ -114,7 +114,7 @@
       {
         "title": "On-the-fly image optimizer",
         "image": {
-          "src": "/assets/images/thumbnail-header.png",
+          "src": "/assets/images/thumbnail-header.jpg",
           "alt": "genrerated item images"
         },
         "challenge": [
@@ -131,7 +131,7 @@
           {
             "type": "image",
             "value": {
-              "src": "/assets/images/thumbnail-schema.png",
+              "src": "/assets/images/thumbnail-schema.jpg",
               "alt": "schema of thumbnail architecture"
             }
           },
@@ -150,7 +150,7 @@
           {
             "type": "image",
             "value": {
-              "src": "/assets/images/thumbnail-examples.png",
+              "src": "/assets/images/thumbnail-examples.jpg",
               "alt": "examples of thumbnail generation"
             }
           }
