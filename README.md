@@ -1,5 +1,5 @@
 # React portfolio
-🔥 My new portfolio built with React  🔥
+🔥 My portfolio built with React  🔥
 
 ![portfolio](https://github.com/matroussilhe/react-portfolio/blob/master/screenshot.png)
 
