@@ -31,7 +31,7 @@ const AboutLinkTitle = styled.h1`
 const AboutLinkSlideLink = styled(SlideLink)`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.primary};
-  opacity: ${props => props.theme.opacity.medium};
+  opacity: ${props => props.theme.opacity.low};
   font-size: 24px;
   text-align: center;
   margin-top: 4px;
@@ -54,7 +54,7 @@ class AboutLink extends Component {
   render() {
     return (
       <AboutLinkFlex>
-        <AboutLinkBox ml={['12.5%', 0]} width={[3/4, 1]}>
+        <AboutLinkBox width={1}>
           <AboutLinkTitle>Thank you for your time :)</AboutLinkTitle>
           <AboutLinkSlideLink onClick={this.handleToggleShow}>Click here to learn more about me</AboutLinkSlideLink>
         </AboutLinkBox>

@@ -13,7 +13,7 @@ const SlideBackgroundFlex = styled(Flex)`
 `;
 
 function SlideBackground(props) {
-  if (props.breakpoint.mdAndUp) {
+  if (props.breakpoints.mdAndUp) {
     return (
       <SlideBackgroundFlex>
         <SlideBackgroundBox show={props.show} width={1 / 8} />
@@ -42,7 +42,7 @@ function SlideBackground(props) {
 SlideBackground.propTypes = {
   show: PropTypes.bool.isRequired,
   onLeaved: PropTypes.func.isRequired,
-  breakpoint: PropTypes.shape({
+  breakpoints: PropTypes.shape({
     xsAndUp: PropTypes.bool.isRequired,
     smAndUp: PropTypes.bool.isRequired,
     mdAndUp: PropTypes.bool.isRequired,

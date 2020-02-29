@@ -108,10 +108,10 @@ class About extends Component {
     return (
       <AboutFlex alignItems="center" width={1} zIndex={this.state.zIndex}>
         <WrapperFlex width={1}>
-          <SlideBox ml="12.5%" width={[0, 2/8, 2/8, 2/8]} show={this.props.show}>
+          <SlideBox ml={[0, 0, '12.5%', '12.5%']} width={[0, 0, 2/8, 2/8]} show={this.props.show}>
             <Image src="/assets/images/me.jpg" alt="photo of Mathieu Roussilhe" />
           </SlideBox>
-          <SlideBox ml={[0, '12.5%', '12.5%', '12.5%']} width={[6/8, 3/8, 3/8, 3/8]} show={this.props.show}>
+          <SlideBox ml={['12.5%', '12.5%', '12.5%', '12.5%']} width={[6/8, 6/8, 3/8, 3/8]} show={this.props.show}>
             <AboutMeWrapper>
               <Title>Hello there</Title>
               <Subtitle>About me</Subtitle>
@@ -141,7 +141,7 @@ class About extends Component {
           </SlideBox>
         </WrapperFlex>
         <AppearClose show={this.props.show} onShowChange={this.props.onShowChange} />
-        <SlideBackground show={this.props.show} onLeaved={this.handleOnLeaved} breakpoint={this.props.breakpoint} />
+        <SlideBackground show={this.props.show} onLeaved={this.handleOnLeaved} breakpoints={this.props.breakpoints} />
       </AboutFlex>
     );
   }
@@ -150,7 +150,7 @@ class About extends Component {
 About.propTypes = {
   show: PropTypes.bool.isRequired,
   onShowChange: PropTypes.func.isRequired,
-  breakpoint: PropTypes.shape({
+  breakpoints: PropTypes.shape({
     xsAndUp: PropTypes.bool.isRequired,
     smAndUp: PropTypes.bool.isRequired,
     mdAndUp: PropTypes.bool.isRequired,

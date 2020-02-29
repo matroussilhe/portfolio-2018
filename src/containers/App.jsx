@@ -23,8 +23,8 @@ const theme = {
   opacity: {
     solid: 1,
     high: 0.87,
-    medium: 0.60,
-    low: 0.38,
+    medium: 0.72,
+    low: 0.60,
   },
   typography: {
     title: {
@@ -40,6 +40,7 @@ const theme = {
       fontFamily: 'Neuzeit Regular',
     },
   },
+  // custom breakpoints
   breakpoint: {
     xs: 0,
     sm: 600,
@@ -47,6 +48,13 @@ const theme = {
     lg: 1280,
     xl: 1920,
   },
+  // grid-styled breakpoints (value and below)
+  breakpoints: [
+    600, // xs (<= 600)
+    960, // sm (<= 960)
+    1280, // md (<= 1280)
+    1920, // lg (<= 1920)
+  ],
 };
 
 class App extends Component {
@@ -54,7 +62,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      breakpoint: {
+      breakpoints: {
         xsAndUp: false,
         smAndUp: false,
         mdAndUp: false,
@@ -84,7 +92,7 @@ class App extends Component {
 
   handleResize() {
     const width = window.innerWidth;
-    const breakpoint = {
+    const breakpoints = {
       xsAndUp: width >= theme.breakpoint.xs,
       smAndUp: width >= theme.breakpoint.md,
       mdAndUp: width >= theme.breakpoint.md,
@@ -93,7 +101,7 @@ class App extends Component {
     };
 
     this.setState({
-      breakpoint,
+      breakpoints,
     });
   }
 
@@ -143,11 +151,11 @@ class App extends Component {
             <Work onShowChange={this.handleShowCaseStudyChange} onProjectChange={this.handleProjectChange} />
             <AboutLink onShowChange={this.handleShowAboutChange} />
           </Box>
-          <About show={this.state.showAbout} onShowChange={this.handleShowAboutChange} breakpoint={this.state.breakpoint} />
-          <CaseStudy show={this.state.showCaseStudy} onShowChange={this.handleShowCaseStudyChange} breakpoint={this.state.breakpoint} caseStudy={this.state.caseStudy} />
+          <About show={this.state.showAbout} onShowChange={this.handleShowAboutChange} breakpoints={this.state.breakpoints} />
+          <CaseStudy show={this.state.showCaseStudy} onShowChange={this.handleShowCaseStudyChange} breakpoints={this.state.breakpoints} caseStudy={this.state.caseStudy} />
           <LeftMenu show={this.state.showAbout || this.state.showCaseStudy} onShowChange={this.handleShowAboutAndCaseStudyChange} />
           <RightMenu contrast={this.state.showAbout || this.state.showCaseStudy} />
-          <Background breakpoint={this.state.breakpoint} />
+          <Background breakpoints={this.state.breakpoints} />
         </Flex>
       </ThemeProvider>
     );

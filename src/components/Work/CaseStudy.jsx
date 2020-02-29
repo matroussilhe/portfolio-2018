@@ -66,7 +66,7 @@ const CaseStudySubtitle = styled.h2`
   opacity: ${props => props.theme.opacity.solid};
   font-size: 32px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 `;
 
@@ -74,12 +74,12 @@ const CaseStudyBody = styled.p`
   font-family: ${props => props.theme.typography.body.fontFamily};
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.medium};
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 1.4;
   white-space: pre-wrap;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
-    font-size: 1.2rem;
-    line-height: 1.2;
+    font-size: 1rem;
+    line-height: 1.4;
   }
 `;
 
@@ -89,7 +89,7 @@ const CaseStudySlideLink = styled(SlideLink)`
   opacity: ${props => props.theme.opacity.solid};
   font-size: 32px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 }`;
 
@@ -100,7 +100,7 @@ const FeatureTitle = styled.h1`
   text-align: center;
   font-size: 60px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 `;
 
@@ -111,8 +111,8 @@ const SectionTitle = styled.h2`
   font-size: 32px;
   margin-bottom: 8px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
+    font-size: 1.4rem;
+    margin-bottom: 4px;
   }
 `;
 
@@ -121,11 +121,11 @@ const SectionBody = styled.p`
   color: ${props => props.theme.color.contrast};
   opacity: ${props => props.theme.opacity.medium};
   font-size: 18px;
-  line-height: 24px;
+  line-height: 1.4;
   white-space: pre-wrap;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
-    font-size: 1.2rem;
-    line-height: 1.2;
+    font-size: 1rem;
+    line-height: 1.4;
   }
 `;
 
@@ -164,59 +164,59 @@ class CaseStudy extends Component {
   }
 
   renderFeatures() {
-    return (this.props.caseStudy ? this.props.caseStudy.features : []).map(feature => (
+    return (this.props.caseStudy ? this.props.caseStudy.features : []).map((feature, idx) => (
       <Flex flexDirection="column">
         <HeaderFlex>
           <HeaderImage src={feature.image.src} alt={this.props.caseStudy.image.alt} height="300px" />
           <HeaderOverlay />
           <HeaderTextFlex alignItems="center" justifyContent="center" flexDirection="column">
-            <FeatureTitle>{feature.title}</FeatureTitle>
+            <FeatureTitle>{idx + 1}. {feature.title}</FeatureTitle>
           </HeaderTextFlex>
         </HeaderFlex>
-        <Flex ml="12.5%" mt="150px" width={1} flexDirection="column">
-          <Flex ml="12.5%" width={4 / 8}>
+        <Flex mt={['75px', '75px', '150px', '150px']} width={1} flexDirection="column">
+          <Flex ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]}>
             <SectionTitle>Challenge</SectionTitle>
           </Flex>
           {feature.challenge.map((item, index) => (
             item.type === 'paragraph'
               ?
-                <Flex ml="12.5%" width={4 / 8} mb={index === feature.challenge.length - 1 ? '0px' : '25px'}>
+                <Flex ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]} mb={index === feature.challenge.length - 1 ? '0px' : '25px'}>
                   <SectionBody>{item.value}</SectionBody>
                 </Flex>
               :
-                <Flex width={6 / 8} mt="75px" mb={index === feature.challenge.length - 1 ? '0px' : '100px'}>
+                <Flex ml={['0%', '0%', '12.5%', '12.5%']} width={[1, 1, 6/8, 6/8]} mt={['25px', '25px', '75px', '75px']} mb={index === feature.challenge.length - 1 ? '0px' : ['50px', '50px', '100px', '100px']}>
                   <SectionImage src={item.value.src} alt={item.value.alt} />
                 </Flex>
           ))}
         </Flex>
-        <Flex ml="12.5%" mt="150px" width={1} flexDirection="column">
-          <Flex ml="12.5%" width={4 / 8}>
+        <Flex mt={['75px', '75px', '150px', '150px']} width={1} flexDirection="column">
+          <Flex ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]}>
             <SectionTitle>Solution</SectionTitle>
           </Flex>
           {feature.solution.map((item, index) => (
             item.type === 'paragraph'
               ?
-                <Flex ml="12.5%" width={4 / 8} mb={index === feature.solution.length - 1 ? '0px' : '25px'}>
+                <Flex ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]} mb={index === feature.solution.length - 1 ? '0px' : '25px'}>
                   <SectionBody>{item.value}</SectionBody>
                 </Flex>
               :
-                <Flex width={6 / 8} mt="75px" mb={index === feature.solution.length - 1 ? '0px' : '100px'}>
+                <Flex ml={['0%', '0%', '12.5%', '12.5%']} width={[1, 1, 6/8, 6/8]} mt={['25px', '25px', '75px', '75px']} mb={index === feature.solution.length - 1 ? '0px' : ['50px', '50px', '100px', '100px']}>
                   <SectionImage src={item.value.src} alt={item.value.alt} />
                 </Flex>
           ))}
         </Flex>
-        <Flex ml="12.5%" my="150px" width={1} flexDirection="column">
-          <Flex ml="12.5%" width={4 / 8}>
+        <Flex my={['75px', '75px', '150px', '150px']} width={1} flexDirection="column">
+          <Flex ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]}>
             <SectionTitle>Result</SectionTitle>
           </Flex>
           {feature.result.map((item, index) => (
             item.type === 'paragraph'
               ?
-                <Flex ml="12.5%" width={4 / 8} mb={index === feature.result.length - 1 ? '0px' : '25px'}>
+                <Flex ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]} mb={index === feature.result.length - 1 ? '0px' : '25px'}>
                   <SectionBody>{item.value}</SectionBody>
                 </Flex>
               :
-                <Flex width={6 / 8} mt="75px" mb={index === feature.result.length - 1 ? '0px' : '100px'}>
+                <Flex ml={['0%', '0%', '12.5%', '12.5%']} width={[1, 1, 6/8, 6/8]} mt={['25px', '25px', '75px', '75px']} mb={index === feature.result.length - 1 ? '0px' : ['50px', '50px', '100px', '100px']}>
                   <SectionImage src={item.value.src} alt={item.value.alt} />
                 </Flex>
           ))}
@@ -238,17 +238,17 @@ class CaseStudy extends Component {
                 <CaseStudySubtitle>{this.props.caseStudy.subtitle}</CaseStudySubtitle>
               </HeaderTextFlex>
             </HeaderFlex>
-            <Flex ml="25%" my="150px" width={4 / 8}>
+            <Flex my={['75px', '75px', '150px', '150px']} ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]}>
               <CaseStudyBody>{this.props.caseStudy.description}</CaseStudyBody>
             </Flex>
             {this.renderFeatures()}
-            <Flex ml="25%" mb="150px" width={4 / 8} justifyContent="center">
+            <Flex mb={['75px', '75px', '150px', '150px']} ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]} justifyContent="center">
               <CaseStudySlideLink href={this.props.caseStudy.link.url} target="_blank">{this.props.caseStudy.link.label}</CaseStudySlideLink>
             </Flex>
           </SlideBox>
         </WrapperFlex>
         <AppearClose show={this.props.show} onShowChange={this.props.onShowChange} />
-        <SlideBackground show={this.props.show} onLeaved={this.handleOnLeaved} breakpoint={this.props.breakpoint} />
+        <SlideBackground show={this.props.show} onLeaved={this.handleOnLeaved} breakpoints={this.props.breakpoints} />
       </CaseStudyFlex>
     );
   }
@@ -268,7 +268,7 @@ CaseStudy.defaultProps = {
 CaseStudy.propTypes = {
   show: PropTypes.bool.isRequired,
   onShowChange: PropTypes.func.isRequired,
-  breakpoint: PropTypes.shape({
+  breakpoints: PropTypes.shape({
     xsAndUp: PropTypes.bool.isRequired,
     smAndUp: PropTypes.bool.isRequired,
     mdAndUp: PropTypes.bool.isRequired,

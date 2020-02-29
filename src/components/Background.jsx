@@ -18,7 +18,7 @@ const BackgroundBox = styled(Box)`
 `;
 
 function Background(props) {
-  if (props.breakpoint.mdAndUp) {
+  if (props.breakpoints.mdAndUp) {
     return (
       <BackgroundFlex>
         <BackgroundBox width={1 / 8} />
@@ -43,7 +43,7 @@ function Background(props) {
 }
 
 Background.propTypes = {
-  breakpoint: PropTypes.shape({
+  breakpoints: PropTypes.shape({
     xsAndUp: PropTypes.bool.isRequired,
     smAndUp: PropTypes.bool.isRequired,
     mdAndUp: PropTypes.bool.isRequired,

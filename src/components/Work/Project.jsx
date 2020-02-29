@@ -64,7 +64,7 @@ class Project extends Component {
   render() {
     return (
       <ProjectFlex>
-        <WrapperBox ml={[0, 0, 0, '25%']} pl={[0, 0, 0, '1px']} width={[1, 1, 1, 1/2]} onClick={this.handleClick}>
+        <WrapperBox ml={[0, 0, '25%', '25%']} pl={[0, 0, '1px', '1px']} width={[1, 1, 1/2, 1/2]} onClick={this.handleClick}>
           {this.renderPanel()}
         </WrapperBox>
       </ProjectFlex>

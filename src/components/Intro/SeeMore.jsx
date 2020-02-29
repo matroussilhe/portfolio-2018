@@ -20,7 +20,7 @@ const SeeMoreTitle = styled.h1`
 const SeeMoreSubtitle = styled.h2`
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
   color: ${props => props.theme.color.primary};
-  opacity: ${props => props.theme.opacity.medium};
+  opacity: ${props => props.theme.opacity.low};
   font-size: 12px;
   margin-bottom: 8px;
 `;
