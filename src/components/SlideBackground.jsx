@@ -16,25 +16,25 @@ function SlideBackground(props) {
   if (props.breakpoints.mdAndUp) {
     return (
       <SlideBackgroundFlex>
-        <SlideBackgroundBox show={props.show} width={1 / 8} />
-        <SlideBackgroundBox show={props.show} width={1 / 8} />
-        <SlideBackgroundBox show={props.show} width={1 / 8} />
-        <SlideBackgroundBox show={props.show} width={1 / 8} />
-        <SlideBackgroundBox show={props.show} width={1 / 8} />
-        <SlideBackgroundBox show={props.show} width={1 / 8} />
-        <SlideBackgroundBox show={props.show} width={1 / 8} />
+        <SlideBackgroundBox show={props.show} width={1/8} />
+        <SlideBackgroundBox show={props.show} width={1/8} />
+        <SlideBackgroundBox show={props.show} width={1/8} />
+        <SlideBackgroundBox show={props.show} width={1/8} />
+        <SlideBackgroundBox show={props.show} width={1/8} />
+        <SlideBackgroundBox show={props.show} width={1/8} />
+        <SlideBackgroundBox show={props.show} width={1/8} />
         {/* SlideBackground's animation considered ended when this box's animation end */}
-        <SlideBackgroundBox show={props.show} width={1 / 8} onLeaved={props.onLeaved} />
+        <SlideBackgroundBox show={props.show} width={1/8} onLeaved={props.onLeaved} />
       </SlideBackgroundFlex>
     );
   }
   return (
     <SlideBackgroundFlex>
-      <SlideBackgroundBox show={props.show} width={1 / 4} />
-      <SlideBackgroundBox show={props.show} width={1 / 4} />
-      <SlideBackgroundBox show={props.show} width={1 / 4} />
+      <SlideBackgroundBox show={props.show} width={1/4} />
+      <SlideBackgroundBox show={props.show} width={1/4} />
+      <SlideBackgroundBox show={props.show} width={1/4} />
       {/* SlideBackground's animation considered ended when this box's animation end */}
-      <SlideBackgroundBox show={props.show} width={1 / 4} onLeaved={props.onLeaved} />
+      <SlideBackgroundBox show={props.show} width={1/4} onLeaved={props.onLeaved} />
     </SlideBackgroundFlex>
   );
 }

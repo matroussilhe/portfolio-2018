@@ -21,6 +21,7 @@ const Title = styled.h1`
   color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.high};
   font-size: 82px;
+  text-align: center;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
     font-size: 2.2rem;
   }
@@ -31,6 +32,7 @@ const Subtitle = styled.h2`
   color: ${props => props.theme.color.primary};
   opacity: ${props => props.theme.opacity.low};
   font-size: 32px;
+  text-align: center;
   margin-top: 4px;
   @media (max-width: ${props => props.theme.breakpoint.md}px) { {
     font-size: 1.2rem;
@@ -45,7 +47,7 @@ const IntroSeeMore = styled(SeeMore)`
 function Intro() {
   return (
     <IntroFlex>
-      <IntroBox width={1}>
+      <IntroBox ml={['12.5%', '12.5%', '0', '0%']} width={[6/8, 6/8, 1, 1]}>
         <Title>Mathieu Roussilhe</Title>
         <Subtitle>Web developer</Subtitle>
         <IntroSeeMore />

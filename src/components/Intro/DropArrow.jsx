@@ -11,7 +11,7 @@ const ArrowWrapper = styled.div`
 
 const ArrowTrail = styled.div`
   transform: matrix(1, 0, 0, 1, 0, 0);
-  margin-left: 1px;
+  margin-left: -1px;
   height: 34px;
   width: 1px;
   background-color: ${props => props.theme.color.primary};

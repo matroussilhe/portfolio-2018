@@ -54,7 +54,7 @@ class AboutLink extends Component {
   render() {
     return (
       <AboutLinkFlex>
-        <AboutLinkBox width={1}>
+        <AboutLinkBox ml={['12.5%', '12.5%', '0', '0%']} width={[6/8, 6/8, 1, 1]}>
           <AboutLinkTitle>Thank you for your time :)</AboutLinkTitle>
           <AboutLinkSlideLink onClick={this.handleToggleShow}>Click here to learn more about me</AboutLinkSlideLink>
         </AboutLinkBox>

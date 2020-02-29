@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Flex, Box } from 'grid-styled';
+import debounce from 'lodash.debounce';
 
 import projects from '../api/project.json';
 import caseStudies from '../api/case-study.json';
@@ -75,6 +76,7 @@ class App extends Component {
     };
 
     this.handleResize = this.handleResize.bind(this);
+    this.debouncedHandleResize = debounce(this.handleResize, 300);
     this.handleShowAboutChange = this.handleShowAboutChange.bind(this);
     this.handleShowCaseStudyChange = this.handleShowCaseStudyChange.bind(this);
     this.handleShowAboutAndCaseStudyChange = this.handleShowAboutAndCaseStudyChange.bind(this);
@@ -83,18 +85,18 @@ class App extends Component {
 
   componentDidMount() {
     this.handleResize();
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener('resize', this.debouncedHandleResize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener('resize', this.debouncedHandleResize);
   }
 
   handleResize() {
     const width = window.innerWidth;
     const breakpoints = {
       xsAndUp: width >= theme.breakpoint.xs,
-      smAndUp: width >= theme.breakpoint.md,
+      smAndUp: width >= theme.breakpoint.sm,
       mdAndUp: width >= theme.breakpoint.md,
       lgAndUp: width >= theme.breakpoint.lg,
       xlAndUp: width >= theme.breakpoint.xl,

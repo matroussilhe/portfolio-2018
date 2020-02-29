@@ -31,10 +31,6 @@ function SlideBox(props) {
           ease: easePolyInOut,
         },
       }}
-      // How to handle interrupted enter and leave transitions.
-      update={{
-        left: -100,
-      }}
       // How to transform node state on leave
       leave={{
         left: [-100],

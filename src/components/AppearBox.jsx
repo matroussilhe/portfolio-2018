@@ -33,11 +33,6 @@ function AppearBox(props) {
           ease: easePolyInOut,
         },
       }}
-      // How to handle interrupted enter and leave transitions.
-      update={{
-        top: 0,
-        opacity: 1,
-      }}
       // How to transform node state on leave
       leave={{
         top: [50],

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -165,7 +166,7 @@ class CaseStudy extends Component {
 
   renderFeatures() {
     return (this.props.caseStudy ? this.props.caseStudy.features : []).map((feature, idx) => (
-      <Flex flexDirection="column">
+      <Flex key={`case-study-${idx}`} flexDirection="column">
         <HeaderFlex>
           <HeaderImage src={feature.image.src} alt={this.props.caseStudy.image.alt} height="300px" />
           <HeaderOverlay />
@@ -180,11 +181,11 @@ class CaseStudy extends Component {
           {feature.challenge.map((item, index) => (
             item.type === 'paragraph'
               ?
-                <Flex ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]} mb={index === feature.challenge.length - 1 ? '0px' : '25px'}>
+                <Flex key={`challenge-body-${index}`} ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]} mb={index === feature.challenge.length - 1 ? '0px' : '25px'}>
                   <SectionBody>{item.value}</SectionBody>
                 </Flex>
               :
-                <Flex ml={['0%', '0%', '12.5%', '12.5%']} width={[1, 1, 6/8, 6/8]} mt={['25px', '25px', '75px', '75px']} mb={index === feature.challenge.length - 1 ? '0px' : ['50px', '50px', '100px', '100px']}>
+                <Flex key={`challenge-image-${index}`} ml={['0%', '0%', '12.5%', '12.5%']} width={[1, 1, 6/8, 6/8]} mt={['25px', '25px', '75px', '75px']} mb={index === feature.challenge.length - 1 ? '0px' : ['50px', '50px', '100px', '100px']}>
                   <SectionImage src={item.value.src} alt={item.value.alt} />
                 </Flex>
           ))}
@@ -196,11 +197,11 @@ class CaseStudy extends Component {
           {feature.solution.map((item, index) => (
             item.type === 'paragraph'
               ?
-                <Flex ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]} mb={index === feature.solution.length - 1 ? '0px' : '25px'}>
+                <Flex key={`solution-body-${index}`} ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]} mb={index === feature.solution.length - 1 ? '0px' : '25px'}>
                   <SectionBody>{item.value}</SectionBody>
                 </Flex>
               :
-                <Flex ml={['0%', '0%', '12.5%', '12.5%']} width={[1, 1, 6/8, 6/8]} mt={['25px', '25px', '75px', '75px']} mb={index === feature.solution.length - 1 ? '0px' : ['50px', '50px', '100px', '100px']}>
+                <Flex key={`solution-image-${index}`} ml={['0%', '0%', '12.5%', '12.5%']} width={[1, 1, 6/8, 6/8]} mt={['25px', '25px', '75px', '75px']} mb={index === feature.solution.length - 1 ? '0px' : ['50px', '50px', '100px', '100px']}>
                   <SectionImage src={item.value.src} alt={item.value.alt} />
                 </Flex>
           ))}
@@ -212,11 +213,11 @@ class CaseStudy extends Component {
           {feature.result.map((item, index) => (
             item.type === 'paragraph'
               ?
-                <Flex ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]} mb={index === feature.result.length - 1 ? '0px' : '25px'}>
+                <Flex key={`result-body-${index}`} ml={['12.5%', '12.5%', '25%', '31.25%']} width={[6/8, 6/8, 4/8, 3/8]} mb={index === feature.result.length - 1 ? '0px' : '25px'}>
                   <SectionBody>{item.value}</SectionBody>
                 </Flex>
               :
-                <Flex ml={['0%', '0%', '12.5%', '12.5%']} width={[1, 1, 6/8, 6/8]} mt={['25px', '25px', '75px', '75px']} mb={index === feature.result.length - 1 ? '0px' : ['50px', '50px', '100px', '100px']}>
+                <Flex key={`result-image-${index}`}ml={['0%', '0%', '12.5%', '12.5%']} width={[1, 1, 6/8, 6/8]} mt={['25px', '25px', '75px', '75px']} mb={index === feature.result.length - 1 ? '0px' : ['50px', '50px', '100px', '100px']}>
                   <SectionImage src={item.value.src} alt={item.value.alt} />
                 </Flex>
           ))}
@@ -256,11 +257,18 @@ class CaseStudy extends Component {
 
 CaseStudy.defaultProps = {
   caseStudy: {
-    id: null,
+    id: 0,
     title: '',
+    subtitle: '',
     description: '',
-    image: {},
-    link: {},
+    image: {
+      src: '',
+      alt: '',
+    },
+    link: {
+      label: '',
+      url: '',
+    },
     features: [],
   },
 };
@@ -294,12 +302,36 @@ CaseStudy.propTypes = {
         src: PropTypes.string.isRequired,
         alt: PropTypes.string.isRequired,
       }),
-      challenge: PropTypes.shape({
-        features: PropTypes.arrayOf(PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          body: PropTypes.string.isRequired,
-        })),
-      }),
+      challenge: PropTypes.arrayOf(PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        value: PropTypes.oneOfType([
+          PropTypes.string.isRequired,
+          PropTypes.shape({
+            src: PropTypes.string.isRequired,
+            alt: PropTypes.string.isRequired,
+          }),
+        ]),
+      })),
+      solution: PropTypes.arrayOf(PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        value: PropTypes.oneOfType([
+          PropTypes.string.isRequired,
+          PropTypes.shape({
+            src: PropTypes.string.isRequired,
+            alt: PropTypes.string.isRequired,
+          }),
+        ]),
+      })),
+      result: PropTypes.arrayOf(PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        value: PropTypes.oneOfType([
+          PropTypes.string.isRequired,
+          PropTypes.shape({
+            src: PropTypes.string.isRequired,
+            alt: PropTypes.string.isRequired,
+          }),
+        ]),
+      })),
     })),
   }),
 };

@@ -48,10 +48,6 @@ class AppearClose extends Component {
             ease: easePolyInOut,
           },
         }}
-        // How to handle interrupted enter and leave transitions.
-        update={{
-          opacity: 1,
-        }}
         // How to transform node state on leave
         leave={{
           opacity: [0],

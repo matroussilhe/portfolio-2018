@@ -12,32 +12,30 @@ const BackgroundFlex = styled(Flex)`
 `;
 
 const BackgroundBox = styled(Box)`
-  border-width: 1px;
-  border-left-style: solid;
-  border-color: #dbdbdb;
+  box-shadow: -1px 0 0 #dedede;
 `;
 
 function Background(props) {
   if (props.breakpoints.mdAndUp) {
     return (
       <BackgroundFlex>
-        <BackgroundBox width={1 / 8} />
-        <BackgroundBox width={1 / 8} />
-        <BackgroundBox width={1 / 8} />
-        <BackgroundBox width={1 / 8} />
-        <BackgroundBox width={1 / 8} />
-        <BackgroundBox width={1 / 8} />
-        <BackgroundBox width={1 / 8} />
-        <BackgroundBox width={1 / 8} />
+        <BackgroundBox width={1/8} />
+        <BackgroundBox width={1/8} />
+        <BackgroundBox width={1/8} />
+        <BackgroundBox width={1/8} />
+        <BackgroundBox width={1/8} />
+        <BackgroundBox width={1/8} />
+        <BackgroundBox width={1/8} />
+        <BackgroundBox width={1/8} />
       </BackgroundFlex>
     );
   }
   return (
     <BackgroundFlex>
-      <BackgroundBox width={1 / 4} />
-      <BackgroundBox width={1 / 4} />
-      <BackgroundBox width={1 / 4} />
-      <BackgroundBox width={1 / 4} />
+      <BackgroundBox width={1/4} />
+      <BackgroundBox width={1/4} />
+      <BackgroundBox width={1/4} />
+      <BackgroundBox width={1/4} />
     </BackgroundFlex>
   );
 }

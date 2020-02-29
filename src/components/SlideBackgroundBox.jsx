@@ -6,9 +6,7 @@ import { easePolyInOut } from 'd3-ease';
 import { Box } from 'grid-styled';
 
 const BackgroundBox = styled(Box)`
-  border-width: 1px;
-  border-left-style: solid;
-  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: -1px 0 0 #212121;
   background-color: rgba(0, 0, 0, 1);
   transform-origin: left;
 `;
@@ -29,10 +27,6 @@ function SlideBackgroundBox(props) {
           duration: 800,
           ease: easePolyInOut,
         },
-      }}
-      // How to handle interrupted enter and leave transitions.
-      update={{
-        scaleX: 0,
       }}
       // How to transform node state on leave
       leave={{
