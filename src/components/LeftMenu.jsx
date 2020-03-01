@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import throttle from 'lodash.throttle';
 
 import SlideLink from './SlideLink';
 
@@ -29,6 +30,9 @@ class LeftMenu extends Component {
     super(props);
 
     this.handleToggleShow = this.handleToggleShow.bind(this);
+    // animation takes 1600ms (800 background enter + 800 content enter)
+    // throttle toggle so it can only fires once animation is done
+    this.throttledHandleToggleShow = throttle(this.handleToggleShow, 1700);
   }
 
   handleToggleShow() {
@@ -40,8 +44,8 @@ class LeftMenu extends Component {
       <LeftMenuWrapper>
         {
           (this.props.show)
-            ? <LeftMenuSlideLink contrast onClick={this.handleToggleShow}>close</LeftMenuSlideLink>
-            : <LeftMenuSlideLink onClick={this.handleToggleShow}>about</LeftMenuSlideLink>
+            ? <LeftMenuSlideLink contrast onClick={this.throttledHandleToggleShow}>close</LeftMenuSlideLink>
+            : <LeftMenuSlideLink onClick={this.throttledHandleToggleShow}>about</LeftMenuSlideLink>
         }
       </LeftMenuWrapper>
     );

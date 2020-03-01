@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex, Box } from 'grid-styled';
+import throttle from 'lodash.throttle';
 
 import FrontPanel from './FrontPanel';
 import BackPanel from './BackPanel';
@@ -28,8 +29,11 @@ class Project extends Component {
       nextPannel: 'front',
     };
 
-    this.handleClick = this.handleClick.bind(this);
     this.handleOnLeaved = this.handleOnLeaved.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    // animation takes 900ms (500 leave + 400 delay + 500 enter)
+    // throttle click so it can only fires once animation is done
+    this.throttledHandleClick = throttle(this.handleClick, 1500);
   }
 
   handleClick() {
@@ -64,7 +68,7 @@ class Project extends Component {
   render() {
     return (
       <ProjectFlex>
-        <WrapperBox ml={[0, 0, '25%', '25%']} pl={[0, 0, '1px', '1px']} width={[1, 1, 1/2, 1/2]} onClick={this.handleClick}>
+        <WrapperBox ml={[0, 0, '25%', '25%']} pl={[0, 0, '1px', '1px']} width={[1, 1, 1/2, 1/2]} onClick={this.throttledHandleClick}>
           {this.renderPanel()}
         </WrapperBox>
       </ProjectFlex>
