@@ -39,12 +39,12 @@
           },
           {
             "type": "paragraph",
-            "value": "Image Generation can be resumed in 6 steps:\n1) Editing. Using our editor the artist scale and position his artwork against the product template. When done, the resulting artwork is uploaded and the generation starts.\n2) Cropping. Here we crop the part of the artwork we need and place it according to the product template. For example the left part of the template will be the front of the mug, the right part being the back.\n3) Mask Clipping. By applying a clipping mask we obtain an exact shape with all its irregularities. For a clock the mask will be a circle.\n4) Curving. Here we displace the pixels according to a predefined curve (Bezier curve). This will create the illusion of a round object and give a 3D effect.\n5) Merging. We merge the transformed artwork image on top of the product item image to create our custom product image.\n6) Overlay. Finally we merge the overlay image on top. Overlay includes reflection and light rays to create the illusion of a reflective texture thus reinforcing the 3D and realistic effect."
+            "value": "Image Generation can be resumed in 6 steps:\n1) Editing. Using our custom photoshop-like editor, you can edit your artwork inside a live preview of the product. You can move, scale and rotate both images and texts until it suits you. When done, the result is uploaded as an image and the generation starts.\n2) Cropping. Here we crop the part of the artwork we need and place it according to the product template. For example the left part of the template will be the front of the mug, the right part being the back.\n3) Mask Clipping. By applying a clipping mask we obtain an exact shape with all its irregularities. For a clock the mask will be a circle.\n4) Curving. Here we displace the pixels according to a predefined curve (Bezier curve). This will create the illusion of a round object and give a 3D effect.\n5) Merging. We merge the transformed artwork image on top of the product item image to create our custom product image.\n6) Overlay. Finally we merge the overlay image on top. Overlay includes reflection and light rays to create the illusion of a reflective texture thus reinforcing the 3D and realistic effect."
           },
           {
             "type": "image",
             "value": {
-              "src": "/assets/images/image-generation-mobile.jpg",
+              "src": "/assets/images/image-generation-photoshop.jpg",
               "alt": "photo of image generation on mobile device"
             }
           },
