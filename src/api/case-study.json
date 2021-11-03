@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Withgoods",
     "subtitle": "Building a print-on-demand website",
-    "description": "Withgoods is a place where anyone can upload and sell their original artworks as custom high quality goods.\n\nI joined Withgoods at the very beginning of the project as the lead developer of a team of 3. We used state-of-the-art and custom technologies: frontend, backend, AI, custom image generation pipeline, etc... In just 3 months we built and released the first version of Withgoods.\n\nMy role included designing and implementing the API. Building a responsive and modern interface. Creating a custom image editor and generator. Handling the devops tasks (hosting, deploying, testing, monitoring). Organising the agile development flow in collaboration with the other project members.\n\nBelow are 3 case studies for the features that were the most fun to make and which I believe brings the most value. The first one is the image generator that creates realistic looking product images from the artist’s artwork and our items. The second one is the integration of Google Vision AI into our search system to allow efficient image filtering. The last case study is an on-the-fly image optimizer which drastically improves our page loading speed and user’s data usage.",
+    "description": "Withgoods is a place where anyone can upload and sell their original artworks as custom high quality goods.\n\nI joined Withgoods at the very beginning of the project as the lead developer of a team of 3. We used state-of-the-art and custom technologies: frontend, backend, AI, custom image generation pipeline. In just 3 months we built and released the first version of Withgoods.\n\nMy role included designing and implementing the API. Building a responsive and modern interface. Creating a custom image editor and generator. Handling the devops tasks (hosting, deploying, testing, monitoring). Organizing the agile development workflow in collaboration with the other project members.\n\nBelow are 3 case studies for the features that I had the most fun making and which I believe brings the most value. The first one is the image generator that creates realistic looking product images from the artist’s artwork and our items. The second one is the integration of Google Vision AI into our search system to allow efficient image filtering. The last case study is an on-the-fly image optimizer which drastically improves our page loading speed and user’s data usage.",
     "image": {
       "src": "/assets/images/withgoods-header.jpg",
       "alt": "photo of withgoods items"
@@ -107,7 +107,7 @@
         "result": [
           {
             "type": "paragraph",
-            "value": "The search page is the most visited page (after our landing page). It holds the longest session times and allows our users to effectively find what they are looking for. If you're looking for an illustration of a black cat you are able to find only that."
+            "value": "The search page is the most visited page (after our landing page). It holds the longest session times and allows our users to effectively find what they are looking for. If you are looking for an illustration of a black cat you are able to find just that."
           }
         ]
       },
@@ -141,7 +141,7 @@
           },
           {
             "type": "paragraph",
-            "value": "After the first step, we ask CloudFront if the URI exists. If it does, the optimized image is immediately returned. If it doesn’t we ask for the original image directly from S3."
+            "value": "After completing the first step, we ask CloudFront if the URI exists. If it does, the optimized image is immediately returned. If it doesn’t we ask for the original image directly from S3."
           },
           {
             "type": "paragraph",
@@ -158,7 +158,7 @@
         "result": [
           {
             "type": "paragraph",
-            "value": "We can now optimize and watermark our images on the fly. Implementing this solution drastically improved page loading speed and reduced data usage. We could increase the upload limit from 5 to 12mb for a better image quality. Reducing the image size, also mean reducing the transfer costs thus reducing the bill. Now when a UI change ask for new display settings, it only takes one run to generate the new optimized images and will be done in an automatic and effortless way."
+            "value": "We can now optimize and watermark our images on the fly. Implementing this solution drastically improved page loading speed and reduced data usage. We were able to increase the upload limit from 5 to 20mb for better raw image quality. Reducing the image size, also meant reducing the transfer costs thus reducing the bill. Now whenever our UI changes and requires new settings, it only takes one run to generate the new optimized images and will be done in an automatic and effortless way."
           }
         ]
       }
