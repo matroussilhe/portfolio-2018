@@ -116,21 +116,22 @@ class About extends Component {
               <Title>Hello there</Title>
               <Subtitle>About me</Subtitle>
               <Body>
-                I am a French software engineer based in Seoul, Korea.<br />
-                Always looking for the best and the latest technologies.<br />
-                I enjoy creating efficient and pleasant experiences.
+                I am a Software Engineer from France, based in Korea.<br />
+                I use technology to build eloquent systems.<br />
+                I seek quality, clarity and beauty in my work.<br />
+                I strive to create excellent products through steady iterations.
               </Body>
               <AboutSlideLink href="https://www.instagram.com/matroussilhe" target="_blank">Instagram</AboutSlideLink>
             </AboutMeWrapper>
             <AboutMeWrapper>
               <Subtitle>Skills</Subtitle>
               <Body>
-                Designing interfaces using the latest front-end technologies<br />
-                Building reliable API and back-end solutions<br />
-                Familiar with both relational and non-relational database<br />
-                Managing hosting and deployment processes<br />
-                Knowledge of algorithm, Unix programming and OOP<br />
-                I can work in complete autonomy as well as part of a multidisciplinary team
+                Designing interfaces using the latest front-end technologies.<br />
+                Building reliable API and back-end solutions.<br />
+                Familiar with both relational and non-relational database.<br />
+                Managing hosting and deployment processes.<br />
+                Knowledge of algorithm, Unix programming and OOP.<br />
+                I can work in complete autonomy as well as part of a multidisciplinary team.
               </Body>
               <AboutSlideLink href={Resume} target="_blank">Resume</AboutSlideLink>
               <AboutSlideLink href="https://www.linkedin.com/in/matroussilhe" target="_blank">Linkedin</AboutSlideLink>
