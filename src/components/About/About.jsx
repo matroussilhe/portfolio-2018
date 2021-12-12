@@ -116,7 +116,7 @@ class About extends Component {
               <Title>Hello there</Title>
               <Subtitle>About me</Subtitle>
               <Body>
-                I am a French developer based in Seoul, Korea.<br />
+                I am a French software engineer based in Seoul, Korea.<br />
                 Always looking for the best and the latest technologies.<br />
                 I enjoy creating efficient and pleasant experiences.
               </Body>

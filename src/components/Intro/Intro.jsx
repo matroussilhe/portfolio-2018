@@ -49,7 +49,7 @@ function Intro() {
     <IntroFlex>
       <IntroBox ml={['12.5%', '12.5%', '0', '0%']} width={[6/8, 6/8, 1, 1]}>
         <Title>Mathieu Roussilhe</Title>
-        <Subtitle>Web developer</Subtitle>
+        <Subtitle>Software Engineer</Subtitle>
         <IntroSeeMore />
       </IntroBox>
     </IntroFlex>
