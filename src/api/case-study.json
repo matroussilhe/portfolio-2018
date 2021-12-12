@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Withgoods",
     "subtitle": "Building a print-on-demand website",
-    "description": "Withgoods is a place where anyone can upload and sell their original artworks as custom high quality goods.\n\nI joined Withgoods at the very beginning of the project as the lead developer of a team of 3. We used state-of-the-art and custom technologies: frontend, backend, AI, custom image generation pipeline. In just 3 months we built and released the first version of Withgoods.\n\nMy role included designing and implementing the API. Building a responsive and modern interface. Creating a custom image editor and generator. Handling the devops tasks (hosting, deploying, testing, monitoring). Organizing the agile development workflow in collaboration with the other project members.\n\nBelow are 3 case studies for the features that I had the most fun making and which I believe brings the most value. The first one is the image generator that creates realistic looking product images from the artist’s artwork and our items. The second one is the integration of Google Vision AI into our search system to allow efficient image filtering. The last case study is an on-the-fly image optimizer which drastically improves our page loading speed and user’s data usage.",
+    "description": "Withgoods is a place where anyone can upload and sell their original artworks as custom high quality goods.\n\nI joined Withgoods at the very beginning of the project as the lead developer of a team of 4. We used state-of-the-art and custom technologies: frontend, backend, AI, custom image generation pipeline. In just 3 months we built and released the first version of Withgoods.\n\nMy role included designing and implementing the API. Building a responsive and modern interface. Creating a custom image editor and generator. Handling the devops tasks (hosting, deploying, testing, monitoring). Organizing the agile development workflow in collaboration with the other project members.\n\nBelow are 3 case studies for the features that I had the most fun making and which I believe brings the most value. The first one is the image generator that creates realistic looking product images from the artist’s artwork and our items. The second one is the integration of Google Vision AI into our search system to allow efficient image filtering. The last case study is an on-the-fly image optimizer which drastically improves our page loading speed and user’s data usage.",
     "image": {
       "src": "/assets/images/withgoods-header.jpg",
       "alt": "photo of withgoods items"
@@ -22,13 +22,13 @@
         "challenge": [
           {
             "type": "paragraph",
-            "value": "Generating life-like product images is our core feature both for the artists and the customers. If something feels wrong (ex: too pixelated, too flat, bad lightning) the illusion is broken. To advocate high quality, induce sales and promote our brand it is critical that we generate the best images we can."
+            "value": "Generating life-like product images is our core feature both for the artists and the customers. If something feels wrong (i.e. too pixelated, too flat, bad lightning) the illusion is broken. To advocate high quality, induce sales and promote our brand it is critical that we generate the best images we can."
           }
         ],
         "solution": [
           {
             "type": "paragraph",
-            "value": "To create a product image we need 4 different things. The artwork (ex: some characters), the product image (ex: a mug cup), a clipping mask (ex: mug rectangular shape) and an overlay (ex: mug light reflection)."
+            "value": "To create a product image we need 4 different things. The artwork (e.g. some characters on a beach), the product image (e.g. a mug cup), a clipping mask (e.g. a mug shaped rectangle) and an overlay (e.g. some light beams)."
           },
           {
             "type": "image",
@@ -50,7 +50,7 @@
           },
           {
             "type": "paragraph",
-            "value": "Considering the artist pick 20 items and each item needs 3 images (ex: left, front and right view), we need to generate 60 images at once. Image generation is a heavy process, running it all at once would overload and slow down our main server. Here the image generation process has been moved from our main server to a serverless function (AWS Lambda). When an image generation is requested, a new function is launched, create the image, save it and is terminated. When 60 are requested, 60 functions will run in parallel. This feature is totally independent from our main server and is infinitely scalable."
+            "value": "Considering the artist pick 20 items and each item needs 3 images (i.e. left, front and right view), we need to generate 60 images at once. Image generation is a heavy process, running it all at once would overload and slow down our main server. Here the image generation process has been moved from our main server to a serverless function (AWS Lambda). When an image generation is requested, a new function is launched, create the image, save it and is terminated. When 60 are requested, 60 functions will run in parallel. This feature is totally independent from our main server and is infinitely scalable."
           }
         ],
         "result": [
@@ -137,7 +137,7 @@
           },
           {
             "type": "paragraph",
-            "value": "During the first step and before hitting the cache (function 1 in schema), we validate and parse the request looking for 3 possible parameters. The first one is the desired dimensions and is the only mandatory one. Its format is WIDTHxHEIGHT (ex: 500x500). The second one is quality. Here we accept the values “full” (original quality), “fine” (lowest quality settings before artifacts start to appear), and “low”. The third and last one is the watermark. Here we can pick from a set of watermarks to apply (ex: logo or grid). From the combination of these we generate a unique URI to store and retrieve the generated image."
+            "value": "During the first step and before hitting the cache (function 1 in schema), we validate and parse the request looking for 3 possible parameters. The first one is the desired dimensions and is the only mandatory one. Its format is WIDTHxHEIGHT (e.g. 500x500). The second one is quality. Here we accept the values “full” (original quality), “fine” (lowest quality settings before artifacts start to appear), and “low”. The third and last one is the watermark. Here we can pick from a set of watermarks to apply (e.g. logo or grid). From the combination of these we generate a unique URI to store and retrieve the generated image."
           },
           {
             "type": "paragraph",
