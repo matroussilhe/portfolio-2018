@@ -62,7 +62,7 @@ const Title = styled.h1`
 
 function FrontPanel(props) {
   return (
-    <WrapperBox>
+    <WrapperBox onClick={props.onClick}>
       <Image src={props.image.src} alt={props.image.alt} />
       <ContentFlex alignItems="center" justifyContent="center">
         <AppearBox show={props.show} onLeaved={props.onLeaved}>
@@ -75,6 +75,7 @@ function FrontPanel(props) {
 
 FrontPanel.propTypes = {
   show: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
   onLeaved: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   image: PropTypes.shape({

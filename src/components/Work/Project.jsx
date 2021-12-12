@@ -58,9 +58,9 @@ class Project extends Component {
 
   renderPanel() {
     if (this.state.pannel === 'front') {
-      return <FrontPanel show={this.state.nextPannel === 'front'} onLeaved={this.handleOnLeaved} title={this.props.project.title} image={this.props.project.image} />;
+      return <FrontPanel show={this.state.nextPannel === 'front'} onClick={this.throttledHandleClick} onLeaved={this.handleOnLeaved} title={this.props.project.title} image={this.props.project.image} />;
     } else if (this.state.pannel === 'back') {
-      return <BackPanel show={this.state.nextPannel === 'back'} onLeaved={this.handleOnLeaved} project={this.props.project} />;
+      return <BackPanel show={this.state.nextPannel === 'back'} onClick={this.throttledHandleClick} onLeaved={this.handleOnLeaved} project={this.props.project} />;
     }
     return '';
   }
@@ -68,7 +68,7 @@ class Project extends Component {
   render() {
     return (
       <ProjectFlex>
-        <WrapperBox ml={[0, 0, '25%', '25%']} pl={[0, 0, '1px', '1px']} width={[1, 1, 1/2, 1/2]} onClick={this.throttledHandleClick}>
+        <WrapperBox ml={[0, 0, '25%', '25%']} pl={[0, 0, '1px', '1px']} width={[1, 1, 1/2, 1/2]}>
           {this.renderPanel()}
         </WrapperBox>
       </ProjectFlex>

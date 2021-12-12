@@ -85,7 +85,7 @@ const DescriptionSlideLink = styled(SlideLink)`
 
 function BackPanel(props) {
   return (
-    <WrapperBox width={1}>
+    <WrapperBox width={1} onClick={props.onClick}>
       <ContentFlex flexDirection="column">
         <AppearBox show={props.show} pl="6%" pt="6%" delay={0}>
           <Title>{props.project.title}</Title>
@@ -115,6 +115,7 @@ function BackPanel(props) {
 
 BackPanel.propTypes = {
   show: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
   onLeaved: PropTypes.func.isRequired,
   project: PropTypes.shape({
     id: PropTypes.number.isRequired,
