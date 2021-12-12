@@ -5,8 +5,8 @@
     "subtitle": "Empowering athletes with technology",
     "description": "QMIT's vision is to positively change sport culture through technology. Information Technology has the power to make many aspects of sport more convenient, transparent and systematic.\n\nAt the time I joined QMIT there was only one backend developer and most of the backend work was done. My first mission was to develop the PLCO application. About 5 months in, we started the development of PLCO for Coach. Since this project, I took the frontend lead and was in charge of picking the stack, setting up the project, creating the design system and recruiting new members. Today our team is composed of 4 frontend developers and 2 backend developers. Aside from frontend tasks, I built two microservices; one for payments (i.e. subscription based) and one for notifications (i.e. email, sms, push notification).\n\nThe first 2 case studies will walk you through our 2 products in detail. The PLCO app helps you become a better athlete without sacrificing your health. The PLCO for Coach web app provides coaches with the tools to make better decisions to lead their team to greatness. The third case study is a close-up on a particular feature of PLCO for Coach, the Chart System. I picked this feature specifically to highlight my mindset when it comes to problem solving.",
     "image": {
-      "src": "/assets/images/withgoods-header.jpg",
-      "alt": "image of withgoods items"
+      "src": "/assets/images/qmit-header.jpg",
+      "alt": "image of sports"
     },
     "link": {
       "label": "Visit Website",
