@@ -2,7 +2,7 @@
   {
     "id": 1,
     "caseStudyId": 1,
-    "title": "Withgoods",
+    "title": "QMIT",
     "role": "",
     "tech": "",
     "description": "",
@@ -13,6 +13,18 @@
   },
   {
     "id": 2,
+    "caseStudyId": 2,
+    "title": "Withgoods",
+    "role": "",
+    "tech": "",
+    "description": "",
+    "image": {
+      "src": "/assets/images/withgoods.jpg",
+      "alt": "picture of withgoods service"
+    }
+  },
+  {
+    "id": 3,
     "caseStudyId": null,
     "title": "Sleek",
     "role": "Full-stack developer",
@@ -28,19 +40,19 @@
     }
   },
   {
-    "id": 3,
+    "id": 4,
     "caseStudyId": null,
     "title": "Maevents",
     "role": "Full-stack developer",
     "tech": "JavaScript (ES6), React, Meteor, MongoDB",
-    "description": "Maevents is a rising tour operator. I worked with them to speed up their operation with a custom software.\n\nI was in charge of the whole development process. I built a website to easily manage your client base and generate various contracts and reports. Data is hierarchically structured and presented in a clear way. A fuzzy-search bar allow you to quickly find what you’re looking for. There is also a data table where you get a big picture of your client base and perform global search.",
+    "description": "Maevents is a rising tour operator. I worked with them to speed up their operation with a custom software.\n\nI was in charge of the whole development process. I built a website to easily manage your client base and generate various contracts and reports. Data is hierarchically structured and presented in a clear way. A fuzzy-search bar allow you to quickly find what you're looking for. There is also a data table where you get a big picture of your client base and perform global search.",
     "image": {
       "src": "/assets/images/event.jpg",
       "alt": "picture of maevent website"
     }
   },
   {
-    "id": 4,
+    "id": 5,
     "caseStudyId": null,
     "title": "Hub-Grade",
     "role": "Back-end developer",
@@ -56,7 +68,7 @@
     }
   },
   {
-    "id": 5,
+    "id": 6,
     "caseStudyId": null,
     "title": "Game Jams",
     "role": "AI and game programmer",
@@ -72,7 +84,7 @@
     }
   },
   {
-    "id": 6,
+    "id": 7,
     "caseStudyId": null,
     "title": "Naview ",
     "role": "Software developer",

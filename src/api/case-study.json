@@ -1,12 +1,253 @@
 [
   {
     "id": 1,
-    "title": "Withgoods",
-    "subtitle": "Building a print-on-demand website",
-    "description": "Withgoods is a place where anyone can upload and sell their original artworks as custom high quality goods.\n\nI joined Withgoods at the very beginning of the project as the lead developer of a team of 4. We used state-of-the-art and custom technologies: frontend, backend, AI, custom image generation pipeline. In just 3 months we built and released the first version of Withgoods.\n\nMy role included designing and implementing the API. Building a responsive and modern interface. Creating a custom image editor and generator. Handling the devops tasks (hosting, deploying, testing, monitoring). Organizing the agile development workflow in collaboration with the other project members.\n\nBelow are 3 case studies for the features that I had the most fun making and which I believe brings the most value. The first one is the image generator that creates realistic looking product images from the artist’s artwork and our items. The second one is the integration of Google Vision AI into our search system to allow efficient image filtering. The last case study is an on-the-fly image optimizer which drastically improves our page loading speed and user’s data usage.",
+    "title": "QMIT",
+    "subtitle": "Empowering athletes with technology",
+    "description": "QMIT's vision is to positively change sport culture through technology. Information Technology has the power to make many aspects of sport more convenient, transparent and systematic.\n\nAt the time I joined QMIT there was only one backend developer and most of the backend work was done. My first mission was to develop the PLCO application. About 5 months in, we started the development of PLCO for Coach. Since this project, I took the frontend lead and was in charge of picking the stack, setting up the project, creating the design system and recruiting new members. Today our team is composed of 4 frontend developers and 2 backend developers. Aside from frontend tasks, I built two microservices; one for payments (i.e. subscription based) and one for notifications (i.e. email, sms, push notification).\n\nThe first 2 case studies will walk you through our 2 products in detail. The PLCO app helps you become a better athlete without sacrificing your health. The PLCO for Coach web app provides coaches with the tools to make better decisions to lead their team to greatness. The third case study is a close-up on a particular feature of PLCO for Coach, the Chart System. I picked this feature specifically to highlight my mindset when it comes to problem solving.",
     "image": {
       "src": "/assets/images/withgoods-header.jpg",
-      "alt": "photo of withgoods items"
+      "alt": "image of withgoods items"
+    },
+    "link": {
+      "label": "Visit Website",
+      "url": "https://plco.site"
+    },
+    "features": [
+      {
+        "title": "PLCO",
+        "image": {
+          "src": "/assets/images/plco-header.jpg",
+          "alt": "image of plco application"
+        },
+        "challenge": [
+          {
+            "type": "paragraph",
+            "value": "All athletes strive to achieve the best performance, but excessive training with disregard for your physical condition often leads to injury. The goal of plco is to offer you the means necessary to achieve this objective.\n\nPLCO targets both individual athletes and athletes that are part of a team. This translates to features designed either for one type of user or for both."
+          }
+        ],
+        "solution": [
+          {
+            "type": "paragraph",
+            "value": "PLCO is a hybrid application made using React Native. It comes in two flavors with a light and a dark theme. The design is a mix of Eva Design System (UI Kitten) with the addition of many custom components made by myself for the most part (e.g. slider input, injury dummy, sliding list)."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/plco-home.jpg",
+              "alt": "image of plco home screen"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "The home screen acts as a dashboard. From there you can access the most important actions such as recording your data and viewing your upcoming events and to-dos."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/plco-record-condition.jpg",
+              "alt": "image of plco condition record screens"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "The recording is the first and most vital step in using PLCO. The more often you input your raw data, the more reliable the computed data we provide will be.\n\nThe condition is expected to be registered daily. To help with that, I built a local notification scheduler and a remote notification service. Players can set up daily reminders and coaches can send reminders to all players who fail to report."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/plco-record-workload.jpg",
+              "alt": "image of plco workload record screens"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "Whenever you complete a workload (e.g. training, match) you are encouraged to register it. Workload data will be used to detect undertraining, overtraining and to calculate ACWR (i.e. risk of injury).\n\nUpon completing a condition or workload input, the injury dummy shows up. Body-part by body-part, you can update your injury report to keep track of current and past injuries."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/plco-data-main.jpg",
+              "alt": "image of plco main data screens"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "From the data tab you can view, edit and delete all previous data. Data will be presented to you in 2 formats, in it's raw format and in it's computed format. Computed format includes “Readiness” (i.e. overall condition), degree labels (e.g. good, normal, danger), highlights (i.e. personalized advice) and more."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/plco-data-detail.jpg",
+              "alt": "image of plco detail data screens"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "The data tab contains another depth with charts, the highlight collection, and the list of all recorded data. While the top depth organizes data day by day, this level allows you to view all past data together to better grasp trends and detect issues."
+          }
+        ],
+        "result": [
+          {
+            "type": "paragraph",
+            "value": "The outcome is an app that allows athletes to receive valuable feedback and guidance. Our users are able to yield the best results from training while preserving their health. All it takes is to record simple data.\n\nFor coaches, PLCO is the cornerstone to their Athlete Monitoring System. We remove the burden of gathering all this data from players by hand. We give them more time to focus on the actual coaching."
+          }
+        ]
+      },
+      {
+        "title": "PLCO for Coach",
+        "image": {
+          "src": "/assets/images/plco-pro-header.jpg",
+          "alt": "image of plco for coach web application"
+        },
+        "challenge": [
+          {
+            "type": "paragraph",
+            "value": "Coaches want their team to succeed and to win. To achieve it, it is critical to offer the best training while maintaining the morale and health of your athletes.\n\nFirst, you'll need the tool to gather data from your players. By using PLCO they will do it for you. Then you'll want to view your team data in a clear and informative way. You want to quickly grasp the physical and mental condition of both your team and your athletes individually. Finally, you'll want to act on it by adjusting your training content and intensity and by communicating with your team. We aim to provide the tools for you to do it effortlessly."
+          }
+        ],
+        "solution": [
+          {
+            "type": "paragraph",
+            "value": "PLCO for Coach is a responsive web application based on a React stack. I built a custom component library and design system using Theme UI as the base design framework. Like PLCO, it offers both Korean and English language options. It is a secure access portal with granular authorization based on the type of user (e.g. team owner, head coach, physical coach)."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/plco-pro-dashboard.jpg",
+              "alt": "image of plco for coach dashboard page"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "The dashboard is your entry-point to the application. The top section is here to help you ensure your players record their data. The bottom section gives you a quick glance at the 3 main components of the athlete monitoring system: your team's condition, workload and injury state."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/plco-pro-monitoring.jpg",
+              "alt": "image of plco for coach monitoring page"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "The monitoring page is here to give you more detailed and exhaustive information. All raw data and computed data is accessible here. You'll find raw data such as stress level or sleep quality and computed data such as monotony (i.e. workload fluctuations) or ACWR (i.e. risk of injury).\n\nWhile the dashboard aggregates data as your team's average, here data is displayed player by player. Data can be filtered by group and received by daily, weekly or monthly period. To suit every need, data is displayed in both chart and table formats."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/plco-pro-insight.jpg",
+              "alt": "image of plco for coach insight page"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "Because browsing data can be time consuming, we added the insight page to help you quickly identify anomalies. Each time period (i.e. daily, weekly and monthly) has its own relevant widgets. They expose players with issues that need to be addressed."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/plco-pro-event.jpg",
+              "alt": "image of plco for coach event page"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "The event page works similarly to a regular calendar app except for a few differences. The first difference is that most of its features are relevant to the sport domain. Events you can create include training or matches. The second difference is that it will be directly integrated with the PLCO and PLCO for Coach ecosystem. Events will show up on the athlete's app and each event will be linked to its own recorded data."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/plco-pro-player.jpg",
+              "alt": "image of plco for coach player page"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "Each athlete has its own dedicated page; it gives you a clear and complete picture so you can assess its current and past state. After identifying a problem, the next step is to take action. Talk to your player, adapt its training program, or dismiss him from the incoming match to allow for recovery. Finally, examine the weekly and monthly progression and find out if your coaching has yielded positive results."
+          }
+        ],
+        "result": [
+          {
+            "type": "paragraph",
+            "value": "The result is an all-around athlete monitoring system. PLCO for Coach helps you make better coaching decisions by using a holistic approach to workload management and injury prevention.\n\nOur users have reported a sharp decline in injuries, better morale, more gratifying training and a better performing team."
+          }
+        ]
+      },
+      {
+        "title": "Chart System",
+        "image": {
+          "src": "/assets/images/chart-system-header.jpg",
+          "alt": "image of charts"
+        },
+        "challenge": [
+          {
+            "type": "paragraph",
+            "value": "As we added more pages and features to PLCO for Coach, the number of charts kept increasing rapidly. For every new chart, we had to repeat the same steps. This led to a lot of redundancy and code duplication. It became apparent to me that we needed a higher level of abstraction. We needed a system."
+          }
+        ],
+        "solution": [
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/chart-system-chain.jpg",
+              "alt": "schema of the chart system"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "At that time, the old implementation was a 2-step process. I only made a wrapper of the Victory charting library as the Chart component. Each page or parent component was still responsible for implementing the rest of the flow.\n\nTo improve on that, the idea was to encapsulate each of these steps into a reusable chunk. What's more, by designing some of these chunks as a system too, they can be reused elsewhere inside the application. This gives us the Chart System, a 6-step process which given a config as input returns a chart as output."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/chart-system-first-steps.jpg",
+              "alt": "schema of the 3 first steps of the chart system"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "The Query System integrates with Apollo, our GraphQL data fetching client. Given a query key and variables, the Query System will generate and call the proper query, then return the data. The variables can then be modified anywhere down the chain, triggering a new fetch (e.g. by changing the current date through the date picker). Once new data is received the whole chain will re-run rendering a new chart.\n\nSince our queries are tightly coupled with our backend, the received data needs to be transformed into data compatible with the rest of the Chart System. That is the role being filled by the Parser System.\n\nThe Store System is here to centralize the system state so it can be easily accessed and modified from anywhere inside or outside of it. For instance, the Query System will write into the Store System “data” field. After that, the Parser System will read it, parse it, then write the output into the “parsedData” field and so on."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/chart-system-last-steps.jpg",
+              "alt": "schema of the 3 last steps of the chart system"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "The Chart Props is the most elaborate step in the process. It's role is to generate all the properties used by the Chart and by extension the Victory library. It is a huge collection of hundreds of reusable functions dedicated to axes, domain, events and more.\nAn example for the x axis is the key “DAY_OF_WEEK” which returns a function that turns raw dates (e.g. 2021-05-16T15:00:00.000Z) into localized days of the week (e.g. Mon, Tue, etc.).\nAnother example is the key “Y_MAX_PLUS_400_DEFAULT_1600_ROUNDED_UP” that reads all data, then generates all y axis tick values. In this case either up until 1600 or the biggest found y value rounded up to 400 (i.e. for workload values between 0 and 2316, it will return 0, 400, 800, 1200, 1600, 2000 and 2400).\nA final example would be keys that render complete components such as “LABEL_AVATAR” rendering a user avatar or “LABEL_TOOLTIP_MULTI_TEAM_DATA” rendering an advanced tooltip.\n\nThe Chart receives 2 types of properties. The one generated in the previous step and styling properties from its parent component (e.g. chart width, height, padding). It then combines these 2 and converts them into the corresponding Victory components. For instance, each dataset item of type “BAR” will render a VictoryBar component (i.e. a bar chart).\n\nThe Victory Chart is the final step. The inner functioning of the library will draw vector graphics (i.e. SVG) representing different kinds of charts to accurately visualize our data."
+          },
+          {
+            "type": "image",
+            "value": {
+              "src": "/assets/images/chart-system-config-to-chart.jpg",
+              "alt": "schema of 2 configs turning into 2 charts"
+            }
+          },
+          {
+            "type": "paragraph",
+            "value": "The config is highly customizable and allows just about any combination. You can request any data, mix as many different chart types as you want (e.g. bar, line, stack), display several axes, personalize appearance and even control domain navigation."
+          }
+        ],
+        "result": [
+          {
+            "type": "paragraph",
+            "value": "As of today, with over 90 charts in the form of 8000 lines of config, the Chart System proved to be extremely valuable. The systematic approach helped us save a tremendous amount of time, effort and code. Adding or modifying a chart is now a smooth and proven method allowing for quick iterations.\n\nThe next evolution for the Chart System is to allow users to create their own charts through a user-friendly config editor.\n\nAs for our team the next goal is to expand the use of systems in our codebase. This can be done by relying more on the newly made systems and by applying the same philosophy to other parts of our products."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Withgoods",
+    "subtitle": "Building a print-on-demand website",
+    "description": "Withgoods is a place where anyone can upload and sell their original artworks as custom high quality goods.\n\nI joined Withgoods at the very beginning of the project as the lead developer of a team of 4. We used state-of-the-art and custom technologies: frontend, backend, AI, custom image generation pipeline. In just 3 months we built and released the first version of Withgoods.\n\nMy role included designing and implementing the API. Building a responsive and modern interface. Creating a custom image editor and generator. Handling the devops tasks (hosting, deploying, testing, monitoring). Organizing the agile development workflow in collaboration with the other project members.\n\nBelow are 3 case studies for the features that I had the most fun making and which I believe brings the most value. The first one is the image generator that creates realistic looking product images from the artist's artwork and our items. The second one is the integration of Google Vision AI into our search system to allow efficient image filtering. The last case study is an on-the-fly image optimizer which drastically improves our page loading speed and user's data usage.",
+    "image": {
+      "src": "/assets/images/withgoods-header.jpg",
+      "alt": "image of withgoods items"
     },
     "link": {
       "label": "Visit Website",
@@ -17,7 +258,7 @@
         "title": "Image generator",
         "image": {
           "src": "/assets/images/image-generation-header.jpg",
-          "alt": "photo of image editor"
+          "alt": "image of image editor"
         },
         "challenge": [
           {
@@ -34,7 +275,7 @@
             "type": "image",
             "value": {
               "src": "/assets/images/image-generation-mix.jpg",
-              "alt": "photo of image generation result"
+              "alt": "image of image generation result"
             }
           },
           {
@@ -45,7 +286,7 @@
             "type": "image",
             "value": {
               "src": "/assets/images/image-generation-photoshop.jpg",
-              "alt": "photo of image generation on mobile device"
+              "alt": "image of image generation on mobile device"
             }
           },
           {
@@ -101,7 +342,7 @@
           },
           {
             "type": "paragraph",
-            "value": "This process is run in the background so the user experience is not affected in any way. When an artwork is uploaded a serverless function (AWS Lambda) will trigger the necessary calls to the Google Cloud services. The function will then parse and persist its metadata in our database. It’s a completely automatic, silent and scalable solution."
+            "value": "This process is run in the background so the user experience is not affected in any way. When an artwork is uploaded a serverless function (AWS Lambda) will trigger the necessary calls to the Google Cloud services. The function will then parse and persist its metadata in our database. It's a completely automatic, silent and scalable solution."
           }
         ],
         "result": [
@@ -141,7 +382,7 @@
           },
           {
             "type": "paragraph",
-            "value": "After completing the first step, we ask CloudFront if the URI exists. If it does, the optimized image is immediately returned. If it doesn’t we ask for the original image directly from S3."
+            "value": "After completing the first step, we ask CloudFront if the URI exists. If it does, the optimized image is immediately returned. If it doesn't we ask for the original image directly from S3."
           },
           {
             "type": "paragraph",
