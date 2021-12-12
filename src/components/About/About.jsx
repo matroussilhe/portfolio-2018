@@ -121,7 +121,6 @@ class About extends Component {
                 I enjoy creating efficient and pleasant experiences.
               </Body>
               <AboutSlideLink href="https://www.instagram.com/matroussilhe" target="_blank">Instagram</AboutSlideLink>
-              <AboutSlideLink href="mailto:mathieu.roussilhe@gmail.com">Email</AboutSlideLink>
             </AboutMeWrapper>
             <AboutMeWrapper>
               <Subtitle>Skills</Subtitle>
@@ -133,10 +132,11 @@ class About extends Component {
                 Knowledge of algorithm, Unix programming and OOP<br />
                 I can work in complete autonomy as well as part of a multidisciplinary team
               </Body>
+              <AboutSlideLink href={Resume} target="_blank">Resume</AboutSlideLink>
               <AboutSlideLink href="https://www.linkedin.com/in/matroussilhe" target="_blank">Linkedin</AboutSlideLink>
               <AboutSlideLink href="https://www.rocketpunch.com/@matroussilhe" target="_blank">RocketPunch</AboutSlideLink>
-              <AboutSlideLink href={Resume} target="_blank">Resume</AboutSlideLink>
               <AboutSlideLink href="https://github.com/matroussilhe" target="_blank">Github</AboutSlideLink>
+              <AboutSlideLink href="mailto:mathieu.roussilhe@gmail.com">Email</AboutSlideLink>
             </AboutMeWrapper>
           </SlideBox>
         </WrapperFlex>
