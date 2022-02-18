@@ -116,7 +116,7 @@ class About extends Component {
               <Title>Hello there</Title>
               <Subtitle>About me</Subtitle>
               <Body>
-                I am a Software Engineer from France, based in Korea.<br />
+                I am a Fullstack Engineer from France, based in Korea.<br />
                 I use technology to build eloquent systems.<br />
                 I seek quality, clarity and beauty in my work.<br />
                 I strive to create excellent products through steady iterations.
