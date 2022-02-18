@@ -27,7 +27,7 @@
     "id": 3,
     "caseStudyId": null,
     "title": "Sleek",
-    "role": "Full-stack developer",
+    "role": "Fullstack engineer",
     "tech": "JavaScript (ES6), Node.js, React, Vue, TDD, Mongoose",
     "description": "Sleek is a startup which offers online company secretary services. They provide a two-sided web platform. One side for the clients, one side for the corporate secretary admins.\n\nMy main contribution to the platform was maintaining and improving the API, refactoring the access control system, and building an automated reminding and renewing (billing) system. As the deadline for Sleek new service (e-signature) was approaching I switched to this project to speed up the development. My final task was the complete rework of the UI. We switched to a whole new stack (React to Vue). We built a lighter, faster and more maintainable UI.",
     "image": {
@@ -43,7 +43,7 @@
     "id": 4,
     "caseStudyId": null,
     "title": "Maevents",
-    "role": "Full-stack developer",
+    "role": "Fullstack engineer",
     "tech": "JavaScript (ES6), React, Meteor, MongoDB",
     "description": "Maevents is a rising tour operator. I worked with them to speed up their operation with a custom software.\n\nI was in charge of the whole development process. I built a website to easily manage your client base and generate various contracts and reports. Data is hierarchically structured and presented in a clear way. A fuzzy-search bar allow you to quickly find what you're looking for. There is also a data table where you get a big image of your client base and perform global search.",
     "image": {
@@ -55,9 +55,9 @@
     "id": 5,
     "caseStudyId": null,
     "title": "Hub-Grade",
-    "role": "Back-end developer",
+    "role": "Backend engineer",
     "tech": "PHP, Symfony3, REST, Doctrine",
-    "description": "Office rental in France is very constraining. Hub-Grade is a start-up that offers flexible renting solutions.\n\nThey recruited me and two other interns to rework their website using modern technologies. I built a reliable API while my colleagues developed the front-end. Together we had a really fun and engaging teamwork experience.",
+    "description": "Office rental in France is very constraining. Hub-Grade is a start-up that offers flexible renting solutions.\n\nThey recruited me and two other interns to rework their website using modern technologies. I built a reliable API while my colleagues developed the frontend. Together we had a really fun and engaging teamwork experience.",
     "image": {
       "src": "/assets/images/hubgrade.jpg",
       "alt": "image of hubgrade website"
@@ -87,9 +87,9 @@
     "id": 7,
     "caseStudyId": null,
     "title": "Naview ",
-    "role": "Software developer",
+    "role": "Software engineer",
     "tech": "UE4, Node.js, Socket.io",
-    "description": "Naview is an immersive VR experience. It transports you in a 3D environment where you can watch videos with your friends. From within the app anyone can browse YouTube and add videos to a shared playlist. These videos will then synchronously play on the room's screen.\n\nThis project lasted over two years including ideation, documentation, coding and external promotion. We were six developers, spread all over the world during half this duration. I developed the playlist and the web browser both client and server side.",
+    "description": "Naview is an immersive VR experience. It transports you in a 3D environment where you can watch videos with your friends. From within the app anyone can browse YouTube and add videos to a shared playlist. These videos will then synchronously play on the room's screen.\n\nThis project lasted over two years including ideation, documentation, coding and external promotion. We were six engineers, spread all over the world during half this duration. I developed the playlist and the web browser both client and server side.",
     "image": {
       "src": "/assets/images/naview.jpg",
       "alt": "image of naview app"

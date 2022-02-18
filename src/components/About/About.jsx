@@ -126,8 +126,8 @@ class About extends Component {
             <AboutMeWrapper>
               <Subtitle>Skills</Subtitle>
               <Body>
-                Designing interfaces using the latest front-end technologies.<br />
-                Building reliable API and back-end solutions.<br />
+                Designing interfaces using the latest frontend technologies.<br />
+                Building reliable API and backend solutions.<br />
                 Familiar with both relational and non-relational database.<br />
                 Managing hosting and deployment processes.<br />
                 Knowledge of algorithm, Unix programming and OOP.<br />
