@@ -1,12 +1,20 @@
-# Portfolio 2018~2020
-![portfolio](https://github.com/matroussilhe/react-portfolio/blob/master/screenshot.png)
+# Portfolio 2018~2021
+## Description
+My personal website built with React. It served as my portfolio to showcase my work, skills and personality from to 2018 to 2021.
 
-## Built With
-* [react](https://github.com/facebook/react) - base library
-* [create-react-app](https://github.com/facebook/create-react-app) - boilerplate for React
-* [styled-components](https://github.com/styled-components/styled-components/tree/v2) - CSS-in-JS styling
-* [grid-styled](https://github.com/jxnblk/grid-styled) - grid system
-* [react-move](https://github.com/react-tools/react-move) - animations
+## Screenshots
+![portfolio](https://github.com/matroussilhe/assets/blob/master/images/portfolio-2018/home.png)
+![portfolio](https://github.com/matroussilhe/assets/blob/master/images/portfolio-2018/case-study.png)
+![portfolio](https://github.com/matroussilhe/assets/blob/master/images/portfolio-2018/about.png)
+
+## Technologies
+* [react](https://github.com/facebook/react)
+* [create-react-app](https://github.com/facebook/create-react-app)
+* [styled-components](https://github.com/styled-components/styled-components/tree/v2)
+* [react-move](https://github.com/react-tools/react-move)
+
+## Status
+Past version of my porfolio, preserved for posterity.
 
 ## Link
-[Live website](http://matroussilhe.com/)
+[See live website](http://matroussilhe.com/)
