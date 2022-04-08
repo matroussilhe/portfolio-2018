@@ -8,7 +8,7 @@ My personal website built with React. It served as my portfolio to showcase my w
 ## Technologies
 * [react](https://github.com/facebook/react)
 * [create-react-app](https://github.com/facebook/create-react-app)
-* [styled-components](https://github.com/styled-components/styled-components/tree/v2)
+* [styled-components](https://github.com/styled-components/styled-components)
 * [react-move](https://github.com/react-tools/react-move)
 
 ## Status
