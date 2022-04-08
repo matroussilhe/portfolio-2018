@@ -15,4 +15,4 @@ My personal website built with React. It served as my portfolio to showcase my w
 Past version of my porfolio, preserved for posterity.
 
 ## Link
-[See live website](matroussilhe-portfolio-2018.netlify.app)
+[See live website](https://matroussilhe-portfolio-2018.netlify.app)
