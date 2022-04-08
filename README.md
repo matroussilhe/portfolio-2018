@@ -6,10 +6,10 @@ My personal website built with React. It served as a portfolio to showcase my wo
 ![portfolio](https://github.com/matroussilhe/assets/blob/master/images/portfolio-2018/about.png)
 
 ## Technologies
-* [react](https://github.com/facebook/react)
-* [create-react-app](https://github.com/facebook/create-react-app)
+* [React](https://github.com/facebook/react)
+* [Create React App](https://github.com/facebook/create-react-app)
 * [styled-components](https://github.com/styled-components/styled-components)
-* [react-move](https://github.com/react-tools/react-move)
+* [React Move](https://github.com/react-tools/react-move)
 
 ## Status
 Past version of my porfolio, preserved for posterity.
